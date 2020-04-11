@@ -1,0 +1,53 @@
+.homeProjects {
+  &-list {
+  }
+
+  &-heading {
+    @include section-heading;
+  }
+
+  &-project {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    align-items: center;
+
+    & + & {
+      border-top: 1px solid #eeeeee;
+    }
+  }
+
+  &-projectName {
+    min-width: 200px;
+    max-width: 200px;
+    width: 200px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  &-projectDescription {
+    text-align: left;
+    flex: 1 1;
+    color: $color-subheading;
+    line-height: 1;
+  }
+
+  &-projectRepo {
+    @include small-button($color-subheading);
+  }
+
+  &-projectDemo {
+    @include small-button($color-highlight);
+    margin-left: 10px;
+  }
+
+  &-projectEmoji {
+    font-size: 26px;
+    margin-right: 15px;
+  }
+
+  &-projectTitle {
+    font-weight: 500;
+  }
+}

@@ -3,3 +3,24 @@
   margin: auto;
   padding: 30px;
 }
+
+@mixin small-button($bg-color) {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: $color-highlight-text;
+  background-color: $bg-color;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+@mixin section-heading {
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 28px;
+}

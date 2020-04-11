@@ -1,0 +1,21 @@
+<div class="homeProjects-container">
+  <h2 class="homeProjects-heading">My Projects</h2>
+
+  <div class="homeProjects-list">
+    {% for project in site.data.projects %}
+    <div class="homeProjects-project">
+      <div class="homeProjects-projectName">
+        <div class="homeProjects-projectEmoji">{{ project.emoji }}</div>
+        <h3 class="homeProjects-projectTitle">{{ project.name }}</h3>
+      </div>
+      <p class="homeProjects-projectDescription">{{ project.description }}</p>
+      <a href="{{ project.github }}" class="homeProjects-projectRepo">Github</a>
+      {% if project.demo %}
+      <a href="{{ project.demo }}" class="homeProjects-projectDemo">
+        Demo
+      </a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

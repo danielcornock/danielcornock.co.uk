@@ -1,0 +1,28 @@
+- name: NuTodo
+  description: A todo app written the way that I like to organise my todos.
+  emoji: 📝
+  github: https://github.com/danielcornock/nutodo-ui
+
+- name: PropertyRight
+  description: An app to manage your properties, tenants and payments.
+  emoji: 🏡
+  github: https://github.com/danielcornock/propertyright-ui
+  demo: https://property-right-ui.herokuapp.com/
+
+- name: Kanbo
+  description: A trello-inspired kanban board with added feature that fit my own work flow.
+  emoji: 📊
+  github: https://github.com/danielcornock/kanbo-ui
+  demo: https://ng-kanban.herokuapp.com/
+
+- name: Mark Nartey
+  description: An academic portfolio for a client.
+  emoji: 🎓
+  demo: https://www.marknartey.com
+  github: https://github.com/danielcornock/marknartey.com
+
+- name: Legacy Portfolio
+  description: My first shot at a portfolio & blog before this redesign.
+  emoji: 👨‍💻
+  demo: https://www.danielcornock.co.uk
+  github: https://github.com/danielcornock/danielcornock.co.uk
