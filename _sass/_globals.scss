@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  @include container-element;
+  color: $color-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $color-heading;
+  line-height: 1.2;
+}

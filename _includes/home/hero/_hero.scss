@@ -1,0 +1,29 @@
+.hero {
+  &-container {
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+  }
+
+  &-image {
+    display: block;
+    height: 300px;
+  }
+
+  &-content {
+    margin-left: 60px;
+  }
+
+  &-title {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &-subtitle {
+    color: $color-subheading;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.4;
+  }
+}

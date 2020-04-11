@@ -1,0 +1,6 @@
+- name: Portfolio
+  link: /portfolio
+- name: Articles
+  link: /articles
+- name: About Me
+  link: /about

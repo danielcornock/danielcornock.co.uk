@@ -7,6 +7,14 @@
     <title>Document</title>
   </head>
   <body>
-    {{ content }}
+    <header>
+      {% include header/header.html %}
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer>
+      {% include footer/footer.html %}
+    </footer>
   </body>
 </html>
