@@ -4,14 +4,14 @@
   padding: 30px;
 }
 
-@mixin small-button($bg-color) {
+@mixin small-button($bg-color, $font-color: $color-highlight-text) {
   display: block;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 5px;
-  color: $color-highlight-text;
+  color: $font-color;
   background-color: $bg-color;
 
   &:hover {

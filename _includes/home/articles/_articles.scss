@@ -1,0 +1,41 @@
+.homeArticles {
+  &-container {
+  }
+
+  &-heading {
+    @include section-heading;
+    display: flex;
+    align-items: center;
+  }
+
+  &-viewMore {
+    @include small-button($color-light-grey, $color-subheading);
+    margin-left: 15px;
+    line-height: 1.6;
+  }
+
+  &-image {
+    width: 26px;
+    margin-right: 15px;
+  }
+
+  &-article {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 25px 10px;
+
+    & + & {
+      border-top: 1px solid $color-light-grey;
+    }
+
+    &:hover {
+      background-color: $color-light-grey;
+      border-radius: 10px;
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+  }
+}

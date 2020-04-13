@@ -5,5 +5,15 @@
     <h3 class="hero-subtitle">
       I'm a full stack JavaScript developer creating open source web applications.
     </h3>
+    <div class="hero-socialButtonsContainer">
+      {% for social in site.data.social %}
+      <a class="hero-socialButton hero-socialButton--{{ social.type }}" href="{{ social.link }}">
+        <div class="hero-socialIcon">{{ social.icon }}</div>
+        <span class="hero-socialName">{{ social.username }}</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </div>

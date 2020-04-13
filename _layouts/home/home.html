@@ -3,5 +3,13 @@ layout: default
 ---
 
 <div class="home-container">
-  {% include home/hero/hero.html %} {% include home/projects/projects.html %}
+  <div class="home-section">
+    {% include home/hero/hero.html %}
+  </div>
+  <div class="home-section">
+    {% include home/projects/projects.html %}
+  </div>
+  <div class="home-section">
+    {% include home/articles/articles.html %}
+  </div>
 </div>

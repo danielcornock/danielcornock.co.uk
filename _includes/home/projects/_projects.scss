@@ -4,16 +4,24 @@
 
   &-heading {
     @include section-heading;
+    display: flex;
+    align-items: center;
+  }
+
+  &-viewMore {
+    @include small-button($color-light-grey, $color-subheading);
+    margin-left: 15px;
+    line-height: 1.6;
   }
 
   &-project {
     display: flex;
     justify-content: space-between;
-    padding: 25px 0;
+    padding: 25px 10px;
     align-items: center;
 
     & + & {
-      border-top: 1px solid #eeeeee;
+      border-top: 1px solid $color-light-grey;
     }
   }
 
@@ -27,14 +35,15 @@
   }
 
   &-projectDescription {
-    text-align: left;
     flex: 1 1;
     color: $color-subheading;
     line-height: 1;
+    font-weight: 500;
   }
 
   &-projectRepo {
     @include small-button($color-subheading);
+    margin-left: 10px;
   }
 
   &-projectDemo {

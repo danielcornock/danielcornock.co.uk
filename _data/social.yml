@@ -1,0 +1,8 @@
+- username: '@danielcornock'
+  icon: <i class="fab fa-twitter"></i>
+  link: 'https://twitter.com/danielcornock'
+  type: twitter
+- username: 'danielcornock'
+  icon: <i class="fab fa-github"></i>
+  link: 'https://github.com/danielcornock'
+  type: github
