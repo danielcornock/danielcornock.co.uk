@@ -2,6 +2,10 @@
   max-width: 950px;
   margin: auto;
   padding: 30px;
+
+  @include media($phone) {
+    padding: 15px;
+  }
 }
 
 @mixin small-button($bg-color, $font-color: $color-highlight-text) {
@@ -23,4 +27,21 @@
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 28px;
+
+  @include media($tablet) {
+    font-size: 24px;
+  }
+
+  @include media($phone) {
+    font-size: 20px;
+  }
 }
+
+@mixin media($sizing) {
+  @media (max-width: $sizing) {
+    @content;
+  }
+}
+
+$tablet: 768px;
+$phone: 460px;

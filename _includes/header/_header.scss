@@ -1,3 +1,12 @@
+@mixin header-text-config {
+  font-size: 18px;
+  font-weight: 500;
+
+  @include media($phone) {
+    font-size: 16px;
+  }
+}
+
 .header {
   &-container {
     @include container-element;
@@ -5,6 +14,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include media($phone) {
+      height: auto;
+    }
   }
 
   &-branding {
@@ -19,11 +32,18 @@
   }
 
   &-brandingText {
-    font-size: 18px;
-    font-weight: 500;
+    @include header-text-config;
+    @include media($tablet) {
+      display: none;
+    }
   }
 
   &-nav {
+    @include media($tablet) {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: space-around;
+    }
   }
 
   &-navLink {
@@ -31,11 +51,14 @@
     margin-left: 60px;
     text-decoration: none;
     color: $color-body;
-    font-size: 18px;
-    font-weight: 500;
+    @include header-text-config;
 
     &:hover {
       color: $color-highlight;
+    }
+
+    @include media($tablet) {
+      margin-left: 0;
     }
   }
 }

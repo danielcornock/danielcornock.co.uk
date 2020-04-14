@@ -11,21 +11,42 @@
     display: flex;
     align-items: center;
     padding: 100px 0 160px;
+
+    @include media($tablet) {
+      flex-direction: column;
+      padding: 0 0 30px;
+    }
+
+    @include media($phone) {
+      padding: 40px 0;
+    }
   }
 
   &-image {
     display: block;
     height: 300px;
+
+    @include media($tablet) {
+      display: none;
+    }
   }
 
   &-content {
     margin-left: 60px;
+
+    @include media($tablet) {
+      margin-left: initial;
+    }
   }
 
   &-title {
     font-size: 42px;
     font-weight: 500;
     margin-bottom: 10px;
+
+    @include media($tablet) {
+      font-size: 36px;
+    }
   }
 
   &-subtitle {
@@ -34,6 +55,10 @@
     font-size: 28px;
     line-height: 1.4;
     margin-bottom: 10px;
+
+    @include media($tablet) {
+      font-size: 24px;
+    }
   }
 
   &-socialButtonsContainer {

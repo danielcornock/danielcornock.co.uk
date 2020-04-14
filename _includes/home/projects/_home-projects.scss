@@ -23,15 +23,21 @@
     & + & {
       border-top: 1px solid $color-light-grey;
     }
+
+    @include media(680px) {
+      padding: 15px 10px;
+    }
   }
 
   &-projectName {
-    min-width: 200px;
-    max-width: 200px;
     width: 200px;
     margin-right: 15px;
     display: flex;
     align-items: center;
+
+    @include media($phone) {
+      width: 150px;
+    }
   }
 
   &-projectDescription {
@@ -39,11 +45,19 @@
     color: $color-subheading;
     line-height: 1;
     font-weight: 500;
+
+    @include media(680px) {
+      display: none;
+    }
   }
 
   &-projectRepo {
     @include small-button($color-subheading);
     margin-left: 10px;
+
+    @include media(680px) {
+      margin-left: auto;
+    }
   }
 
   &-projectDemo {
@@ -58,5 +72,9 @@
 
   &-projectTitle {
     font-weight: 500;
+
+    @include media($tablet) {
+      font-size: 16px;
+    }
   }
 }
