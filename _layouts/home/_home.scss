@@ -1,7 +1,7 @@
 .home {
   &-section {
     & + & {
-      margin-top: 50px;
+      margin-top: $section-default-spacing;
     }
   }
 }

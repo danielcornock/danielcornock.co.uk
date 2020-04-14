@@ -1,2 +1,10 @@
 .footer {
+  background-color: $color-heading;
+  color: white;
+  margin-top: auto;
+
+  &-container {
+    @include container-element;
+    text-align: center;
+  }
 }

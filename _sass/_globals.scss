@@ -16,11 +16,15 @@ p {
 
 body {
   background-color: $color-background;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
   @include container-element;
   color: $color-body;
+  padding-bottom: $section-default-spacing;
 }
 
 h1,
