@@ -1,6 +1,6 @@
 @mixin mobile-only-icon-switch {
   .no-mobile {
-    @include media(380px) {
+    @include media($sm-phone) {
       display: none;
     }
   }
@@ -8,7 +8,7 @@
   .mobile-only {
     display: none;
 
-    @include media(380px) {
+    @include media($sm-phone) {
       display: block;
     }
   }
