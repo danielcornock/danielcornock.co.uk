@@ -36,10 +36,6 @@
   @include media($phone) {
     font-size: 20px;
   }
-
-  @include media($sm-phone) {
-    font-size: 18px;
-  }
 }
 
 @mixin media($sizing) {
