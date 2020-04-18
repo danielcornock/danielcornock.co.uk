@@ -4,4 +4,7 @@ layout: default
 
 <div class="articles-container">
   <h2 class="articles-heading">Articles</h2>
+  <div class="articles-list">
+    {% for article in site.posts %} {% include article/article.html %} {% endfor %}
+  </div>
 </div>

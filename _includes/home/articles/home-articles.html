@@ -3,10 +3,5 @@
     Recent Articles
     <a href="/articles" class="homeArticles-viewMore">View more</a>
   </h2>
-  {% for post in site.posts %}
-  <a class="homeArticles-article" href="{{ post.url }}">
-    <img class="homeArticles-image" src="{{ post.image }}" alt="" />
-    <h3 class="homeArticles-title">{{ post.title }}</h3>
-  </a>
-  {% endfor %}
+  {% for article in site.posts %} {% include article/article.html %} {% endfor %}
 </div>

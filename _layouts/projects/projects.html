@@ -4,4 +4,7 @@ layout: default
 
 <div class="projects-container">
   <h2 class="projects-heading">Projects</h2>
+  <div class="projects-list">
+    {% for project in site.data.projects %} {% include project/project.html %} {% endfor %}
+  </div>
 </div>
