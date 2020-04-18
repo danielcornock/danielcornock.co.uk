@@ -1,16 +1,16 @@
 - name: NuTodo
-  description: A todo app written the way that I like to organise my todos.
+  description: A full stack todo app written the way that I like to organise my todos.
   emoji: 📝
   github: https://github.com/danielcornock/nutodo-ui
 
 - name: Property Right
-  description: An app to manage your properties, tenants and payments.
+  description: A full stack app to manage your properties, tenants and payments.
   emoji: 🏡
   github: https://github.com/danielcornock/propertyright-ui
   demo: https://property-right-ui.herokuapp.com/
 
 - name: Kanbo
-  description: A trello-inspired kanban board with added feature that fit my own work flow.
+  description: A full stack trello-inspired kanban board with added features that fit my own work flow.
   emoji: 📊
   github: https://github.com/danielcornock/kanbo-ui
   demo: https://ng-kanban.herokuapp.com/
