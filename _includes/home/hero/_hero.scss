@@ -14,11 +14,11 @@
 
     @include media($tablet) {
       flex-direction: column;
-      padding: 0 0 30px;
+      padding: 100px 0 130px;
     }
 
     @include media($phone) {
-      padding: 40px 0;
+      padding: 100px 0;
     }
   }
 

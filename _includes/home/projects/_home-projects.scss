@@ -1,3 +1,19 @@
+@mixin mobile-only-icon-switch {
+  .no-mobile {
+    @include media(380px) {
+      display: none;
+    }
+  }
+
+  .mobile-only {
+    display: none;
+
+    @include media(380px) {
+      display: block;
+    }
+  }
+}
+
 .homeProjects {
   &-list {
   }
@@ -35,8 +51,8 @@
     display: flex;
     align-items: center;
 
-    @include media($phone) {
-      width: 150px;
+    @include media(680px) {
+      width: auto;
     }
   }
 
@@ -53,6 +69,7 @@
 
   &-projectRepo {
     @include small-button($color-subheading);
+    @include mobile-only-icon-switch;
     margin-left: 10px;
 
     @include media(680px) {
@@ -62,12 +79,17 @@
 
   &-projectDemo {
     @include small-button($color-highlight);
+    @include mobile-only-icon-switch;
     margin-left: 10px;
   }
 
   &-projectEmoji {
     font-size: 26px;
     margin-right: 15px;
+
+    @include media($phone) {
+      font-size: 20px;
+    }
   }
 
   &-projectTitle {
