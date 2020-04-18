@@ -1,2 +1,8 @@
 .about {
+  &-container {
+  }
+
+  &-heading {
+    @include section-heading;
+  }
 }

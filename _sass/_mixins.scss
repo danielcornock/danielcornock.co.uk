@@ -1,6 +1,7 @@
 @mixin container-element {
+  width: 100%;
   max-width: 950px;
-  margin: auto;
+  margin: 0 auto;
   padding: 30px;
 
   @include media($phone) {

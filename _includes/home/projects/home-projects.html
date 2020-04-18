@@ -5,24 +5,6 @@
   </h2>
 
   <div class="homeProjects-list">
-    {% for project in site.data.projects %}
-    <div class="homeProjects-project">
-      <div class="homeProjects-projectName">
-        <div class="homeProjects-projectEmoji">{{ project.emoji }}</div>
-        <h3 class="homeProjects-projectTitle">{{ project.name }}</h3>
-      </div>
-      <p class="homeProjects-projectDescription">{{ project.description }}</p>
-      <a href="{{ project.github }}" class="homeProjects-projectRepo">
-        <span class="no-mobile">Github</span>
-        <span class="mobile-only"><i class="fab fa-github"></i></span>
-      </a>
-      {% if project.demo %}
-      <a href="{{ project.demo }}" class="homeProjects-projectDemo">
-        <span class="no-mobile">Demo</span>
-        <span class="mobile-only"><i class="fas fa-desktop"></i></span>
-      </a>
-      {% endif %}
-    </div>
-    {% endfor %}
+    {% for project in site.data.projects %} {% include project/project.html %} {% endfor %}
   </div>
 </div>
