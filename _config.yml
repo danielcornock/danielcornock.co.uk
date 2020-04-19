@@ -8,11 +8,15 @@ baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://danielcornock-v2.netlify.com/' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: danielcornock
 github_username: danielcornock
+permalink: /articles/:title
 
 include: ['_pages']
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 plugins:
   - jekyll-feed

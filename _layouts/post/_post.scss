@@ -108,17 +108,16 @@
     h2,
     h3 {
       margin-top: 40px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      color: $color-subheading;
     }
 
     h2 {
-      font-size: 30px;
-      color: $color-subheading;
+      font-size: 26px;
     }
 
     h3 {
-      font-size: 26px;
-      color: $color-subheading;
+      font-size: 22px;
     }
 
     p {
@@ -137,6 +136,36 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    table {
+      border-spacing: 30px;
+      border-collapse: separate;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    tr {
+      border-spacing: 20px;
+      & + & {
+        margin-top: 10px;
+      }
+    }
+
+    .highlighter-rouge {
+      background-color: #eee;
+      border-radius: 5px;
+    }
+
+    div.highlighter-rouge {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    code.highlighter-rouge {
+      padding: 5px;
     }
   }
 }
