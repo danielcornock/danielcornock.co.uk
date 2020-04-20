@@ -11,7 +11,9 @@ tags:
 
 For some people, unit testing is their least favourite part about development. Your feature work is complete, and then you’re hit with the mass of unit tests just waiting to be written. However, it doesn’t have to be this way. When creating a new component, writing unit tests is one of my favourite things to do - I already know and understand how my component works, and so I can just sit down and blast my way through them.
 
-In this series, I’ll be showing you how to utilise jasmine, alongside Angular’s great built in testing functionality, in order to test angular components (including templates), services and directives in a clean and understandable way. Without further ado, let’s get started.
+In this series, I’ll be showing you how to utilise jasmine, alongside Angular’s great built in testing functionality, in order to test angular components (including templates), services and directives in a clean and understandable way. Please note, that it is expected that you are comfortable with Angular and its conventions. A general idea of how unit testing works is not necessary, but will help you understand.
+
+## Getting started
 
 We’re going to be unit testing a small application that displays products, mocking API calls and dealing with asynchronous data. Here is how our component is going to start:
 
@@ -106,4 +108,4 @@ And finally, here is where we make our test assertions. The usual syntax for thi
 
 ## Onto the next step
 
-Unfortunately, these tests won't currently pass. This is because we haven't properly set up our testing environment yet. For the next step, let's move on to [stubbing dependencies](angular-testing-stubbing-dependencies).
+Unfortunately, these tests won't currently pass. This is because we haven't properly set up our testing environment yet. For the next step, let's move on to [stubbing dependencies](angular-testing-2-stubbing-dependencies).
