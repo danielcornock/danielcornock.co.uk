@@ -4,6 +4,7 @@ description: >-
   An introduction to unit testing in Angular
 image: 'assets/images/articles/angular.png'
 layout: 'post/post'
+series: angular-unit-testing
 tags:
   - angular
   - testing

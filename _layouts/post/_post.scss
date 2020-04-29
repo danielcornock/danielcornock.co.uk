@@ -116,6 +116,8 @@ $post-default-spacing: 30px;
 
     h2 {
       font-size: 26px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid $color-light-grey;
     }
 
     h3 {
@@ -141,13 +143,20 @@ $post-default-spacing: 30px;
     }
 
     .highlighter-rouge {
-      background-color: #eee;
+      background-color: #f9f9f9;
       border-radius: 5px;
     }
 
+    .highlight {
+      > .highlight {
+        background-color: #f9f9f9 !important;
+
+        overflow-x: auto;
+        padding: 20px;
+      }
+    }
+
     div.highlighter-rouge {
-      overflow-x: auto;
-      padding: 20px;
       margin-bottom: $post-default-spacing;
     }
 
@@ -155,14 +164,26 @@ $post-default-spacing: 30px;
       padding: 3px 5px;
     }
 
+    .highlight {
+      font-size: 12px !important;
+
+      .highlight {
+        border-radius: $br-default;
+        padding: 20px;
+        margin: 0;
+      }
+    }
+
     blockquote {
       border-left: 5px solid $color-tertiary;
       background-color: lighten($color-tertiary, 35%);
-      padding: 10px 20px;
+      padding: 15px 25px;
       border-radius: 0 $br-default $br-default 0;
       margin-bottom: $post-default-spacing;
+
       p {
         margin-bottom: 0;
+        font-size: 16px;
       }
     }
   }

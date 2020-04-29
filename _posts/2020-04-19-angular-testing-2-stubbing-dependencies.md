@@ -4,12 +4,13 @@ description: >-
   How to stub dependencies in angular to ensure total isolation for your test suite.
 image: 'assets/images/articles/angular.png'
 layout: 'post/post'
+series: angular-unit-testing
 tags:
   - angular
   - testing
 ---
 
-When working with big applications, it can be beneficial to create a stub for every service you create. Stubbing a service means that were don’t have to spy on any methods, as they are all already initialised as spies for us. Creating a stub doesn’t take long, and it saves you repeating code in future test files if your service is used in multiple places.
+When working with big applications, it can be beneficial to create a stub for every service you create. Stubbing a service means that we don’t have to spy on any methods in our test file, as they are all already initialised as spies for us. Creating a stub doesn’t take long, and it saves you repeating code in future test files if your service is used in multiple places.
 
 Let’s take a look at our service:
 
