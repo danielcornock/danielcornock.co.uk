@@ -5,6 +5,9 @@
 
   &-container {
     @include container-element;
+    @include media($tablet) {
+      padding: 30px 15px;
+    }
     text-align: center;
   }
 }
