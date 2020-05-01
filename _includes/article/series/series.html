@@ -1,0 +1,16 @@
+{% if page.series %}
+<div class="series-container">
+  <p class="series-heading">This article is a part of a series. Take a look at the other articles below!</p>
+
+  {% assign sorted = site.posts | sort: 'date' %}
+  <ul class="series-list">
+    {% for post in sorted %} {% if post.series == page.series %}
+    <li class="series-item">
+      {% if post.url == page.url %}
+      <span class="series-active">{{ post.title }}</span>
+      {% else %} <a class="series-link" href="{{ post.url }}">{{ post.title }}</a>{% endif %}
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
+</div>
+{% endif %}

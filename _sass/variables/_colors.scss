@@ -8,3 +8,5 @@ $color-tertiary: #e45858;
 $color-background: #fffffe;
 
 $color-light-grey: #eeeeee;
+$color-tertiary-light: lighten($color-tertiary, 35%);
+$color-highlight-light: lighten($color-highlight, 30%);

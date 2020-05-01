@@ -1,0 +1,43 @@
+.series {
+  &-container {
+    background-color: $color-tertiary-light;
+    border-radius: $br-default;
+    color: $color-highlight-light;
+    padding: 30px;
+    margin-bottom: 40px;
+
+    @include media($tablet) {
+      display: none;
+    }
+  }
+
+  &-heading {
+    font-weight: 500 !important;
+    font-size: 22px !important;
+    color: $color-heading !important;
+  }
+
+  &-list {
+    list-style-position: outside !important;
+    padding-left: 25px;
+    list-style-type: lower-roman;
+    color: $color-subheading;
+    margin-bottom: 0 !important;
+  }
+
+  &-item {
+    padding-left: 10px;
+    font-size: 18px;
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &-active {
+    color: $color-heading;
+    font-weight: 500 !important;
+  }
+
+  &-link {
+  }
+}

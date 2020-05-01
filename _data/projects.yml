@@ -3,6 +3,17 @@
   emoji: 📝
   github: https://github.com/danielcornock/nutodo-ui
 
+- name: ng-forms
+  description: A WIP forms framework for use with modern Angular applications.
+  emoji: ✏️
+  demo: https://www.npmjs.com/package/@danielc7150/ng-forms
+
+- name: express-utils
+  description: An npm package written to abstract await some of my most used API building utilities.
+  emoji: 🔧
+  github: https://github.com/danielcornock/express-utils
+  demo: https://www.npmjs.com/package/@danielc7150/express-utils
+
 - name: Property Right
   description: A full stack app to manage your properties, tenants and payments.
   emoji: 🏡

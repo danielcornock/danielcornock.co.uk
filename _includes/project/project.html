@@ -4,11 +4,12 @@
     <h3 class="project-projectTitle">{{ project.name }}</h3>
   </div>
   <p class="project-projectDescription">{{ project.description }}</p>
+  {% if project.github %}
   <a href="{{ project.github }}" class="project-projectRepo" rel="noreferrer" rel="noopener" target="_blank">
     <span class="no-mobile">Github</span>
     <span class="mobile-only"><i class="fab fa-github"></i></span>
   </a>
-  {% if project.demo %}
+  {% endif %} {% if project.demo %}
   <a href="{{ project.demo }}" class="project-projectDemo" rel="noreferrer" rel="noopener" target="_blank">
     <span class="no-mobile">Demo</span>
     <span class="mobile-only"><i class="fas fa-desktop"></i></span>

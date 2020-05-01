@@ -41,6 +41,8 @@ export class ProductServiceStub {
 
 And it’s as simple as that. It’s best to keep it in it’s own file, with the naming convention `.stub.ts`. Even if this service had dependencies of its own, we don’t need to add a constructor to the stub.
 
+> A spy allows us to mock return values and track certain information about our function call such as what it was called with and how many times it was called.
+
 ## Providing the stub
 
 Now, back in our test file, we can provide this stub in place of our service:

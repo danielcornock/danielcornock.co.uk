@@ -92,6 +92,22 @@ $post-default-spacing: 30px;
     text-transform: capitalize;
   }
 
+  &-codeLabel {
+    // Used for auto generated javascript element
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: $color-heading;
+    color: white;
+    padding: 5px 8px;
+    border-radius: $br-default;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0;
+
+    transition: 250ms;
+  }
+
   &-content {
     img {
       width: 100%;
@@ -127,7 +143,7 @@ $post-default-spacing: 30px;
     p {
       font-weight: 400;
       color: $color-body;
-      line-height: 1.8;
+      line-height: 1.9;
       font-size: 18px;
       margin-bottom: $post-default-spacing;
     }
@@ -142,9 +158,26 @@ $post-default-spacing: 30px;
       }
     }
 
+    ul {
+      list-style-position: inside;
+      margin-bottom: $post-default-spacing;
+    }
+
+    li {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
     .highlighter-rouge {
+      position: relative;
       background-color: #f9f9f9;
       border-radius: 5px;
+
+      &:hover {
+        .post-codeLabel {
+          opacity: 0.8;
+        }
+      }
     }
 
     .highlight {
@@ -162,6 +195,8 @@ $post-default-spacing: 30px;
 
     code.highlighter-rouge {
       padding: 3px 5px;
+      color: $color-tertiary;
+      background-color: $color-tertiary-light;
     }
 
     .highlight {
@@ -176,7 +211,7 @@ $post-default-spacing: 30px;
 
     blockquote {
       border-left: 5px solid $color-tertiary;
-      background-color: lighten($color-tertiary, 35%);
+      background-color: $color-tertiary-light;
       padding: 15px 25px;
       border-radius: 0 $br-default $br-default 0;
       margin-bottom: $post-default-spacing;

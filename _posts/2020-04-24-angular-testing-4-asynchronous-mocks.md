@@ -10,16 +10,6 @@ tags:
   - testing
 ---
 
-{% assign sorted = site.posts | sort: 'date' %}
-
-{% for post in sorted %}
-{% if post.series == 'angular-unit-testing' %}
-
-[{{post.title}}]({{post.url}})
-
-{% endif %}
-{% endfor %}
-
 Often when creating Angular applications, we will be dealing with some sort of asynchronous data, whether that be from a modal closing, one of your own asynchronous methods or awaiting a response from an external API. Luckily for us, Angular provides some great utilities for dealing with this. However, there are a few small utilities that we can use to make testing asynchronous code even easier. Without further ado, let's get started.
 
 ## The test promise class
@@ -115,7 +105,50 @@ With that, our asynchronous call is now resolved and we can test to see if the p
 
 ## Rejecting our promise
 
-CONTENT TO BE CREATED
+Often in our code, we will be catching our errors in order to handle them correctly. Let's extend our asynchronous code to do just that.
+
+```ts
+public async getAllProducts(): Promise<void> {
+  try {
+    const allProducts: Array<IProduct> = await this._productService.getAllAsync();
+    this.products = allProducts;
+  } catch (e) {
+    console.log(e);
+  }
+}
+```
+
+In the real world, we would be doing something a bit more sophisticated than this. However, this is enough for us to show how to deal with promise rejections in our test file.
+
+Just after our describe block stating `when the products have been fetched`, we can cover the reject case with `when something goes wrong when fetching the products`.
+
+```ts
+describe('when something goes wrong when fetching the products', () => {
+  beforeEach(async(() => {
+    spyOn(console, 'log');
+
+    getProductsPromise.reject('error!');
+  }));
+});
+```
+
+In our `beforeEach` block, we make it `async` (we don't need `fakeAsync` this time or `detectChanges` this time because we are not testing the template). Before we reject our promise, we need to spy on the `console.log` method. Luckily for us, we can spy on static methods using `spyOn`.
+
+> `spyOn` is a testing method provided by Jasmine that allows us to pass in an object and a method name that we want to spy on. Whenever this method is then called, it will then call a spy in its place.
+
+After we've spied on our method, we reject our promise with an error. This will make our asynchronous call throw an error, which will be caught in our `catch` block.
+
+```ts
+getProductsPromise.reject('error!');
+```
+
+Finally, just after our `beforeEach` block, we can make sure that `console.log` gets called with the error that gets thrown. and with that, we now have 3 passing tests!
+
+```ts
+it('should log the error', () => {
+  expect(console.log).toHaveBeenCalledWith('error!');
+});
+```
 
 ## Wrapping up
 
