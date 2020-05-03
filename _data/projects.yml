@@ -1,45 +1,67 @@
 - name: NuTodo
   description: A full stack todo app written the way that I like to organise my todos.
+  type: project
   emoji: 📝
   github: https://github.com/danielcornock/nutodo-ui
 
 - name: ng-forms
   description: A WIP forms framework for use with modern Angular applications.
+  type: package
   emoji: ✏️
   demo: https://www.npmjs.com/package/@danielc7150/ng-forms
 
+- name: ng-api
+  description: A WIP Angular framework for communicating with and processing external API data.
+  type: package
+  emoji: 📡
+  demo: https://www.npmjs.com/package/@danielc7150/ng-api
+  hidden: true
+
 - name: express-utils
   description: An npm package written to abstract await some of my most used API building utilities.
+  type: package
   emoji: 🔧
   github: https://github.com/danielcornock/express-utils
   demo: https://www.npmjs.com/package/@danielc7150/express-utils
 
 - name: Property Right
   description: A full stack app to manage your properties, tenants and payments.
+  type: project
   emoji: 🏡
   github: https://github.com/danielcornock/propertyright-ui
   demo: https://property-right-ui.herokuapp.com/
 
 - name: Kanbo
   description: A full stack trello-inspired kanban board with added features that fit my own work flow.
+  type: project
   emoji: 📊
   github: https://github.com/danielcornock/kanbo-ui
   demo: https://ng-kanban.herokuapp.com/
 
 - name: Mark Nartey
   description: An academic portfolio for a client.
+  type: client
   emoji: 🎓
   demo: https://www.marknartey.com
   github: https://github.com/danielcornock/marknartey.com
 
 - name: Legacy Portfolio
   description: My first shot at a portfolio & blog before this redesign.
+  type: project
   emoji: 👨‍💻
   demo: https://www.danielcornock.co.uk
   github: https://github.com/danielcornock/danielcornock.co.uk
 
 - name: Greg Woodin
   description: An academic portfolio built for a friend.
+  type: client
   emoji: 🏫
   demo: https://www.gregwoodin.co.uk
   github: https://github.com/GregWoodin/gregwoodin.github.io
+
+- name: Ionic Builds
+  description: A brochure style website for a construction company build with WordPress.
+  type: client
+  emoji: 👷‍♂️
+  demo: https://www.ionicbuilds.co.uk
+  hidden: true

@@ -5,6 +5,7 @@
   </h2>
 
   <div class="homeProjects-list">
-    {% for project in site.data.projects %} {% include project/project.html %} {% endfor %}
+    {% for project in site.data.projects %} {% unless project.hidden %} {% include project/project.html %} {% endunless
+    %}{% endfor %}
   </div>
 </div>

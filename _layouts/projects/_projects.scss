@@ -5,4 +5,10 @@
   &-heading {
     @include section-heading;
   }
+
+  &-section {
+    & + & {
+      margin-top: $section-default-spacing;
+    }
+  }
 }

@@ -1,11 +1,11 @@
-- Institution: MHR
+- institution: MHR
   position: Junior Web Application Developer
-  technologies:
-    - Angular
-    - Typescript
-    - Web technologies
-  description: During my time working at MHR...
+  icon: 💻
+  type: work
+  description: During my time working at MHR, I have been privelidged enough to have complete ownership of the front-end of multiple products from start to finish. Working within the recruitment area, I have been a key contributor to delivering high-quality solutions for the users of our SaaS HR social media application.
 
-- Institution: University of Birmingham
+- institution: University of Birmingham
   position: Computer Systems Engineering BEng - 2:1
-  description: University...
+  icon: 🎓
+  type: education
+  description: Whilst studying at the University of Birmingham, I completed modules from a wide range of disciplines, including mathematics, software development and data analysis. I achieved a 1st class grade for my final year project (dissertation) in the field of visual analytics.

@@ -92,22 +92,6 @@ $post-default-spacing: 30px;
     text-transform: capitalize;
   }
 
-  &-codeLabel {
-    // Used for auto generated javascript element
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: $color-heading;
-    color: white;
-    padding: 5px 8px;
-    border-radius: $br-default;
-    font-weight: 500;
-    font-size: 14px;
-    opacity: 0;
-
-    transition: 250ms;
-  }
-
   &-content {
     img {
       width: 100%;
@@ -137,6 +121,8 @@ $post-default-spacing: 30px;
 
       @include media($tablet) {
         font-size: 22px;
+        border-bottom: 0;
+        padding-bottom: 0;
       }
     }
 
@@ -181,13 +167,34 @@ $post-default-spacing: 30px;
       margin-bottom: 20px;
     }
 
+    .codeLabel {
+      // Used for auto generated javascript element
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: $color-heading;
+      color: white;
+      padding: 5px 8px;
+      border-radius: $br-default;
+      font-weight: 500;
+      font-size: 14px;
+      opacity: 0;
+
+      transition: 250ms;
+
+      @include media($tablet) {
+        top: 10px;
+        right: 10px;
+      }
+    }
+
     .highlighter-rouge {
       position: relative;
       background-color: #f9f9f9;
       border-radius: 5px;
 
       &:hover {
-        .post-codeLabel {
+        .codeLabel {
           opacity: 0.8;
         }
       }

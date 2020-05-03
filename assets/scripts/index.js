@@ -18,7 +18,7 @@ const languages = [
 
 const createNewElement = (label) => {
   const inputElement = document.createElement('div');
-  inputElement.classList.add('post-codeLabel');
+  inputElement.classList.add('codeLabel');
   inputElement.innerText = label;
 
   return inputElement;
