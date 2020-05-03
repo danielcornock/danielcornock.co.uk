@@ -62,7 +62,10 @@
     }
 
     @include media($phone) {
-      display: block;
+      border-top: 0 !important;
+    }
+
+    @include media($phone) {
       padding: 20px 0;
     }
   }
@@ -72,6 +75,10 @@
     color: $color-subheading;
     font-size: 22px;
     font-weight: 500;
+
+    @include media($phone) {
+      font-size: 18px;
+    }
   }
 
   &-institution {
