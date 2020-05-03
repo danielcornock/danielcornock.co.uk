@@ -93,7 +93,7 @@ As you can see, this code is held in an asynchronous `beforeEach` function. This
 
 This section will initialise the component. `TestBed.createComponent()` will run the constructor, while `fixture.detectChanges()` will initialise the component and render the template.
 
-```js
+```ts
 fixture = TestBed.createComponent(ProductListComponent);
 component = fixture.componentInstance;
 fixture.detectChanges();

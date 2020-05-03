@@ -13,7 +13,8 @@ const addCodeSnippetLabels = () => {
 const languages = [
   { cssClass: '.language-ts', label: 'TypeScript' },
   { cssClass: '.language-typescript', label: 'TypeScript' },
-  { cssClass: '.language-html', label: 'HTML' }
+  { cssClass: '.language-html', label: 'HTML' },
+  { cssClass: '.language-css', label: 'CSS' }
 ];
 
 const createNewElement = (label) => {

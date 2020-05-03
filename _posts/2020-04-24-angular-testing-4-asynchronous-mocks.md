@@ -18,7 +18,7 @@ Conventially, promises cannot be resolved or rejected from outside of the promis
 
 Luckily for us, there's a way around this. Introducing, the test promise...
 
-```js
+```ts
 export class TestPromise {
   public promise;
   public resolve;
@@ -53,9 +53,11 @@ public async getAllProducts(): Promise<void> {
 
 We need to first add the `getAllAsync` to our stubbed service. If you're unsure, you can refer back to the [stubbing dependencies](angular-testing-2-stubbing-dependencies#creating-the-stub) article to see how.
 
-Once we've done that, we need to create our test promise, and ensure that the call to this service returns that promise. Within our initialisation `describe` block, we can do just that.
+Once we've done that, we need to create our test promise, and ensure that the call to this service returns that promise.
 
 ## Returning a promise
+
+Within our initialisation `describe` block, we can do just that:
 
 ```ts
 describe('on initialisation', () => {

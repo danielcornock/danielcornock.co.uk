@@ -1,0 +1,89 @@
+.postHeader {
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: $br-default;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $color-light-grey;
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: 34px;
+    margin-bottom: 15px;
+
+    @include media($phone) {
+      font-size: 26px;
+    }
+  }
+
+  &-image {
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+    border-radius: $br-default;
+    margin-left: 30px;
+
+    @include media($phone) {
+      display: none;
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  &-avatar {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: $br-max;
+    margin-right: 10px;
+  }
+
+  &-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  &-metaDivider {
+    display: inline-block;
+    margin: 0 8px;
+  }
+
+  &-shareButton {
+    text-decoration: none;
+    color: $color-body;
+    display: inline-block;
+    margin: -5px;
+    padding: 5px;
+    border-radius: $br-default;
+
+    &:hover {
+      background-color: $color-tertiary;
+      color: white;
+    }
+  }
+
+  &-shareButtonIcon {
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  &-time {
+    font-size: 16px;
+    letter-spacing: -0.25px;
+  }
+
+  &-tags {
+  }
+
+  &-tag {
+    @include small-button($color-highlight);
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: capitalize;
+  }
+}

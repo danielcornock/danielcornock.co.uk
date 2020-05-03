@@ -1,0 +1,14 @@
+<ul class="experience-container">
+  {% for experience in site.data.experience %}
+  <li class="experience-item">
+    <p class="experience-icon">{{ experience.icon }}</p>
+    <div class="experience-details">
+      <span class="experience-institution">{{ experience.institution }}</span>
+      <h3 class="experience-position">{{ experience.position }}</h3>
+      <p class="experience-description">
+        {{ experience.description}}
+      </p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

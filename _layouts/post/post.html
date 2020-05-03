@@ -3,32 +3,9 @@ layout: default
 ---
 
 <article class="post-container">
-  <div class="post-header">
-    <div class="post-headerDetails">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-meta">
-        <img src="{{ 'assets/images/avatar.jpeg' | absolute_url }}" alt="" class="post-avatar" />
-        <time class="post-time">{{ page.date | date: "%d %B %Y" }}</time>
-        <span class="post-metaDivider"> | </span>
-        <a href="" class="post-shareButton">
-          <span class="post-shareButtonIcon">
-            <i class="fas fa-share-alt"></i>
-          </span>
-          Share
-        </a>
-      </div>
-      <div class="post-tags">
-        {% for tag in page.tags %}
-        <a class="post-tag" href="">
-          {{ tag }}
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-    <img class="post-image" src="{{ page.image | absolute_url }}" alt="" class="post-image" />
-  </div>
+  {% include post/post-header/post-header.html %}
 
   <section class="post-content">
-    {% include article/series/series.html %} {{ content }}
+    {% include post/series/series.html %} {{ content }}
   </section>
 </article>

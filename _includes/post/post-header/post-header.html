@@ -1,0 +1,24 @@
+<div class="postHeader-container">
+  <div class="postHeader-headerDetails">
+    <h1 class="postHeader-title">{{ page.title }}</h1>
+    <div class="postHeader-meta">
+      <img src="{{ 'assets/images/avatar.jpeg' | absolute_url }}" alt="" class="postHeader-avatar" />
+      <time class="postHeader-time">{{ page.date | date: "%d %B %Y" }}</time>
+      <span class="postHeader-metaDivider"> | </span>
+      <a href="" class="postHeader-shareButton">
+        <span class="postHeader-shareButtonIcon">
+          <i class="fas fa-share-alt"></i>
+        </span>
+        Share
+      </a>
+    </div>
+    <div class="postHeader-tags">
+      {% for tag in page.tags %}
+      <a class="postHeader-tag" href="">
+        {{ tag }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <img class="postHeader-image" src="{{ page.image | absolute_url }}" alt="" class="postHeader-image" />
+</div>
