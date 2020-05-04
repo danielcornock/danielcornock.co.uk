@@ -1,7 +1,9 @@
-.experience {
+.testimonials {
+  &-container {
+  }
+
   &-item {
     list-style-type: none;
-    font-size: 18px;
     padding: 30px 0;
     display: flex;
 
@@ -18,28 +20,16 @@
     }
   }
 
-  &-position {
-    margin-bottom: 10px;
-    color: $color-subheading;
-    font-size: 20px;
+  &-name {
+    margin-top: 10px;
+    color: $color-tertiary;
+    font-size: 18px;
     font-weight: 500;
+    text-align: right;
 
     @include media($phone) {
       font-size: 18px;
     }
-  }
-
-  &-institution {
-    display: block;
-    margin-bottom: 5px;
-    color: $color-tertiary;
-
-    @include media($phone) {
-      font-size: 16px;
-    }
-  }
-
-  &-description {
   }
 
   &-icon {
@@ -48,6 +38,15 @@
 
     @include media($phone) {
       margin-right: 20px;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

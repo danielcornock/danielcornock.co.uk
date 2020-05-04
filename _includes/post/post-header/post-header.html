@@ -5,7 +5,12 @@
       <img src="{{ 'assets/images/avatar.jpeg' | absolute_url }}" alt="" class="postHeader-avatar" />
       <time class="postHeader-time">{{ page.date | date: "%d %B %Y" }}</time>
       <span class="postHeader-metaDivider"> | </span>
-      <a href="" class="postHeader-shareButton">
+      <a
+        class="postHeader-shareButton"
+        href="http://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text=Checkout this awesome blog.&via=danielcornock&hashtags=webdev"
+        title="Tweet"
+        target="_blank"
+      >
         <span class="postHeader-shareButtonIcon">
           <i class="fas fa-share-alt"></i>
         </span>

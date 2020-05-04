@@ -1,0 +1,20 @@
+<ul class="testimonials-container">
+  {% for testimonial in site.data.testimonials %}
+  <li class="testimonials-item">
+    <p class="testimonials-icon">{{ testimonial.icon }}</p>
+    <div class="testimonials-details">
+      <p class="testimonials-content">"{{ testimonial.content }}"</p>
+      <h3 class="testimonials-name">
+        <a
+          class="testimonials-link"
+          href="https://{{ testimonial.site }}"
+          rel="noreferrer"
+          rel="noopener"
+          target="_blank"
+          >- {{ testimonial.name }}</a
+        >
+      </h3>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
