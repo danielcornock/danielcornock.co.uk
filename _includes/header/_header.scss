@@ -8,16 +8,43 @@
 }
 
 .header {
+  height: 120px;
+
+  @include media($phone) {
+    height: 72px;
+  }
+
   &-container {
+    position: fixed;
+    width: 100%;
+    background-color: $color-background;
+    transition: 250ms;
+
+    &--mini {
+      box-shadow: 2px 2px 8px $color-light-grey;
+    }
+  }
+
+  &-content {
     @include container-element;
-    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 120px;
+    transition: 250ms;
 
     @include media($phone) {
       height: auto;
-      padding: 30px 15px;
+      padding: 20px 15px;
+    }
+
+    &--mini {
+      height: 72px;
+
+      @include media($phone) {
+        height: auto;
+        padding: 10px 15px;
+      }
     }
   }
 

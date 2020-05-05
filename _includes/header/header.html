@@ -1,12 +1,14 @@
 <div class="header-container">
-  <a href="/" class="header-branding">
-    <div class="header-brandingLogo">🖥</div>
-    <h2 class="header-brandingText">Daniel Cornock</h2>
-  </a>
+  <div class="header-content">
+    <a href="/" class="header-branding">
+      <div class="header-brandingLogo">🖥</div>
+      <h2 class="header-brandingText">Daniel Cornock</h2>
+    </a>
 
-  <nav class="header-nav">
-    {% for page in site.data.navigation %}
-    <a href="{{ page.link }}" class="header-navLink">{{ page.name }}</a>
-    {% endfor %}
-  </nav>
+    <nav class="header-nav">
+      {% for page in site.data.navigation %}
+      <a href="{{ page.link }}" class="header-navLink">{{ page.name }}</a>
+      {% endfor %}
+    </nav>
+  </div>
 </div>

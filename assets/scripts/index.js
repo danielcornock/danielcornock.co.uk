@@ -26,3 +26,20 @@ const createNewElement = (label) => {
 };
 
 addCodeSnippetLabels();
+
+const scrollSpy = () => {
+  const headerContainer = document.querySelector('.header-container');
+  const header = document.querySelector('.header-content');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      header.classList.add('header-content--mini');
+      headerContainer.classList.add('header-container--mini');
+    } else {
+      header.classList.remove('header-content--mini');
+      headerContainer.classList.remove('header-container--mini');
+    }
+  });
+};
+
+scrollSpy();
