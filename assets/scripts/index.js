@@ -32,7 +32,7 @@ const scrollSpy = () => {
   const header = document.querySelector('.header-content');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 50) {
       header.classList.add('header-content--mini');
       headerContainer.classList.add('header-container--mini');
     } else {

@@ -40,6 +40,7 @@
 
     &--mini {
       height: 72px;
+      padding: 20px 30px;
 
       @include media($phone) {
         height: auto;
