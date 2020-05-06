@@ -40,10 +40,10 @@
     }
 
     img {
-      height: 300px;
+      height: 230px;
       border-radius: $br-default;
       float: right;
-      margin: 0 0 20px 20px;
+      margin: 10px 30px 10px 30px;
       display: block;
 
       @include media($phone) {

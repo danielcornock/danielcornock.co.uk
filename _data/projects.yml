@@ -18,7 +18,7 @@
   hidden: true
 
 - name: express-utils
-  description: An npm package written to abstract await some of my most used API building utilities.
+  description: An npm package written to abstract away some of my most used API building utilities.
   type: package
   emoji: 🔧
   github: https://github.com/danielcornock/express-utils

@@ -119,8 +119,6 @@ it('should display the products', () => {
 
 And there we have it! Now you should be able to run `ng test`, and get a nice green message telling you that both of your tests pass!
 
-{% include components/image.html url="/assets/images/angular-testing/test-results.png" description="Our two tests passing!"%}
-
 > NOTE: Because of the way Angular runs it’s tests, it will run every spec file in your project when you run `ng test`. If you just want to test one file in isolation, you can head to the `test.ts` file and change the regex to only look for your file, like so:
 
 ```typescript

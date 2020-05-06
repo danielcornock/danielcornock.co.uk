@@ -8,6 +8,6 @@ permalink: /about
 
 I'm a 24 year old developer from Birmingham, UK with a passion for building web applications.
 
-I work professionally as a front end web application developer, however I've worked on multiple full-stack projects in my own time. I'm passionate about creating coding solutions with a focus on readbility of code and clean unit tests.
+I work professionally as a front end web application developer, however I've worked on multiple full-stack projects in my own time. I'm passionate about creating coding solutions with a focus on easy extension and clear readbility of code.
 
-I enjoy creating full stack web applications and writing all about them (when I actually bring myself to write up my ideas!).
+In my free time, I love creating my own projects for fun, or to solve a problem I have in my day-to-day life, as well as writing about the skills I learn along the way.
