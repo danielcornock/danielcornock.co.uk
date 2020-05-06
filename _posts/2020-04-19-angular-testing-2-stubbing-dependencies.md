@@ -3,7 +3,6 @@ title: 'Unit testing in Angular: Stubbing dependencies'
 description: >-
   How to stub dependencies in angular to ensure total isolation for your test suite.
 image: 'assets/images/articles/angular.png'
-layout: 'post/post'
 series: angular-unit-testing
 tags:
   - angular

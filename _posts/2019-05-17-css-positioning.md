@@ -4,7 +4,6 @@ description: >-
   A handy reference for both new and experienced developers for when you just
   can't get that positioning quite right.
 image: 'assets/images/articles/css.png'
-layout: 'post/post'
 tags:
   - CSS
 ---

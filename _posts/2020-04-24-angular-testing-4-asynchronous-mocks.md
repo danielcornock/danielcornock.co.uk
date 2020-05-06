@@ -3,7 +3,6 @@ title: 'Unit testing in Angular: Mocking asynchronous calls'
 description: >-
   How to write unit tests for our service calls that are asynchronous.
 image: 'assets/images/articles/angular.png'
-layout: 'post/post'
 series: angular-unit-testing
 tags:
   - angular
