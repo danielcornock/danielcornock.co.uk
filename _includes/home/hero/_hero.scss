@@ -85,7 +85,7 @@
     }
 
     &--github {
-      @include social-button-bg-color($color-subheading);
+      @include social-button-bg-color($color-dark-button);
     }
   }
 

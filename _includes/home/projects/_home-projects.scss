@@ -9,7 +9,7 @@
   }
 
   &-viewMore {
-    @include small-button($color-light-grey, $color-subheading);
+    @include small-button($color-light-grey, $color-light-button-text);
     margin-left: 15px;
     line-height: 1.6;
   }

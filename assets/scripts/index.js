@@ -1,45 +1,118 @@
-const addCodeSnippetLabels = () => {
-  languages.forEach((language) => {
-    const instances = document.querySelectorAll(language.cssClass);
+class CodeSnippets {
+  static create() {
+    return new CodeSnippets();
+  }
 
-    instances.forEach((instance) => {
-      const element = createNewElement(language.label);
+  constructor() {
+    this.initialiseObject();
+    this.addCodeSnippetLabels();
+  }
 
-      instance.appendChild(element);
+  initialiseObject() {
+    this.languages = [
+      { cssClass: '.language-ts', label: 'TypeScript' },
+      { cssClass: '.language-typescript', label: 'TypeScript' },
+      { cssClass: '.language-html', label: 'HTML' },
+      { cssClass: '.language-css', label: 'CSS' }
+    ];
+  }
+
+  addCodeSnippetLabels() {
+    this.languages.forEach((language) => {
+      const instances = document.querySelectorAll(language.cssClass);
+
+      instances.forEach((instance) => {
+        const element = this.createNewElement(language.label);
+        console.log(instance);
+        instance.appendChild(element);
+      });
     });
-  });
-};
+  }
 
-const languages = [
-  { cssClass: '.language-ts', label: 'TypeScript' },
-  { cssClass: '.language-typescript', label: 'TypeScript' },
-  { cssClass: '.language-html', label: 'HTML' },
-  { cssClass: '.language-css', label: 'CSS' }
-];
+  createNewElement(label) {
+    const inputElement = document.createElement('div');
+    inputElement.classList.add('codeLabel');
+    inputElement.innerText = label;
 
-const createNewElement = (label) => {
-  const inputElement = document.createElement('div');
-  inputElement.classList.add('codeLabel');
-  inputElement.innerText = label;
+    return inputElement;
+  }
+}
 
-  return inputElement;
-};
+class ScrollSpy {
+  static create() {
+    return new ScrollSpy();
+  }
 
-addCodeSnippetLabels();
+  constructor() {
+    this.headerContainer = document.querySelector('.header-container');
+    this.header = document.querySelector('.header-content');
 
-const scrollSpy = () => {
-  const headerContainer = document.querySelector('.header-container');
-  const header = document.querySelector('.header-content');
+    window.addEventListener('scroll', this.onScroll.bind(this));
+  }
 
-  window.addEventListener('scroll', () => {
+  onScroll() {
     if (window.scrollY > 50) {
-      header.classList.add('header-content--mini');
-      headerContainer.classList.add('header-container--mini');
+      this.header.classList.add('header-content--mini');
+      this.headerContainer.classList.add('header-container--mini');
     } else {
-      header.classList.remove('header-content--mini');
-      headerContainer.classList.remove('header-container--mini');
+      this.header.classList.remove('header-content--mini');
+      this.headerContainer.classList.remove('header-container--mini');
     }
-  });
-};
+  }
+}
 
-scrollSpy();
+class ThemeSwitcher {
+  static create(button) {
+    return new ThemeSwitcher(button);
+  }
+
+  constructor() {
+    this.button = document.querySelector('#themeSwitch');
+    this.setTheme();
+    this.listenToThemeSwitch();
+  }
+
+  setTheme() {
+    const currentTheme = localStorage.getItem('theme');
+    const body = document.querySelector('body');
+
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      body.classList.remove('light-mode');
+      this.button.innerText = '☀️';
+    } else {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+      this.button.innerText = '🌙';
+    }
+  }
+
+  listenToThemeSwitch() {
+    this.button = document.querySelector('#themeSwitch');
+
+    this.button.addEventListener('click', () => {
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'dark') {
+        localStorage.setItem('theme', 'light');
+      } else {
+        localStorage.setItem('theme', 'dark');
+      }
+
+      this.setTheme();
+    });
+  }
+}
+
+class App {
+  static create() {
+    return new App();
+  }
+
+  constructor() {
+    ThemeSwitcher.create();
+    ScrollSpy.create();
+    CodeSnippets.create();
+  }
+}
+
+App.create();

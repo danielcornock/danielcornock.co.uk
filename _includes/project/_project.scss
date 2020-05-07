@@ -53,7 +53,7 @@
   }
 
   &-projectRepo {
-    @include small-button($color-subheading);
+    @include small-button($color-dark-button);
     @include mobile-only-icon-switch;
     margin-left: 10px;
 

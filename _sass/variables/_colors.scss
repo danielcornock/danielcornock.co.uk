@@ -1,12 +1,26 @@
-$color-heading: #2d3748;
-$color-subheading: #4a5568;
-$color-body: #555;
+$color-darkest: #2d3748;
+$color-darker: #4a5568;
+$color-dark: #555555;
+$color-light-grey: #eeeeee;
+$color-dark-button: #4a5568;
+$color-light-button-text: #4a5568;
 $color-highlight: #6246ea;
 $color-highlight-text: #fffffe;
 $color-secondary: #d1d1e9;
 $color-tertiary: #e45858;
-$color-background: #fcfcff;
 
-$color-light-grey: #eeeeee;
 $color-tertiary-light: lighten($color-tertiary, 35%);
 $color-highlight-light: lighten($color-highlight, 30%);
+
+$color-heading: var(--color-heading);
+$color-subheading: var(--color-subheading);
+$color-body: var(--color-body);
+$color-background: var(--color-background);
+$color-code-bg: var(--color-code-bg);
+$color-code-border: var(--color-code-border);
+$color-footer: var(--color-footer);
+$color-article-hover: var(--color-article-hover);
+$color-highlight-container-bg: var(--color-highlight-container-bg);
+$color-code-file-label: var(--color-code-file-label);
+$color-code-language-label-bg: var(--color-code-language-label-bg);
+$color-header-underline: var(--color-header-underline);
