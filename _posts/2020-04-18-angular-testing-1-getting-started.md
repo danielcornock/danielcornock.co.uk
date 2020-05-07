@@ -17,6 +17,8 @@ In this series, I’ll be showing you how to utilise jasmine, alongside Angular�
 
 We’re going to be unit testing a small application that displays products, mocking API calls and dealing with asynchronous data. Here is how our component is going to start:
 
+##### product-list.component.ts
+
 ```ts
 export class ProductListComponent implements OnInit {
   public products: Array<IProduct>;
@@ -31,11 +33,15 @@ export class ProductListComponent implements OnInit {
 
 In our component, we make a single, synchronous call to an injected service, and then display the results in the template, rendering it in a child component:
 
+##### product-list.component.html
+
 ```html
 <app-product *ngFor="let product of products" [product]="product"></app-product>
 ```
 
 When we create a component, Angular kindly provides us with a basic template for writing unit tests, looking something like this:
+
+##### product-list.component.spec.ts
 
 ```ts
 describe('ProductListComponent', () => {
@@ -80,6 +86,8 @@ This function does exactly as it says on the tin, it runs before each and every 
 
 This part of the code is preparing the testing module. In the declarations is where you will declare any stub components or directives that you want this test file to use instead of the real implementation. You can also add custom providers in this section, but we will discuss this further in the next section [stubbing dependencies](angular-testing-stubbing-dependencies).
 
+##### product-list.component.ts
+
 ```ts
 TestBed.configureTestingModule({
   declarations: [ProductListComponent]
@@ -91,6 +99,8 @@ As you can see, this code is held in an asynchronous `beforeEach` function. This
 ### `createComponent` & `detectChanges`
 
 This section will initialise the component. `TestBed.createComponent()` will run the constructor, while `fixture.detectChanges()` will initialise the component and render the template.
+
+##### product-list.component.ts
 
 ```ts
 fixture = TestBed.createComponent(ProductListComponent);

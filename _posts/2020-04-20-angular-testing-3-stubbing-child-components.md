@@ -13,6 +13,8 @@ Like services, child components need stubs too. This reduces the load of the tes
 
 Here is the class for our child component:
 
+##### product.component.ts
+
 ```typescript
 @Component({
   selector: 'app-product',
@@ -33,6 +35,8 @@ export class ProductComponent implements OnInit {
 
 To create a stub for this, we just need to look at the `@Input()`s and `Output()`s, and tweak a couple of things within the component decorator.
 
+##### product.component.stub.ts
+
 ```typescript
 @Component({
   selector: 'app-product',
@@ -50,6 +54,8 @@ As you can see we’ve stripped everything but the input from the main class, ke
 
 To use our stubbed component in place of the real thing, we need to add it to the `declarations` in our test file, like so:
 
+##### product-list.component.spec.ts
+
 ```typescript
 TestBed.configureTestingModule({
   declarations: [ProductListComponent, ProductComponentStub],
@@ -63,6 +69,8 @@ Great! Now we should be all set up. If we run our tests, nothing should break, a
 
 In our small component, we are expecting to receive an array of products from the `getAll` method. To mock this, we can add this in to our non-asynchronous `beforeEach` method:
 
+##### product-list.component.spec.ts
+
 ```typescript
 beforeEach(() => {
   fixture = TestBed.createComponent(ProductListComponent);
@@ -75,6 +83,8 @@ beforeEach(() => {
 As you may have noticed, I have moved the `fixture.detectChanges()` out of this method. This is so that if I wanted to test other starting scenarios within the component, I can set up the mocks differently or initialise the inputs and THEN call `fixture.detectChanges()`, otherwise the testing suite will not register the changes.
 
 Now, to start testing:
+
+##### product-list.component.spec.ts
 
 ```typescript
 describe('on initialisation', () => {
@@ -94,11 +104,15 @@ As you can see here, I’ve now called `fixture.detectChanges()` to initialise t
 
 Now, it’s time to test our template. As you may remember, our template looks like this:
 
+##### product-list.component.html
+
 ```html
 <app-product *ngFor="let product of products" [product]="product"></app-product>
 ```
 
 Now, to query the products from within the dom, we can use:
+
+##### product-list.component.spec.ts
 
 ```typescript
 function getProducts(): Array<DebugElement> {
@@ -110,6 +124,8 @@ We can create this function just after we declare our fixture in our top-level s
 
 Now, just after our first test, we can add another test to check that each product has been passed in to our child component.
 
+##### product-list.component.spec.ts
+
 ```typescript
 it('should display the products', () => {
   expect(getProducts()[0].componentInstance.product).toEqual({ product: 'product', number: '1' });
@@ -118,17 +134,15 @@ it('should display the products', () => {
 
 And there we have it! Now you should be able to run `ng test`, and get a nice green message telling you that both of your tests pass!
 
-> NOTE: Because of the way Angular runs it’s tests, it will run every spec file in your project when you run `ng test`. If you just want to test one file in isolation, you can head to the `test.ts` file and change the regex to only look for your file, like so:
-
-```typescript
-const context = require.context('./', true, /product-list.component\.spec\.ts$/);
-```
+> Because of the way Angular runs its tests, it will run every spec file in your project when you run `ng test`. If you just want to test one file in isolation, you can head to the `test.ts` file and change the regex to only look for your file. For more details about this, take a look at [this stack overflow answer](https://stackoverflow.com/a/50636750/11943792).
 
 Great! So now we’ve tested our child components inputs. What about if it has outputs?
 
 ## Mocking outputs
 
 We can go in to our product component (and the stub for this component), and add an output for when a user deletes a product:
+
+##### product.component.ts / product.component.stub.ts
 
 ```typescript
 @Output()
@@ -139,6 +153,8 @@ We should also add this exact same output to our stub file for this component.
 
 Now, in our `product-list` component, we need to handle this
 
+##### product-list.component.html
+
 ```html
 <app-product
   *ngFor="let product of products"
@@ -147,20 +163,26 @@ Now, in our `product-list` component, we need to handle this
 ></app-product>
 ```
 
-Then in the typescript for that file, we can create the function:
+Then in the typescript for that file, we can create the function that will respond to the output and make a call to our service.
+
+##### product-list.component.ts
 
 ```typescript
 public onDelete(productName: string): void {
   this._productService.deleteProduct(productName);
 ```
 
-And finally, add the `deleteProduct` method to both our service file and it’s stub:
+And finally, add the `deleteProduct` method to both our service file and its stub. For this demonstration, we don't need to actually implement anything in the real product service because we will be mocking its behaviour.
+
+##### product.service.ts
 
 ```typescript
   public deleteProduct(name: string) {
     // Send a request to the API
   }
 ```
+
+##### product.service.stub.ts
 
 ```typescript
 export class ProductServiceStub {
@@ -169,7 +191,11 @@ export class ProductServiceStub {
 }
 ```
 
-Now, back in our test file for our product list, we should write a new describe block, just under our existing tests, to set the scenario for when the user removes a product:
+## Writing our test
+
+Now, back in our test file for our product list, we should write a new describe block just under our existing tests to set the scenario for when the user removes a product:
+
+##### product-list.component.spec.ts
 
 ```typescript
 describe('when a user deletes a product', () => {
@@ -182,6 +208,8 @@ describe('when a user deletes a product', () => {
 In here, we’ve put a `beforeEach` block to trigger the event emitter from the first child component that appears in the DOM. As you can see, we are able to reuse the same function to fetch the components as we defined earlier.
 
 Just like before, we can now test that the appropriate method has been called. We pop this test just under the `beforeEach` within this testing block.
+
+##### product-list.component.spec.ts
 
 ```typescript
 it('should delete the product', () => {

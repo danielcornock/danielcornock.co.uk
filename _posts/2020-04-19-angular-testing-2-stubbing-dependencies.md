@@ -13,6 +13,8 @@ When working with big applications, it can be beneficial to create a stub for ev
 
 Let’s take a look at our service:
 
+##### product.service.ts
+
 ```ts
 export class ProductService {
   constructor() {}
@@ -32,6 +34,8 @@ export class ProductService {
 
 This is obviously a very simple service, but no matter that actual implementation, all services can be stubbed the same way:
 
+##### product.service.stub.ts
+
 ```ts
 export class ProductServiceStub {
   public getAll: jasmine.Spy = jasmine.createSpy('getAll');
@@ -45,6 +49,8 @@ And it’s as simple as that. It’s best to keep it in it’s own file, with th
 ## Providing the stub
 
 Now, back in our test file, we can provide this stub in place of our service:
+
+##### product.service.spec.ts
 
 ```ts
 describe('ProductListComponent', () => {
@@ -95,11 +101,15 @@ This way, no real methods of product service will be called (especially necessar
 
 Now that we've stubbed the dependency, we can check that `getAll` is called. Since we haven't created a stub for our child component yet, we will need to add the child component to the `declarations` array:
 
+##### product-list.component.spec.ts
+
 ```ts
-providers: [ProductComponent];
+declarations: [ProductListComponent, ProductComponent];
 ```
 
 Now, we can write our test:
+
+##### product-list.component.spec.ts
 
 ```ts
 it('should fetch all of the products', () => {

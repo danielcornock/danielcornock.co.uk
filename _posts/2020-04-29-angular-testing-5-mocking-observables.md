@@ -16,7 +16,7 @@ RxJS is baked into Angular. At some point in your time spent developing Angular 
 
 If you have internal observables that are triggered and subscribed to within the component that you're testing, you won't have to mock any observables - it should take care of itself. Let's change our code to utilise some RxJS.
 
-First, our typescript code:
+##### product-list.component.ts
 
 ```ts
 export class ProductListComponent implements OnInit {
@@ -46,6 +46,8 @@ this.productsSubject.next(allProducts);
 
 And then in our template we utilise the `async` pipe to subscribe to our subject.
 
+##### product-list.component.html
+
 ```html
 <app-product *ngFor="let product of productsSubject | async" [product]="product"></app-product>
 ```
@@ -59,6 +61,8 @@ If we run our tests again, they should all pass! Wasn't that easy? Now, on to th
 For our example, let's say that in our product service we have a method that returns an observable to notify us whenever the user wants to remove all of the products from the page.
 
 In the initialisation of our component we will subscribe to the observable, and when a value is emitted, use our previously created `productsSubject` to clear the products being displayed on the template.
+
+##### product-list.component.ts
 
 ```ts
 ngOnInit(): void {
@@ -79,6 +83,8 @@ First off, we need to add this method to our stub file, which you can get a refr
 
 After we've done that, we need to mock our new method to return an observable. Because we subscribe to that observable on initialisation of our component, we must set up the mock _before_ the first `detectChanges` in our test file. This can be anywhere you like, as long as its within a `beforeEach` and after the initialisation of your dependencies.
 
+##### product-list.component.spec.ts
+
 ```ts
 describe('on initialisation' () => {
   let deleteProductsSubject: Subject<void>;
@@ -97,6 +103,8 @@ In the above code, I've created a new subject, and made it so that when our serv
 ### Triggering our subscribe block
 
 Now, to best test the functionality of our method, we should test how it works _after_ our template has been populated with products. So, let's place this block of code in the block of code after our products promise has resolved (only if you're following along with the series!).
+
+##### product-list.component.spec.ts
 
 ```ts
 it('should display the products', () => {

@@ -17,6 +17,8 @@ Conventially, promises cannot be resolved or rejected from outside of the promis
 
 Luckily for us, there's a way around this. Introducing, the test promise...
 
+##### test-promise.ts
+
 ```ts
 export class TestPromise {
   public promise;
@@ -38,6 +40,8 @@ Pop this code in to a file of your choice, preferrably inside a `utilities` fold
 
 Say in our component, we have a function for fetching our products asynchronously:
 
+##### product-list.component.ts
+
 ```ts
 ngOnInit(): void {
   this.getAllProducts();
@@ -57,6 +61,8 @@ Once we've done that, we need to create our test promise, and ensure that the ca
 ## Returning a promise
 
 Within our initialisation `describe` block, we can do just that:
+
+##### product-list.component.spec.ts
 
 ```ts
 describe('on initialisation', () => {
@@ -84,6 +90,8 @@ To do this, we're going to use a nice little utility called `fakeAsync`. This ac
 
 Underneath our test for fetching the products, we have:
 
+##### product-list.component.spec.ts
+
 ```ts
 describe('when the products have been fetched', () => {
   beforeEach(fakeAsync(() => {
@@ -108,6 +116,8 @@ With that, our asynchronous call is now resolved and we can test to see if the p
 
 Often in our code, we will be catching our errors in order to handle them correctly. Let's extend our asynchronous code to do just that.
 
+##### product-list.component.ts
+
 ```ts
 public async getAllProducts(): Promise<void> {
   try {
@@ -123,6 +133,8 @@ In the real world, we would be doing something a bit more sophisticated than thi
 
 Just after our describe block stating `when the products have been fetched`, we can cover the reject case with `when something goes wrong when fetching the products`.
 
+##### product-list.component.spec.ts
+
 ```ts
 describe('when something goes wrong when fetching the products', () => {
   beforeEach(async(() => {
@@ -137,13 +149,23 @@ In our `beforeEach` block, we make it `async` (we don't need `fakeAsync` this ti
 
 > `spyOn` is a testing method provided by Jasmine that allows us to pass in an object and a method name that we want to spy on. Whenever this method is then called, it will then call a spy in its place.
 
-After we've spied on our method, we reject our promise with an error. This will make our asynchronous call throw an error, which will be caught in our `catch` block.
+After we've spied on our method, we reject our promise with an error.
 
 ```ts
 getProductsPromise.reject('error!');
 ```
 
+This will make our asynchronous call throw an error, which will be caught in our `catch` block.
+
+```ts
+} catch (e) {
+  console.log(e);
+}
+```
+
 Finally, just after our `beforeEach` block, we can make sure that `console.log` gets called with the error that gets thrown. and with that, we now have 3 passing tests!
+
+##### product-list.component.spec.ts
 
 ```ts
 it('should log the error', () => {
