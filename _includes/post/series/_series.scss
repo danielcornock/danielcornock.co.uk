@@ -5,6 +5,7 @@
     color: $color-highlight-light;
     padding: 30px;
     margin-bottom: 30px;
+    border: 1px solid $color-tertiary;
 
     @include media($tablet) {
       display: none;

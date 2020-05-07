@@ -7,7 +7,7 @@
     min-height: 70px;
 
     & + & {
-      border-top: 1px solid $color-light-grey;
+      border-top: 1px solid $color-divider;
     }
 
     &:hover {
