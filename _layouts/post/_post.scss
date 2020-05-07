@@ -1,4 +1,5 @@
-$post-default-spacing: 30px;
+$post-default-spacing: 20px;
+$post-font-size: 16px;
 
 .post {
   &-content {
@@ -18,7 +19,7 @@ $post-default-spacing: 30px;
 
     h2,
     h3 {
-      margin-top: 50px;
+      margin-top: 40px;
       margin-bottom: 15px;
       color: $color-subheading;
     }
@@ -43,17 +44,19 @@ $post-default-spacing: 30px;
       }
     }
 
+    h5 {
+      background-color: $color-heading;
+      padding: 10px 20px;
+      border-radius: $br-default $br-default 0px 0px;
+      color: $color-highlight-text;
+    }
+
     p {
       font-weight: 400;
       color: $color-body;
       line-height: 1.9;
-      font-size: 18px;
+      font-size: $post-font-size;
       margin-bottom: $post-default-spacing;
-
-      @include media($tablet) {
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
     }
 
     a {
@@ -72,7 +75,7 @@ $post-default-spacing: 30px;
     }
 
     li {
-      font-size: 18px;
+      font-size: $post-default-spacing;
       margin-bottom: 20px;
     }
 
@@ -99,9 +102,9 @@ $post-default-spacing: 30px;
 
     .highlighter-rouge {
       position: relative;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      box-shadow: 0px 0px 0px 1px rgba($color-subheading, 0.1);
+      background-color: $color-code-bg;
+      border-radius: $br-default;
+      box-shadow: 0px 0px 0px 1px $color-code-border;
 
       &:hover {
         .codeLabel {
@@ -110,12 +113,25 @@ $post-default-spacing: 30px;
       }
     }
 
+    h5 + .highlighter-rouge {
+      border-radius: 0px 0px $br-default $br-default;
+      border: 1px solid $color-heading;
+    }
+
     .highlight {
       > .highlight {
-        background-color: #f9f9f9 !important;
+        background-color: $color-code-bg !important;
 
         overflow-x: auto;
         padding: 20px;
+      }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string {
+        background: transparent;
       }
     }
 
@@ -150,11 +166,10 @@ $post-default-spacing: 30px;
       background-color: $color-tertiary-light;
       padding: 15px 25px;
       border-radius: 0 $br-default $br-default 0;
-      margin-bottom: $post-default-spacing;
+      margin: 30px 0;
 
       p {
         margin-bottom: 0;
-        font-size: 16px;
       }
     }
   }
