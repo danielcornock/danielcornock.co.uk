@@ -7,11 +7,25 @@
   }
 }
 
+@mixin header-emoji {
+  font-size: 24px;
+
+  @include media($tablet) {
+    font-size: 20px;
+  }
+}
+
+@mixin set-horizontal-spacing($spacing) {
+  & + & {
+    margin-left: $spacing;
+  }
+}
+
 .header {
   height: 120px;
 
   @include media($phone) {
-    height: 72px;
+    height: 72px;å
   }
 
   &-container {
@@ -58,12 +72,8 @@
   }
 
   &-brandingLogo {
-    font-size: 24px;
     margin-right: 15px;
-
-    @include media($tablet) {
-      margin-right: 0;
-    }
+    @include header-emoji;
   }
 
   &-brandingText {
@@ -78,13 +88,13 @@
     @include media($tablet) {
       flex: 1 1 100%;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
     }
   }
 
   &-navLink {
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 50px;
     text-decoration: none;
     color: $color-body;
     @include header-text-config;
@@ -95,10 +105,15 @@
 
     @include media($tablet) {
       margin-left: 0;
+      @include set-horizontal-spacing(45px);
+    }
+
+    @include media($phone) {
+      @include set-horizontal-spacing(20px);
     }
 
     @include media(370px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
@@ -106,12 +121,13 @@
     display: inline-block;
     background-color: transparent;
     border: none;
-    font-size: 24px;
     cursor: pointer;
     margin-left: 60px;
 
+    @include header-emoji;
+
     @include media($tablet) {
-      margin-left: 0;
+      margin-left: 15px;
     }
   }
 }

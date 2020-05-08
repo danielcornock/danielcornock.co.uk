@@ -1,5 +1,9 @@
 $post-default-spacing: 20px;
+$post-large-spacing: 30px;
 $post-font-size: 16px;
+$post-header-margin-top: 40px;
+$post-code-spacing: 20px;
+$post-header-margin-bottom: 15px;
 
 .post {
   &-content {
@@ -19,8 +23,8 @@ $post-font-size: 16px;
 
     h2,
     h3 {
-      margin-top: 40px;
-      margin-bottom: 15px;
+      margin-top: $post-header-margin-top;
+      margin-bottom: $post-header-margin-bottom;
       color: $color-subheading;
     }
 
@@ -46,11 +50,11 @@ $post-font-size: 16px;
 
     h5 {
       background-color: $color-code-file-label;
-      padding: 10px 20px;
-      border-radius: $br-default $br-default 0px 0px;
+      padding: 10px $post-code-spacing;
+      border-radius: $br-default $br-default 0 0;
       color: $color-highlight-text;
-      border-bottom: 1px solid $color-heading;
-      margin-top: 30px;
+      border-bottom: $border-code-file-label;
+      margin-top: $post-large-spacing;
     }
 
     p {
@@ -73,12 +77,12 @@ $post-font-size: 16px;
 
     ul {
       list-style-position: inside;
-      margin-bottom: $post-default-spacing;
+      margin: $post-default-spacing 0 $post-large-spacing $post-default-spacing;
     }
 
     li {
-      font-size: $post-default-spacing;
-      margin-bottom: 20px;
+      font-size: $post-font-size;
+      margin-bottom: $post-default-spacing;
     }
 
     .codeLabel {
@@ -116,7 +120,7 @@ $post-font-size: 16px;
     }
 
     h5 + .highlighter-rouge {
-      border-radius: 0px 0px $br-default $br-default;
+      border-radius: 0 0 $br-default $br-default;
       border: 1px solid $color-code-file-label;
     }
 
@@ -125,7 +129,7 @@ $post-font-size: 16px;
         background-color: $color-code-bg !important; //change
 
         overflow-x: auto;
-        padding: 20px;
+        padding: $post-code-spacing;
       }
 
       .token.operator,
@@ -138,7 +142,7 @@ $post-font-size: 16px;
     }
 
     div.highlighter-rouge {
-      margin-bottom: 30px;
+      margin-bottom: $post-large-spacing;
     }
 
     code.highlighter-rouge {
@@ -154,7 +158,7 @@ $post-font-size: 16px;
 
       .highlight {
         border-radius: $br-default;
-        padding: 20px;
+        padding: $post-code-spacing;
         margin: 0;
 
         @include media($tablet) {
@@ -164,11 +168,11 @@ $post-font-size: 16px;
     }
 
     blockquote {
-      border-left: 5px solid $color-tertiary;
+      border: 1px solid $color-tertiary;
       background-color: $color-highlight-container-bg;
-      padding: 15px 25px;
-      border-radius: 0 $br-default $br-default 0;
-      margin: 30px 0;
+      padding: 15px $post-default-spacing;
+      border-radius: $br-default;
+      margin: $post-large-spacing 0;
 
       p {
         margin-bottom: 0;
