@@ -124,6 +124,7 @@ $post-header-margin-bottom: 15px;
       background-color: $color-code-bg;
       border-radius: $br-default;
       border: 1px solid $color-code-border;
+      overflow: hidden;
 
       &:hover {
         .codeLabel {
