@@ -76,9 +76,6 @@
     letter-spacing: -0.25px;
   }
 
-  &-tags {
-  }
-
   &-tag {
     @include small-button($color-highlight);
     display: inline-block;
