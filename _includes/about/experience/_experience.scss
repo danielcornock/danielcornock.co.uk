@@ -6,7 +6,7 @@
     display: flex;
 
     & + & {
-      border-top: 1px solid $color-light-grey;
+      border-top: 1px solid $color-divider;
     }
 
     @include media($phone) {
@@ -37,9 +37,6 @@
     @include media($phone) {
       font-size: 16px;
     }
-  }
-
-  &-description {
   }
 
   &-icon {

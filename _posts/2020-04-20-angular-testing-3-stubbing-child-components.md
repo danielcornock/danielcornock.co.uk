@@ -170,17 +170,10 @@ Then in the typescript for that file, we can create the function that will respo
 ```typescript
 public onDelete(productName: string): void {
   this._productService.deleteProduct(productName);
+}
 ```
 
 And finally, add the `deleteProduct` method to both our service file and its stub. For this demonstration, we don't need to actually implement anything in the real product service because we will be mocking its behaviour.
-
-##### product.service.ts
-
-```typescript
-  public deleteProduct(name: string) {
-    // Send a request to the API
-  }
-```
 
 ##### product.service.stub.ts
 

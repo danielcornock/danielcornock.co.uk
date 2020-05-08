@@ -3,7 +3,7 @@ body {
   --color-heading: #2d3748;
   --color-subheading: #4a5568;
   --color-body: #555555;
-  --color-code-bg: #fbfbfb;
+  --color-code-bg: #f9f9ff;
   --color-code-border: rgba(74, 85, 104, 0.1);
   --color-footer: var(--color-heading);
   --color-article-hover: #eeeeee;
@@ -12,6 +12,9 @@ body {
   --color-code-language-label-bg: #2d3748;
   --color-divider: #{$color-light-grey};
   --color-border-code-file-label: transparent;
+  --color-viewMore-bg: #{$color-light-grey};
+  --color-viewMore-text: #{$color-light-button-text};
+  --color-viewMore-bg--hover: #d5d5d5;
 }
 
 body.dark-mode {
@@ -28,4 +31,7 @@ body.dark-mode {
   --color-code-border: #445;
   --color-divider: #556;
   --color-border-code-file-label: #ddd;
+  --color-viewMore-bg: #445;
+  --color-viewMore-text: white;
+  --color-viewMore-bg--hover: #223;
 }

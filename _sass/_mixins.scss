@@ -44,6 +44,18 @@
   }
 }
 
+@mixin viewMore-button {
+  @include small-button($color-light-grey, $color-light-button-text);
+  background-color: $color-viewMore-bg;
+  color: $color-viewMore-text;
+  margin-left: 15px;
+  line-height: 1.6;
+
+  &:hover {
+    background-color: $color-viewMore-bg--hover;
+  }
+}
+
 $tablet: 768px;
 $phone: 460px;
 $sm-phone: 380px;
