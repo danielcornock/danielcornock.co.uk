@@ -53,8 +53,21 @@ $post-header-margin-bottom: 15px;
       padding: 10px $post-code-spacing;
       border-radius: $br-default $br-default 0 0;
       color: $color-highlight-text;
-      border-bottom: $border-code-file-label;
       margin-top: $post-large-spacing;
+      position: relative;
+      font-weight: 600;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: calc(100% - 2px);
+        background-color: $color-border-code-file-label;
+        z-index: 10;
+      }
     }
 
     p {
@@ -157,7 +170,7 @@ $post-header-margin-bottom: 15px;
       }
 
       .highlight {
-        border-radius: $br-default;
+        // border-radius: $br-default;
         padding: $post-code-spacing;
         margin: 0;
 

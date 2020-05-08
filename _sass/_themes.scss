@@ -11,7 +11,7 @@ body {
   --color-code-file-label: #2d3748;
   --color-code-language-label-bg: #2d3748;
   --color-divider: #{$color-light-grey};
-  --border-code-file-label: 0;
+  --color-border-code-file-label: transparent;
 }
 
 body.dark-mode {
@@ -19,7 +19,7 @@ body.dark-mode {
   --color-heading: #fff;
   --color-subheading: #ddd;
   --color-body: #ccc;
-  --color-code-bg: #445;
+  --color-code-bg: #334;
   --color-footer: #223;
   --color-article-hover: #223;
   --color-highlight-container-bg: #223;
@@ -27,5 +27,5 @@ body.dark-mode {
   --color-code-language-label-bg: #223;
   --color-code-border: #445;
   --color-divider: #556;
-  --border-code-file-label: 1px solid #fff;
+  --color-border-code-file-label: #ddd;
 }
