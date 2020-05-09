@@ -62,8 +62,8 @@ class ScrollSpy {
 }
 
 class ThemeSwitcher {
-  static create(button) {
-    return new ThemeSwitcher(button);
+  static create() {
+    return new ThemeSwitcher();
   }
 
   constructor() {
@@ -88,8 +88,6 @@ class ThemeSwitcher {
   }
 
   listenToThemeSwitch() {
-    this.button = document.querySelector('#themeSwitch');
-
     this.button.addEventListener('click', () => {
       const currentTheme = localStorage.getItem('theme');
       if (currentTheme === 'dark') {
