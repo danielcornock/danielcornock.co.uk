@@ -84,4 +84,13 @@
       font-size: 16px;
     }
   }
+
+  &-viewWriteup {
+    color: $color-tertiary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

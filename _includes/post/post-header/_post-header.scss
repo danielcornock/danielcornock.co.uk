@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid $color-divider;
   }
 
@@ -19,9 +19,9 @@
 
   &-image {
     height: 120px;
-    width: 120px;
+    max-width: 250px;
+    object-position: top;
     object-fit: contain;
-    border-radius: $br-default;
     margin-left: 30px;
 
     @include media($phone) {
@@ -79,7 +79,7 @@
   &-tag {
     @include small-button($color-highlight);
     display: inline-block;
-    margin-right: 10px;
+    margin: 0 10px 10px 0;
     text-transform: capitalize;
   }
 }

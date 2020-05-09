@@ -34,6 +34,7 @@
 - name: Kanbo
   description: A full stack trello-inspired kanban board with added features that fit my own work flow.
   type: project
+  writeup: projects/kanbo
   emoji: 📊
   github: https://github.com/danielcornock/kanbo-ui
   demo: https://ng-kanban.herokuapp.com/

@@ -1,9 +1,15 @@
 <li class="project-container">
   <div class="project-projectName">
     <div class="project-projectEmoji">{{ project.emoji }}</div>
-    <h3 class="project-projectTitle">{{ project.name }}</h3>
+    <h3 class="project-projectTitle">
+      {{ project.name }}
+    </h3>
   </div>
-  <p class="project-projectDescription">{{ project.description }}</p>
+  <p class="project-projectDescription">
+    {{ project.description }} {% if project.writeup and page.title == 'Projects' %}
+    <a class="project-viewWriteup" href="{{ project.writeup | absolute_url }}">View writeup</a>
+    {% endif %}
+  </p>
   {% if project.github %}
   <a href="{{ project.github }}" class="project-projectRepo" rel="noreferrer" rel="noopener" target="_blank">
     <span class="no-mobile">Github</span>
