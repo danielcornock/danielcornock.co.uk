@@ -58,7 +58,7 @@
   description: My first shot at a portfolio & blog before this redesign.
   type: project
   emoji: 👨‍💻
-  demo: https://www.danielcornock.co.uk
+  demo: https://www.danielcornock-legacy.netlify.app
   github: https://github.com/danielcornock/danielcornock.co.uk
 
 - name: Greg Woodin

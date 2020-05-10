@@ -13,7 +13,8 @@ class CodeSnippets {
       { cssClass: '.language-ts', label: 'TypeScript' },
       { cssClass: '.language-typescript', label: 'TypeScript' },
       { cssClass: '.language-html', label: 'HTML' },
-      { cssClass: '.language-css', label: 'CSS' }
+      { cssClass: '.language-css', label: 'CSS' },
+      { cssClass: '.language-console', label: 'Console' }
     ];
   }
 
@@ -23,7 +24,6 @@ class CodeSnippets {
 
       instances.forEach((instance) => {
         const element = this.createNewElement(language.label);
-        console.log(instance);
         instance.appendChild(element);
       });
     });

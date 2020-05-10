@@ -89,13 +89,14 @@ $post-header-margin-bottom: 15px;
     }
 
     ul {
-      list-style-position: inside;
-      margin: $post-default-spacing 0 $post-large-spacing $post-default-spacing;
+      list-style-position: outside;
+      margin: $post-default-spacing 0 $post-large-spacing 40px;
     }
 
     li {
       font-size: $post-font-size;
-      margin-bottom: $post-default-spacing;
+      margin-bottom: 10px;
+      line-height: 1.9;
     }
 
     .codeLabel {
