@@ -1,6 +1,6 @@
 ---
 title: 'Project Writeup: Kanbo'
-image: 'assets/images/projects/kanbo/logo.png'
+image: 'projects/kanbo/logo.png'
 date: 2020-05-08 00:00:00 +0100
 tags:
   - TypeScript
@@ -49,15 +49,15 @@ I also began creating my forms framework, which abstracted away some repetitive 
 
 After signing in to the application, and have created a board, you are presented with an empty board with configurable columns. From there, you can add stories and drag them around between columns.
 
-{% include components/image.html url="/assets/images/projects/kanbo/board-screenshot.png" description="A populated board using Kanbo." %}
+{% include components/image.html url="projects/kanbo/board-screenshot.png" description="A populated board using Kanbo." %}
 
 When editing a story, you can then edit the title & description, add tags, and link it to a github commit.
 
-{% include components/image.html url="/assets/images/projects/kanbo/edit-story-screenshot.png" description="The modal used to edit a story." %}
+{% include components/image.html url="projects/kanbo/edit-story-screenshot.png" description="The modal used to edit a story." %}
 
 In order to configure the repos associated with the product, the user can use a modal in the settings to link repositories.
 
-{% include components/image.html url="/assets/images/projects/kanbo/github-screenshot.png" description="The modal used to set up repos used for your board." %}
+{% include components/image.html url="projects/kanbo/github-screenshot.png" description="The modal used to set up repos used for your board." %}
 
 ### Conclusion
 

@@ -1,4 +1,4 @@
 <figure>
-  <img src="{{ include.url | absolute_url }}" alt="{{ include.description }}" />
+  <img src="{{ site.image_dir | append: include.url | absolute_url }}" alt="{{ include.description }}" />
   <figcaption class="post__image-caption">{{ include.description }}</figcaption>
 </figure>

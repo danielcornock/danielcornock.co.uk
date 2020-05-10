@@ -1,4 +1,4 @@
 <a class="article-container" href="{{ article.url }}">
-  <img class="article-image" src="{{ article.image | absolute_url }}" alt="" />
+  <img class="article-image" src="{{ site.image_dir | append: article.image | absolute_url }}" alt="" />
   <h3 class="article-title">{{ article.title }}</h3>
 </a>

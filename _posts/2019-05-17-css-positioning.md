@@ -3,7 +3,7 @@ title: CSS Positioning For Absolute Beginners
 description: >-
   A handy reference for both new and experienced developers for when you just
   can't get that positioning quite right.
-image: 'assets/images/articles/css.png'
+image: 'articles/css.png'
 tags:
   - CSS
 ---

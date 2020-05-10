@@ -9,6 +9,7 @@ url: 'https://danielcornock-v2.netlify.com/' # the base hostname & protocol for 
 twitter_username: danielcornock
 github_username: danielcornock
 permalink: /articles/:title
+image_dir: /assets/images/
 
 include: ['_pages']
 
@@ -16,8 +17,6 @@ include: ['_pages']
 markdown: kramdown
 
 collections:
-  category:
-    output: true
   projects:
     output: true
 

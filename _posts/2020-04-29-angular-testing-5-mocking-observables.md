@@ -2,7 +2,7 @@
 title: 'Unit testing in Angular: Mocking observables'
 description: >-
   How to write unit tests for our service that utilises RxJS observables.
-image: 'assets/images/articles/angular.png'
+image: 'articles/angular.png'
 series: angular-unit-testing
 tags:
   - angular

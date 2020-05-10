@@ -2,7 +2,7 @@
   <div class="postHeader-headerDetails">
     <h1 class="postHeader-title">{{ page.title }}</h1>
     <div class="postHeader-meta">
-      <img src="{{ 'assets/images/avatar.jpeg' | absolute_url }}" alt="" class="postHeader-avatar" />
+      <img src="{{ site.image_dir | append: 'avatar.jpeg' | absolute_url }}" alt="" class="postHeader-avatar" />
       <time class="postHeader-time">{{ page.date | date: "%d %B %Y" }}</time>
       <span class="postHeader-metaDivider"> | </span>
       <a
@@ -25,5 +25,10 @@
       {% endfor %}
     </div>
   </div>
-  <img class="postHeader-image" src="{{ page.image | absolute_url }}" alt="" class="postHeader-image" />
+  <img
+    class="postHeader-image"
+    src="{{ site.image_dir | append: page.image | absolute_url }}"
+    alt=""
+    class="postHeader-image"
+  />
 </div>
