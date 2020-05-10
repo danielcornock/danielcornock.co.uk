@@ -2,7 +2,7 @@
 title: 'Unit testing in Angular: Stubbing child components'
 description: >-
   How to stub child components in angular in order to test their inputs and outputs, and ensure total isolation for your test suite.
-image: 'articles/angular.png'
+image: 'article-icons/angular.png'
 series: angular-unit-testing
 tags:
   - angular

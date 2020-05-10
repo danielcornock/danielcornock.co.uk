@@ -2,7 +2,7 @@
 title: 'Unit testing in Angular: Getting started'
 description: >-
   An introduction to unit testing in Angular
-image: 'articles/angular.png'
+image: 'article-icons/angular.png'
 series: angular-unit-testing
 tags:
   - angular
