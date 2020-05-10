@@ -9,7 +9,7 @@ tags:
 
 The observer pattern is a behavioural design pattern that enables you to define a subscription mechanism to notify objects on any events that occur on the object they are observing.
 
-But **what does this mean?** Well, it allows us to build our software to response to events where we don't know _when_ they're going to fire. It allows us to implement truly asynchronous and reactive code. Maybe we want to respond to an event - for this we have no idea when the event is going to fire, and it may well fire multiple times. For this we need an event-based solution. Enter, RxJS.
+But **what does this mean?** Well, it allows us to build our software to respond to events where we don't know _when_ they're going to fire. It allows us to implement truly asynchronous and reactive code. Maybe we want to respond to an event - for this we have no idea when the event is going to fire, and it may well fire multiple times. For this we need an event-based solution. Enter, RxJS.
 
 ### RxJS
 
@@ -49,10 +49,10 @@ export class Subject {
 
 Let's take a look at what each bit of the code above is responsible for:
 
-- The `subscribers` array will store each function that is assigned to the subject.
-- When the `subscribe` method is called, it will supply a callback function that will fire whenever an event is triggered in our subject.
+- The `subscribers` array will store each callback function that is assigned to the subject.
+- When the `subscribe` method is called, it will supply a callback function that will fire whenever an event is triggered in our subject. This callback function will be added to the `subscribers` array.
 - The `next` method is used to fire an event within our subject, which will then proceed to call all of the functions in the `subscribers` array with the data that is passed to it.
-- Calling `unsubscribe` will empty the list of observers, meaning that in the future when `next` is called, nothing will happen. Calling `unsubscribe` is important because otherwise the callback functions will all still be called, meaning that memory leaks can occur.
+- Calling `unsubscribe` will empty the list of observers, meaning that in the future when `next` is called, nothing will happen. Calling `unsubscribe` is important because otherwise the callback functions will all still be held in memory and potentially called multiple times, meaning that memory leaks can occur.
 
 The subject is the only thing we will be creating that is actually core to RxJS, the rest are flexible implementations that will change depending on your circumstances.
 
@@ -66,7 +66,7 @@ export class MediatorService {
 }
 ```
 
-Then we can create our class that be constructed with our mediator service, and call `next` on the subject in the mediator service whenever it wants to fire an event.
+Then we can create our emitting class that be constructed with our mediator service, and call `next` on the subject in the mediator service whenever it wants to fire an event.
 
 ##### emitting-class.ts
 
