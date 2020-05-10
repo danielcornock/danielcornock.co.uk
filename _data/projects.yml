@@ -1,3 +1,10 @@
+- name: Personal Site
+  description: The site you're on now! A revamped portfolio for 2020.
+  type: project
+  emoji: 📌
+  github: https://github.com/danielcornock/portfolio-v2
+  hidden: true
+
 - name: NuTodo
   description: A full stack todo app written the way that I like to organise my todos.
   type: project
@@ -27,6 +34,7 @@
 - name: Property Right
   description: A full stack app to manage your properties, tenants and payments.
   type: project
+  writeup: projects/property-right
   emoji: 🏡
   github: https://github.com/danielcornock/propertyright-ui
   demo: https://property-right-ui.herokuapp.com/
