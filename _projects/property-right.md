@@ -44,13 +44,13 @@ For the front-end, I had written basic applications before & had completed a few
 
 The application allows the user to view their properties, with useful previews of the information of each property. Before even clicking on a property, the user can see a preview image, the amount of open todos on a property, and the initials of tenants that currently live there (with the ability to navigate to those tenants' pages).
 
-{% include components/image.html url="post_2019-review_IMG6.jpeg" description="Viewing all properties in PropertyRight." %}
+{% include components/image.html url="articles/2019-review/post_2019-review_IMG6.jpeg" description="Viewing all properties in PropertyRight." %}
 
 Upon clicking on a property, the user is presented with the property details. This includes the property address, as well as an embedded google map displaying the exact location of the property which allows them to open up the property in google maps and navigate from there.
 
 From this page, the user can also view, create and edit the tenants and todos that are linked with the property.
 
-{% include components/image.html url="post_2019-review_IMG7.jpeg" description="Viewing property details in PropertyRight." %}
+{% include components/image.html url="articles/2019-review/post_2019-review_IMG7.jpeg" description="Viewing property details in PropertyRight." %}
 
 ### Conclusion
 
