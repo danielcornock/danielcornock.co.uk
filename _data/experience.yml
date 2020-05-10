@@ -1,17 +1,20 @@
 - institution: MHR
   position: Junior Web Application Developer
+  time: Jul 2019 - Present
   icon: 💻
   type: work
   description: During my time working at MHR, I have been privileged enough to have complete ownership of the front-end of multiple features from start to finish. Working within the recruitment area, I have been a key contributor to delivering high-quality solutions for the users of our SaaS HR social media application.
 
 - institution: Freelance
   position: Web Designer & Developer
+  time: Dec 2018 - Present
   icon: 💼
   type: work
   description: After learning web development for a couple of months, I jumped right in to building websites for friends and clients. Using wordpress and static site generators, I created a range of websites from academic portfolios to construction company brochure sites.
 
 - institution: University of Birmingham
   position: Computer Systems Engineering BEng - 2:1
+  time: Sep 2014 - Jul 2017
   icon: 🎓
   type: education
   description: Whilst studying at the University of Birmingham, I completed modules from a wide range of disciplines, including mathematics, software development and data analysis. I achieved a 1st class grade for my final year project (dissertation) in the field of visual analytics.
