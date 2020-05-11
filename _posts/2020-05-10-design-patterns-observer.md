@@ -23,6 +23,8 @@ At this point, this may all still seem like jargon to you, and that's OK. Let's 
 
 ### Break it down!
 
+For our example, we will be building two classes with a shared dependency that holds an observable subject for them to communicate.
+
 To start off, we need to build our `Subject`.
 
 ##### subject.ts
@@ -55,6 +57,8 @@ Let's take a look at what each bit of the code above is responsible for:
 - Calling `unsubscribe` will empty the list of observers, meaning that in the future when `next` is called, nothing will happen. Calling `unsubscribe` is important because otherwise the callback functions will all still be held in memory and potentially called multiple times, meaning that memory leaks can occur.
 
 The subject is the only thing we will be creating that is actually core to RxJS, the rest are flexible implementations that will change depending on your circumstances.
+
+### Implementing our subject
 
 Next up, we will have a mediator service that will store the subject, and allow two classes to communicate with each other without knowing about each others existence.
 
