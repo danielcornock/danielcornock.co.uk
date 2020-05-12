@@ -6,7 +6,61 @@ $post-code-spacing: 20px;
 $post-header-margin-bottom: 15px;
 
 .post {
+  &-headerList {
+    position: fixed;
+    padding: 20px 50px 20px 20px;
+    bottom: 30px;
+    left: 0;
+    transform: translateX(-100%);
+    border: 2px solid $color-tertiary;
+    transition: transform 250ms;
+    border-radius: $br-default;
+    background-color: $color-background;
+    z-index: 5000;
+
+    @include media(1100px) {
+      display: none;
+    }
+
+    &::after {
+      position: absolute;
+      content: '🔍';
+      padding: 20px;
+      font-size: 30px;
+      left: 100%;
+      bottom: 0;
+      background-color: $color-tertiary;
+      border-radius: $br-default;
+    }
+
+    &:hover {
+      transform: translateX(0%);
+    }
+  }
+
+  &-headerListTitle {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $color-divider;
+    color: $color-subheading;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &-headerLink {
+    display: block;
+
+    & + & {
+      margin-top: 20px;
+    }
+
+    &--indented {
+      margin-left: 20px;
+    }
+  }
+
   &-content {
+    position: relative;
     img {
       width: 100%;
       margin-bottom: 5px;

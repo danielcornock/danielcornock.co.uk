@@ -19,6 +19,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  &.experimental-on {
+    .is-experimental {
+      display: block;
+    }
+  }
 }
 
 main {
@@ -38,4 +44,8 @@ h4,
 h5 {
   color: $color-heading;
   line-height: 1.2;
+}
+
+.is-experimental {
+  display: none;
 }

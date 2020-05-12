@@ -139,7 +139,7 @@ hello!
 
 Although this example may seem arbitrary, we would often not be calling the `onClick` method ourselves, but it would be from an external event. We can also see how `EmittingClass` is able to call a function defined in `ReceivingClass` without either of them having any knowledge of the other.
 
-### Shall we go further?
+### Diving a little deeper
 
 That's the basic subject covered, but what about other types of subjects? The `BehaviourSubject` of RxJs, perhaps?
 
