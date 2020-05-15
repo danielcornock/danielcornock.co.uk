@@ -1,4 +1,4 @@
-body {
+html {
   --color-background: #fcfcff;
   --color-heading: #2d3748;
   --color-subheading: #4a5568;
@@ -18,7 +18,7 @@ body {
   --color-viewMore-bg--hover: #d5d5d5;
 }
 
-body.dark-mode {
+html.dark-mode {
   --color-background: #333544;
   --color-heading: #fff;
   --color-subheading: #ddd;

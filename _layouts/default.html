@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light-mode">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ "assets/styles/index.css" | absolute_url }}" />
+    <link rel="stylesheet" href="{{ "assets/styles/index.css" | absolute_url }}"
+    />
     <meta name="theme-color" content="#6246ea" />
-    <link rel="shortcut icon" type="image/png" href="{{ 'favicon.png' | absolute_url }} " />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{{ 'favicon.png' | absolute_url }} "
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <title>Daniel Cornock {% if page.title %}| {{ page.title }} {% endif %}</title>
+    <title>
+      Daniel Cornock {% if page.title %}| {{ page.title }} {% endif %}
+    </title>
+    <script src="{{ 'assets/scripts/theme-switcher.js' | absolute_url }}"></script>
     <script src="{{ 'assets/scripts/prism.js' | absolute_url }}"></script>
   </head>
-  <body class="light-mode">
+  <body>
     <header class="header">
       {% include header/header.html %}
     </header>
