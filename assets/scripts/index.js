@@ -14,7 +14,7 @@ class CodeSnippets {
       { cssClass: '.language-typescript', label: 'TypeScript' },
       { cssClass: '.language-html', label: 'HTML' },
       { cssClass: '.language-css', label: 'CSS' },
-      { cssClass: '.language-console', label: 'Console' }
+      { cssClass: '.language-js', label: 'JavaScript' }
     ];
   }
 
@@ -108,8 +108,7 @@ class ContentsTable {
 
   constructor() {
     const headers = document.querySelectorAll('.post-content h2, h3');
-
-    if (!headers.length) {
+    if (!document.querySelector('.post-content')) {
       return;
     }
 
@@ -131,7 +130,8 @@ class ContentsTable {
 
   idToString(id) {
     const normalisedString = id.split('-').join(' '),
-      capitalisedString = normalisedString.charAt(0).toUpperCase() + normalisedString.slice(1);
+      capitalisedString =
+        normalisedString.charAt(0).toUpperCase() + normalisedString.slice(1);
 
     return capitalisedString;
   }
