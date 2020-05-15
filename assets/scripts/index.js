@@ -63,28 +63,14 @@ class ScrollSpy {
 
 class ThemeSwitcher {
   static create() {
-    return new ThemeSwitcher();
+    const preThemeSwitcher = new PreThemeSwitcher();
+    return new ThemeSwitcher(preThemeSwitcher);
   }
 
-  constructor() {
+  constructor(preThemeSwitcher) {
     this.button = document.querySelector('#themeSwitch');
-    this.setTheme();
+    this.preThemeSwitcher = preThemeSwitcher;
     this.listenToThemeSwitch();
-  }
-
-  setTheme() {
-    const currentTheme = localStorage.getItem('theme');
-    const body = document.querySelector('body');
-
-    if (currentTheme === 'dark') {
-      body.classList.add('dark-mode');
-      body.classList.remove('light-mode');
-      this.button.innerText = '☀️';
-    } else {
-      body.classList.add('light-mode');
-      body.classList.remove('dark-mode');
-      this.button.innerText = '🌙';
-    }
   }
 
   listenToThemeSwitch() {
@@ -96,7 +82,7 @@ class ThemeSwitcher {
         localStorage.setItem('theme', 'dark');
       }
 
-      this.setTheme();
+      this.preThemeSwitcher.setTheme();
     });
   }
 }
