@@ -5,7 +5,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-body.light-mode {
+html.light-mode {
   code[class*='language-'],
   pre[class*='language-'] {
     color: black;
@@ -145,7 +145,7 @@ body.light-mode {
   }
 }
 
-body.dark-mode {
+html.dark-mode {
   /**
  * a11y-dark theme for JavaScript, CSS, and HTML
  * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
