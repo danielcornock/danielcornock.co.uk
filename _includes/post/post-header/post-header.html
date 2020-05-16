@@ -2,12 +2,16 @@
   <div class="postHeader-headerDetails">
     <h1 class="postHeader-title">{{ page.title }}</h1>
     <div class="postHeader-meta">
-      <img src="{{ site.image_dir | append: 'avatar.jpeg' | absolute_url }}" alt="" class="postHeader-avatar" />
+      <img
+        src="{{ site.image_dir | append: 'avatar.jpeg' | absolute_url }}"
+        alt=""
+        class="postHeader-avatar"
+      />
       <time class="postHeader-time">{{ page.date | date: "%d %B %Y" }}</time>
       <span class="postHeader-metaDivider"> | </span>
       <a
         class="postHeader-shareButton"
-        href="http://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text=Checkout this awesome blog.&via=danielcornock&hashtags=webdev"
+        href="http://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}"
         title="Tweet"
         target="_blank"
       >
@@ -25,10 +29,14 @@
       {% endfor %}
     </div>
   </div>
+  {% if page.image %}
   <img
     class="postHeader-image"
     src="{{ site.image_dir | append: page.image | absolute_url }}"
     alt=""
     class="postHeader-image"
   />
+  {% else %}
+  <span class="postHeader-emoji">{{ page.emoji }}</span>
+  {% endif %}
 </div>

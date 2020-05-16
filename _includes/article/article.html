@@ -1,4 +1,12 @@
 <a class="article-container" href="{{ article.url }}">
-  <img class="article-image" src="{{ site.image_dir | append: article.image | absolute_url }}" alt="" />
+  {% if article.image %}
+  <img
+    class="article-image"
+    src="{{ site.image_dir | append: article.image | absolute_url }}"
+    alt=""
+  />
+  {% else %}
+  <div class="article-image">{{ article.emoji }}</div>
+  {% endif %}
   <h3 class="article-title">{{ article.title }}</h3>
 </a>
