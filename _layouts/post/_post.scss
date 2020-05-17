@@ -76,7 +76,8 @@ $post-header-margin-bottom: 15px;
     }
 
     h2,
-    h3 {
+    h3,
+    h4 {
       margin-top: $post-header-margin-top;
       margin-bottom: $post-header-margin-bottom;
       color: $color-subheading;
@@ -99,6 +100,15 @@ $post-header-margin-bottom: 15px;
 
       @include media($tablet) {
         font-size: 18px;
+      }
+    }
+
+    h4 {
+      font-size: 20px;
+      color: $color-body;
+
+      @include media($tablet) {
+        font-size: 16px;
       }
     }
 
@@ -262,6 +272,10 @@ $post-header-margin-bottom: 15px;
         height: 13px;
         background-color: $color-console-header-bg;
         color: #cccccc;
+
+        @include media($phone) {
+          padding: 9px 0 21px 10px;
+        }
       }
     }
   }
