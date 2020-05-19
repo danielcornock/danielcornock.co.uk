@@ -5,21 +5,17 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: _site/experience.yml
+  path: _data/experience.yml
   label: Experience
-  match: "**/*"
 - type: document
-  path: _site/testimonials.yml
+  path: _data/testimonials.yml
   label: Testimonials
-  match: "**/*"
 - type: document
-  path: _site/projects.yml
+  path: _data/projects.yml
   label: Projects
-  match: "**/*"
 - type: document
-  path: _site/navigation.yml
+  path: _data/navigation.yml
   label: Navigation
-  match: "**/*"
 - type: directory
   path: _pages
   label: Custom Pages
