@@ -5,6 +5,14 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: _site/experience.yml
+  label: Experience
+  match: "**/*"
+- type: document
+  path: _site/testimonials.yml
+  label: Testimonials
+  match: "**/*"
+- type: document
   path: _site/projects.yml
   label: Projects
   match: "**/*"
