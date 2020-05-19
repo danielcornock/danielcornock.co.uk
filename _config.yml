@@ -1,11 +1,9 @@
 title: Daniel Cornock
 email: daniel_cornock@hotmail.co.uk
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: '' # the subpath of your site, e.g. /blog
-url: 'https://www.danielcornock.co.uk' # the base hostname & protocol for your site, e.g. http://example.com
+description: >-
+  Personal website and blog of Daniel Cornock. Take a look at my projects and articles that I write about software development.
+baseurl: ''
+url: 'https://www.danielcornock.co.uk'
 twitter_username: danielcornock
 github_username: danielcornock
 permalink: /articles/:title
@@ -19,9 +17,6 @@ markdown: kramdown
 collections:
   projects:
     output: true
-
-plugins:
-  - jekyll-feed
 
 defaults:
   - scope:

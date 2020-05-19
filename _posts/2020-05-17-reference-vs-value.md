@@ -1,7 +1,7 @@
 ---
 title: Understanding reference types in JavaScript
 description: >-
-  ...
+  Discover the difference between value and reference types in JavaScript, and how to use them to your advantage.
 image: 'article-icons/js.svg'
 tags:
   - javascript
