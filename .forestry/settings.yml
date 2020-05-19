@@ -4,6 +4,19 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: _site/projects.yml
+  label: Projects
+  match: "**/*"
+- type: document
+  path: _site/navigation.yml
+  label: Navigation
+  match: "**/*"
+- type: directory
+  path: _pages
+  label: Custom Pages
+  create: documents
+  match: "**/*"
 - type: jekyll-pages
   label: Pages
   create: all
@@ -12,7 +25,7 @@ sections:
   create: all
 - type: directory
   path: _projects
-  label: Projects
+  label: Project Writeups
   create: all
   match: "**/*"
 upload_dir: uploads
