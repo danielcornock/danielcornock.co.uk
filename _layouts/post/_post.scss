@@ -232,7 +232,6 @@ $post-header-margin-bottom: 15px;
       }
 
       .highlight {
-        // border-radius: $br-default;
         padding: $post-code-spacing;
         margin: 0;
 
@@ -243,7 +242,7 @@ $post-header-margin-bottom: 15px;
     }
 
     blockquote {
-      border: 2px solid $color-tertiary;
+      border: 2px solid rgba($color-highlight, 0.5);
       background-color: $color-highlight-container-bg;
       padding: 15px $post-default-spacing;
       border-radius: $br-default;
