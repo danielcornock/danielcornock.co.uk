@@ -253,6 +253,7 @@ $post-header-margin-bottom: 15px;
       }
     }
 
+    div.language-bash,
     div.language-console {
       padding-top: 30px;
       position: relative;
@@ -272,6 +273,18 @@ $post-header-margin-bottom: 15px;
           padding: 9px 0 21px 10px;
         }
       }
+    }
+
+    div.language-console::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 15px;
+      transform: translate(-50%, -50%);
+      height: 15px;
+      width: 40%;
+      border-radius: 5px;
+      background-color: #cccccc;
     }
   }
 }

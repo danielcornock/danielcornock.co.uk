@@ -103,7 +103,7 @@ console.log(arr2);
 
 What do you think will be the output when we log both of these arrays?
 
-```console
+```bash
 [1000, 2, 3];
 [1000, 2, 3];
 ```

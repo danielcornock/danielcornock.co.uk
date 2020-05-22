@@ -129,7 +129,7 @@ emittingClass.onClick('hello!');
 
 If you then have a look at your console, you can see the flow of the data from the emitting class to the receiving class, followed by the data that we passed through. Magic!
 
-```console
+```bash
 Sending message from emitting class!
 Message received in receiving class!
 hello!
