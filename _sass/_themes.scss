@@ -7,7 +7,7 @@ html {
   --color-code-border: rgba(74, 85, 104, 0.1);
   --color-footer: var(--color-heading);
   --color-article-hover: #eeeeee;
-  --color-highlight-container-bg: #{lighten($color-highlight, 35%)};
+  --color-highlight-container-bg: #{$color-highlight-light};
   --color-code-file-label: #2d3748;
   --color-code-language-label-bg: #2d3748;
   --color-divider: #{$color-light-grey};
