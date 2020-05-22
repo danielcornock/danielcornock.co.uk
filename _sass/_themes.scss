@@ -16,6 +16,7 @@ html {
   --color-viewMore-bg: #{$color-light-grey};
   --color-viewMore-text: #{$color-light-button-text};
   --color-viewMore-bg--hover: #d5d5d5;
+  --color-header-shadow: #{$color-light-grey};
 }
 
 html.dark-mode {
@@ -24,16 +25,17 @@ html.dark-mode {
   --color-subheading: #ddd;
   --color-body: #ccc;
   --color-code-bg: #333340;
-  --color-footer: #223;
-  --color-article-hover: #445;
-  --color-highlight-container-bg: #223;
-  --color-code-file-label: #223;
-  --color-code-language-label-bg: #223;
-  --color-code-border: #445;
-  --color-console-header-bg: #445;
+  --color-footer: #{$color-darkest-blue};
+  --color-article-hover: #{$color-dark-blue};
+  --color-highlight-container-bg: #{$color-darkest-blue};
+  --color-code-file-label: #{$color-darkest-blue};
+  --color-code-language-label-bg: #{$color-darkest-blue};
+  --color-code-border: #{$color-dark-blue};
+  --color-console-header-bg: #{$color-dark-blue};
   --color-divider: #556;
   --color-border-code-file-label: #ddd;
-  --color-viewMore-bg: #445;
+  --color-viewMore-bg: #{$color-dark-blue};
   --color-viewMore-text: white;
-  --color-viewMore-bg--hover: #223;
+  --color-viewMore-bg--hover: #{$color-darkest-blue};
+  --color-header-shadow: #{$color-darkest-blue};
 }
