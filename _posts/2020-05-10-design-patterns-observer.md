@@ -11,7 +11,7 @@ The observer pattern is a behavioural design pattern that enables you to define 
 
 But **what does this mean?** Well, it allows us to build our software to respond to events where we don't know _when_ they're going to fire. It allows us to implement truly asynchronous and reactive code. Maybe we want to respond to an event - for this we have no idea when the event is going to fire, and it may well fire multiple times. For this we need an event-based solution. Enter, RxJS.
 
-### RxJS
+## RxJS
 
 RxJS is a javascript library that lets us use observables to make it easier to compose asynchronous or callback code. It is a popular library which is bundled with the Angular framework.
 
@@ -21,7 +21,7 @@ When subscribing to an observable in RxJS, you pass it a callback function. When
 
 At this point, this may all still seem like jargon to you, and that's OK. Let's break down the subject in RxJS and build a simplified version of it.
 
-### Break it down!
+## Break it down!
 
 For our example, we will be building two classes with a shared dependency that holds an observable subject for them to communicate.
 
@@ -58,7 +58,7 @@ Let's take a look at what each bit of the code above is responsible for:
 
 The subject is the only thing we will be creating that is actually core to RxJS, the rest are flexible implementations that will change depending on your circumstances.
 
-### Implementing our subject
+## Implementing our subject
 
 Next up, we will have a mediator service that will store the subject, and allow two classes to communicate with each other without knowing about each others existence.
 
@@ -137,7 +137,7 @@ hello!
 
 Although this example may seem arbitrary, we would often not be calling the `onClick` method ourselves, but it would be from an external event. We can also see how `EmittingClass` is able to call a function defined in `ReceivingClass` without either of them having any knowledge of the other.
 
-### Diving a little deeper
+## Diving a little deeper
 
 That's the basic subject covered, but what about other types of subjects? The `BehaviourSubject` of RxJs, perhaps?
 
@@ -178,6 +178,6 @@ We've made a few modifications here:
 - When subscribing to this subject, the callback provided will instantly be called with the state that is currently held internally, as well as being added to the subscribers list.
 - When we call `next` on the subject, it will store the data provided before calling all of the subscriber functions with that data.
 
-### Conclusion
+## Conclusion
 
 Hopefully this article helps you to understand the basics of the observer pattern and how it's implemented within the RxJS library. We've only scratched the surface of RxJS here, as it is an incredibly complex and powerful library. Maybe we can leave that for another day!
