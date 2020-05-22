@@ -85,13 +85,9 @@ $post-header-margin-bottom: 15px;
 
     h2 {
       font-size: 26px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid $color-divider;
 
       @include media($tablet) {
         font-size: 22px;
-        border-bottom: 0;
-        padding-bottom: 0;
       }
     }
 
