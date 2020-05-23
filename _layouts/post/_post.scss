@@ -85,8 +85,10 @@ $post-header-margin-bottom: 10px;
 
     h2 {
       font-size: 26px;
+      margin-top: 50px;
 
       @include media($tablet) {
+        margin-top: $post-header-margin-top;
         font-size: 22px;
       }
     }
@@ -113,7 +115,7 @@ $post-header-margin-bottom: 10px;
       padding: 10px $post-code-spacing;
       border-radius: $br-default $br-default 0 0;
       color: $color-highlight-text;
-      margin-top: $post-large-spacing;
+      margin-top: $post-default-spacing;
       position: relative;
       font-weight: 600;
 
@@ -150,7 +152,7 @@ $post-header-margin-bottom: 10px;
 
     ul {
       list-style-position: outside;
-      margin: $post-default-spacing 0 $post-large-spacing 40px;
+      margin: 10px 0 $post-large-spacing 40px;
 
       @include media($phone) {
         margin-left: 20px;
@@ -203,12 +205,21 @@ $post-header-margin-bottom: 10px;
       border: 1px solid $color-code-file-label;
     }
 
+    code.language-console {
+      font-family: 'Arial' !important;
+      font-size: 16px !important;
+    }
+
     .highlight {
       > .highlight {
         background-color: $color-code-bg !important; //change
 
         overflow-x: auto;
         padding: $post-code-spacing;
+
+        &.language-console {
+          padding-bottom: 60px;
+        }
       }
 
       .token.operator,
@@ -221,7 +232,7 @@ $post-header-margin-bottom: 10px;
     }
 
     div.highlighter-rouge {
-      margin-bottom: $post-large-spacing;
+      margin-bottom: $post-default-spacing;
     }
 
     code.highlighter-rouge {
@@ -250,7 +261,7 @@ $post-header-margin-bottom: 10px;
       background-color: $color-highlight-container-bg;
       padding: 15px $post-default-spacing;
       border-radius: $br-default;
-      margin: $post-large-spacing 0;
+      margin: $post-default-spacing 0;
 
       p {
         margin-bottom: 0;
