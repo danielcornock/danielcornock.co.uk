@@ -151,6 +151,10 @@ $post-header-margin-bottom: 10px;
     ul {
       list-style-position: outside;
       margin: $post-default-spacing 0 $post-large-spacing 40px;
+
+      @include media($phone) {
+        margin-left: 20px;
+      }
     }
 
     li {
