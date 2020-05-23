@@ -7,13 +7,13 @@ tags:
   - angular
 ---
 
-Pipes are a feature built in to the Angular framework to process the way that data is displayed to the end-user. A prime example is using a data pipe to transform a raw date in to the format that you desire, or turning a number in to a currency.
+Pipes are a feature built in to the Angular framework to process the way that data is displayed to the end-user. A prime example is using a date pipe to transform a raw date in to the format that you desire, or turning a number in to a currency.
 
 Using pipes allows us to separate concerns for the presentation of our application, and avoid repetition across our component files.
 
 ## Using pipes
 
-In our component file, we fetch the current date and store it in a variable.
+In our component file, lets create a variable and assign the current date to it.
 
 ##### current-date-viewer.component.ts
 
@@ -23,7 +23,7 @@ export class CurrentDateViewerComponent {
 }
 ```
 
-In the template for our component, we display this date using the built-in Angular pipe.
+In the template for our component, we can display this date by using the built-in Angular pipe.
 
 ##### current-date-viewer.component.html
 
@@ -55,6 +55,8 @@ The value used for the parameter can be a string literal or a property of the co
 
 Pipes can also be chained, meaning that we can apply multiple pipes to the same data. The pipes will be processed from left to right.
 
+##### current-date-viewer.component.html
+
 {% raw %}
 
 ```html
@@ -69,6 +71,8 @@ In our example above, the `currentDate` will first be formatted in to a standard
 
 We all know what you're here for - you want to create your own pipe. Well, your wait is finally over, so let's get stuck in. We'll build a simple pipe to add file extensions to a string.
 
+> If you're using the Angular CLI, you can go ahead and run `ng generate pipe extension-builder`. If you're not, you'll have to create the pipe yourself and manually add it to your modules `declarations`.
+
 ##### extension-builder.pipe.ts
 
 ```ts
@@ -82,7 +86,9 @@ export class ExtensionBuilder implements PipeTransform {
 }
 ```
 
-- First we name our pipe by passing in an object with a name property to the decorator arguments.
+There's a lot going on here, so let's break it down.
+
+- First we name our pipe by passing in an object with a name property to the decorator arguments - the value we use here is what we will use to access the pipe in our template.
 - We then create the class and implement `PipeTransform`, which dictates the use of the `transform` method.
 - The `value` parameter of the `transform` method will take the value that is passed to the left of the pipe (`|`) operator.
 - The second argument of the `transform` method is an optional parameter, which is used if our pipe has a parameter attached to it.
@@ -97,7 +103,7 @@ export class FileViewerComponent {
 }
 ```
 
-And then use this variable within our template:
+We can then pipe this variable within our template, adding our desired file extension within the parameters.
 
 ##### file-viewer.component.html
 
@@ -117,7 +123,7 @@ fileName.jpeg
 
 ### Multiple parameters
 
-Our pipe can accept multiple parameters. To add multiple parameters in the template, we separate them using a colon (`:`).
+We can build our pipe to accept multiple parameters. To add multiple parameters in the template, we separate them using a colon (`:`).
 
 ##### file-fiewer.component.html
 
@@ -129,7 +135,7 @@ Our pipe can accept multiple parameters. To add multiple parameters in the templ
 
 {% endraw %}
 
-In the logic for the pipe, we can accept multiple parameters by adding them manually:
+In the logic for the pipe, we can accept multiple parameters by adding each one to the arguments of our `transform` method.
 
 ##### extension-builder.pipe.ts
 
@@ -139,7 +145,7 @@ public transform(value: string, extension: string, increment: number): string {
 }
 ```
 
-Or for an unknown amount, we can use the rest operator:
+Or for an unknown amount of parameters, we can use the rest operator:
 
 ##### extension-builder.pipe.ts
 
@@ -149,7 +155,9 @@ public transform(value: string, ...args: Array<string>): string {
 }
 ```
 
-And utilise it in the template with a pipe such as this.
+> The rest operator will take the rest of the arguments for our method and convert them in to an array.
+
+And then utilise that in our template by adding extra parameters to our pipe.
 
 ##### file-fiewer.component.html
 
@@ -184,7 +192,7 @@ By doing this, we can extract repetitive logic from our components and keep the 
 
 ## The async pipe
 
-So good that it deserved its own section.
+A pipe that's so good it deserved its own section.
 
 The async pipe is another built-in pipe that Angular provides. By using an async pipe, you can pass promises and observable streams straight in to the template, and the pipe will await the resolved promise or listen for events on the observable.
 
@@ -202,7 +210,7 @@ We can utilise the async pipe in the following way:
   `,
   styleUrls: ['./profile.component.css']
 })
-export class AppComponent {
+export class ProfileComponent {
   public myPromise: Promise<string>;
 
   constructor(private readonly _asyncService: AsyncService) {}
@@ -214,6 +222,8 @@ export class AppComponent {
 ```
 
 {% endraw %}
+
+We assign the promise received from our service to a variable without awaiting it. By passing it directly in to our `async` pipe it will be automatically awaited, meaning that when the promise resolves the value will be displayed as HTML.
 
 This is great for us, as it removes the clutter from our component where would usually be awaiting our promises, and leaves all of that logic down to the `async` pipe.
 
