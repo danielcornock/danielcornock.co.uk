@@ -17,6 +17,9 @@ html {
   --color-viewMore-text: #{$color-light-button-text};
   --color-viewMore-bg--hover: #d5d5d5;
   --color-header-shadow: #{$color-light-grey};
+  --color-tooltip-icon-background: #fcfcff;
+  --color-tooltip-icon-border: #{rgba($color-highlight, 0.5)};
+  --color-tooltip-icon-text: #{$color-highlight};
 }
 
 html.dark-mode {
@@ -38,4 +41,7 @@ html.dark-mode {
   --color-viewMore-text: white;
   --color-viewMore-bg--hover: #{$color-darkest-blue};
   --color-header-shadow: #{$color-darkest-blue};
+  --color-tooltip-icon-background: #112;
+  --color-tooltip-icon-border: #{$color-highlight};
+  --color-tooltip-icon-text: #{$color-highlight};
 }

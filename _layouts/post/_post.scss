@@ -257,14 +257,35 @@ $post-header-margin-bottom: 10px;
     }
 
     blockquote {
-      border: 2px solid rgba($color-highlight, 0.5);
+      border: 2px solid $color-tooltip-icon-border;
       background-color: $color-highlight-container-bg;
       padding: 15px $post-default-spacing;
       border-radius: $br-default;
-      margin: $post-default-spacing 0;
+      margin: $post-large-spacing 0 $post-default-spacing;
+      position: relative;
 
       p {
         margin-bottom: 0;
+      }
+
+      &::after {
+        position: absolute;
+        content: '!';
+        height: 35px;
+        width: 35px;
+        font-size: 20px;
+        border-color: $color-highlight;
+        border: 2px solid $color-tooltip-icon-border;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        color: $color-tooltip-icon-text;
+        background-color: $color-tooltip-icon-background;
+        font-weight: 800;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $br-max;
       }
     }
 
