@@ -95,9 +95,11 @@ $post-header-margin-bottom: 10px;
 
     h3 {
       font-size: 22px;
+      margin-top: 50px;
 
       @include media($tablet) {
         font-size: 18px;
+        margin-top: $post-header-margin-top;
       }
     }
 
