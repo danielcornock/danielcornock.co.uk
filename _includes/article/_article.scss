@@ -106,7 +106,7 @@
 
       @include media($tablet) {
         margin: 0;
-        padding: 25px 10px;
+        padding: 20px 10px;
       }
     }
 
@@ -114,6 +114,10 @@
       display: block;
       color: $color-grey-text;
       font-size: 14px;
+
+      @include media($phone) {
+        margin-top: 2px;
+      }
     }
   }
 }
