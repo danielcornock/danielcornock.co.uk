@@ -28,7 +28,7 @@
       crossorigin="anonymous"
     />
     <title>
-      Daniel Cornock {% if page.title %}| {{ page.title }} {% endif %}
+      {% if page.title %} {{ page.title }} |{% endif %} Daniel Cornock
     </title>
     <script src="{{ 'assets/scripts/theme-switcher.js' | absolute_url }}"></script>
   </head>
