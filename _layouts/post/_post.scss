@@ -206,7 +206,7 @@ $post-header-margin-bottom: 10px;
     }
 
     code.language-console {
-      font-family: 'Arial' !important;
+      font-family: $system-font !important;
       font-size: 16px !important;
     }
 
@@ -273,7 +273,7 @@ $post-header-margin-bottom: 10px;
         content: 'i';
         height: 30px;
         width: 30px;
-        font-size: 20px;
+        font-size: 16px;
         border-color: $color-highlight;
         border: 2px solid $color-tooltip-icon-border;
         top: 0;

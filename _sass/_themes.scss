@@ -20,6 +20,8 @@ html {
   --color-tooltip-icon-background: #fcfcff;
   --color-tooltip-icon-border: #{rgba($color-highlight, 0.5)};
   --color-tooltip-icon-text: #{$color-highlight};
+  --color-tag-bg: #{$color-highlight-light};
+  --color-tag-text: #{$color-highlight};
 }
 
 html.dark-mode {
@@ -44,4 +46,6 @@ html.dark-mode {
   --color-tooltip-icon-background: #112;
   --color-tooltip-icon-border: #{$color-highlight};
   --color-tooltip-icon-text: #{$color-highlight};
+  --color-tag-bg: #223;
+  --color-tag-text: #fff;
 }

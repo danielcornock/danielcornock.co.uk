@@ -10,6 +10,7 @@ $color-secondary: #d1d1e9;
 $color-tertiary: #e45858;
 $color-darkest-blue: #223;
 $color-dark-blue: #445;
+$color-grey-text: #848991;
 
 $color-tertiary-light: lighten($color-tertiary, 35%);
 $color-highlight-light: lighten($color-highlight, 35%);
@@ -35,3 +36,5 @@ $color-header-shadow: var(--color-header-shadow);
 $color-tooltip-icon-background: var(--color-tooltip-icon-background);
 $color-tooltip-icon-border: var(--color-tooltip-icon-border);
 $color-tooltip-icon-text: var(--color-tooltip-icon-text);
+$color-tag-bg: var(--color-tag-bg);
+$color-tag-text: var(--color-tag-text);

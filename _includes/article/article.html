@@ -8,5 +8,13 @@
   {% else %}
   <div class="article-image">{{ article.emoji }}</div>
   {% endif %}
-  <h3 class="article-title">{{ article.title }}</h3>
+  <div class="article-content">
+    <h3 class="article-title">{{ article.title }}</h3>
+    <span class="article-date">{{ article.date | date: "%d %B %Y" }}</span>
+  </div>
+  <div class="article-tags">
+    {% for tag in article.tags %}
+    <span class="article-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
 </a>
