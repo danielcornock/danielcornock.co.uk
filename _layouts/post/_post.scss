@@ -89,7 +89,7 @@ $post-header-margin-bottom: 10px;
 
       @include media($tablet) {
         margin-top: $post-header-margin-top;
-        font-size: 22px;
+        font-size: 24px;
       }
     }
 
@@ -152,7 +152,7 @@ $post-header-margin-bottom: 10px;
 
     ul {
       list-style-position: outside;
-      margin: 10px 0 $post-large-spacing 40px;
+      margin: -10px 0 $post-large-spacing 40px;
 
       @include media($phone) {
         margin-left: 20px;
@@ -270,9 +270,9 @@ $post-header-margin-bottom: 10px;
 
       &::after {
         position: absolute;
-        content: '!';
-        height: 35px;
-        width: 35px;
+        content: 'i';
+        height: 30px;
+        width: 30px;
         font-size: 20px;
         border-color: $color-highlight;
         border: 2px solid $color-tooltip-icon-border;
@@ -286,6 +286,10 @@ $post-header-margin-bottom: 10px;
         justify-content: center;
         align-items: center;
         border-radius: $br-max;
+
+        @include media($phone) {
+          display: none;
+        }
       }
     }
 

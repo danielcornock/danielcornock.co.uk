@@ -13,33 +13,40 @@ Using pipes allows us to separate concerns for the presentation of our applicati
 
 ## Using pipes
 
-In our component file, lets create a variable and assign the current date to it.
+Let's take a look at a conventional use of the built-in Angular date pipe.
 
-##### current-date-viewer.component.ts
+{% raw %}
 
 ```ts
+@Component({
+  selector: 'app-current-date-viewer',
+  template: `
+    <p>{{ currentDate | date }}</p>
+  `,
+  styleUrls: ['./current-date-viewer.component.scss']
+})
 export class CurrentDateViewerComponent {
   public currentDate: Date = new Date(Date.now());
 }
 ```
 
-In the template for our component, we can display this date by using the built-in Angular pipe.
-
-##### current-date-viewer.component.html
-
-{% raw %}
-
-```html
-<p>{{ currentDate | date }}</p>
-```
-
 {% endraw %}
+
+In the above code snippet, we are:
+
+- Assigning the current date to a variable, `currentDate`.
+- Passing that value in to the template with double curly braces.
+- Piping the value of that variable with the `date` pipe.
+
+If we serve this component, we should see the current date displayed in a processed format.
+
+```console
+May 24, 2020
+```
 
 ### Adding parameters to a pipe
 
-If we want to customise the actions taken by the pipe, we can pass in parameters.
-
-##### current-date-viewer.component.html
+If we want to customise the actions taken by the pipe, we can pass in parameters. Inside the template of our component, we can add the parameters as an argument to the pipe by doing the following:
 
 {% raw %}
 
@@ -49,13 +56,11 @@ If we want to customise the actions taken by the pipe, we can pass in parameters
 
 {% endraw %}
 
-The value used for the parameter can be a string literal or a property of the component, which allows for dynamic parameters.
+The value used for the parameter can be a string literal or a property of the component, which allows for dynamic parameters to be passed in.
 
 ### Chaining pipes
 
 Pipes can also be chained, meaning that we can apply multiple pipes to the same data. The pipes will be processed from left to right.
-
-##### current-date-viewer.component.html
 
 {% raw %}
 
@@ -66,6 +71,10 @@ Pipes can also be chained, meaning that we can apply multiple pipes to the same 
 {% endraw %}
 
 In our example above, the `currentDate` will first be formatted in to a standard date, and then will be converted to uppercase.
+
+```console
+MAY 24, 2020
+```
 
 ## Creating our own pipe
 
@@ -93,32 +102,37 @@ There's a lot going on here, so let's break it down.
 - The `value` parameter of the `transform` method will take the value that is passed to the left of the pipe (`|`) operator.
 - The second argument of the `transform` method is an optional parameter, which is used if our pipe has a parameter attached to it.
 
-Let's give our pipe some action. First, a simple component file.
+Let's put our pipe to the test. In a component file, let's initialise a variable that holds a file name.
 
 ##### file-viewer.component.ts
 
 ```ts
+@Component({
+  selector: 'app-file-viewer',
+  template: './file-viewer.component.html',
+  styleUrls: ['./file-viewer.component.scss']
+})
 export class FileViewerComponent {
-  public fileName: string = 'filename';
+  public fileName: string = 'my-component';
 }
 ```
 
-We can then pipe this variable within our template, adding our desired file extension within the parameters.
+We can then pipe this variable within the template of our component, by using the curly braces and adding our desired file extension within the parameters of the pipe.
 
 ##### file-viewer.component.html
 
 {% raw %}
 
 ```html
-<p>{{ fileName | extensionBuilder: 'jpeg' }}</p>
+<p>{{ fileName | extensionBuilder: 'ts' }}</p>
 ```
 
 {% endraw %}
 
-When we serve the application, we should now see our concatenated filename in the browser
+When we serve the application, we should now see our concatenated filename in the browser!
 
 ```console
-fileName.jpeg
+my-component.ts
 ```
 
 ### Multiple parameters
@@ -130,22 +144,22 @@ We can build our pipe to accept multiple parameters. To add multiple parameters 
 {% raw %}
 
 ```html
-<p>{{ fileName | extensionBuilder: 'jpeg':'1' }}</p>
+<p>{{ fileName | extensionBuilder: 'service':'ts' }}</p>
 ```
 
 {% endraw %}
 
-In the logic for the pipe, we can accept multiple parameters by adding each one to the arguments of our `transform` method.
+In the logic for the pipe, we can accept multiple parameters by adding each one to the arguments of our `transform` method, which will follow the order that the arguments are added in the template. In our case, `type` and `language` will both be using the parameters.
 
 ##### extension-builder.pipe.ts
 
 ```ts
-public transform(value: string, extension: string, increment: number): string {
-  return `${value}-${increment}.${extension}`;
+public transform(value: string, type: string, language: number): string {
+  return `${value}.${type}.${language}`;
 }
 ```
 
-Or for an unknown amount of parameters, we can use the rest operator:
+Or for an unknown amount of parameters, we can use the rest operator to take all arguments and convert them in to an array to be used within the pipe.
 
 ##### extension-builder.pipe.ts
 
@@ -154,20 +168,6 @@ public transform(value: string, ...args: Array<string>): string {
   return `${value}.${args.join('.')}`;
 }
 ```
-
-> The rest operator will take the rest of the arguments for our method and convert them in to an array.
-
-And then utilise that in our template by adding extra parameters to our pipe.
-
-##### file-fiewer.component.html
-
-{% raw %}
-
-```html
-<p>{{ fileName | extensionBuilder: 'component':'spec':'ts' }}</p>
-```
-
-{% endraw %}
 
 ### Creating a more complex pipe
 
