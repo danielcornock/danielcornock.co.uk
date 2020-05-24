@@ -39,6 +39,10 @@ main {
   @include container-element;
   color: $color-body;
   padding-bottom: $section-default-spacing;
+
+  @include media($phone) {
+    padding-bottom: 30px;
+  }
 }
 
 h3 {

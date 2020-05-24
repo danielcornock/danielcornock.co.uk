@@ -3,5 +3,6 @@
     Recent Articles
     <a href="/articles" class="homeArticles-viewMore">View more</a>
   </h2>
-  {% for article in site.posts %} {% include article/article.html %} {% endfor %}
+  {% for article in site.posts | limit: 7 %} {% include article/article.html %}
+  {% endfor %}
 </div>
