@@ -1,5 +1,65 @@
 .articles {
   &-heading {
     @include section-heading;
+    margin-bottom: 0;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+  }
+
+  &-search {
+    padding: 8px 10px;
+    padding: 10px 15px;
+
+    font-size: 16px;
+    border-radius: $br-default 0 0 $br-default;
+    border: 0;
+    background-color: $color-viewMore-bg;
+    outline: none;
+    font-family: 'Montserrat';
+    color: $color-heading;
+
+    &:focus {
+      box-shadow: inset 0 0 2px 2px $color-highlight;
+    }
+  }
+
+  &-searchInputContainer {
+    position: relative;
+  }
+
+  &-searchContainer {
+    display: flex;
+  }
+
+  &-resetButton {
+    border: none;
+    font-size: 22px;
+    color: #ccc;
+    background: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:hover {
+      color: $color-heading;
+    }
+  }
+
+  &-searchButton {
+    background-color: $color-highlight;
+    color: $color-highlight-text;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 0 $br-default $br-default 0;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
   }
 }

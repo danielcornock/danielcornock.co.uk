@@ -4,9 +4,26 @@ layout: default
 
 <div class="articles-container">
   <div class="articles-section">
-    <h2 class="articles-heading">Articles</h2>
+    <header class="articles-header">
+      <h2 class="articles-heading">Articles</h2>
+      <div class="articles-searchContainer is-experimental">
+        <div class="articles-searchInputContainer">
+          <input
+            class="articles-search"
+            type="text"
+            id="articleSearchInput"
+            placeholder="Search articles"
+          />
+          <button class="articles-resetButton" id="clearButton"><i class="far fa-times-circle"></i></button>
+        </div>
+        <button class="articles-searchButton" id="articleSearchButton">Search</button>
+      </header>
+      </div>
     <div class="articles-list">
-      {% for article in site.posts %} {% include article/article.html %} {% endfor %}
+      {% for article in site.posts %} {% include article/article.html %} {%
+      endfor %}
     </div>
   </div>
 </div>
+
+<script src="{{ 'assets/scripts/site-search.js' | absolute_url }}"></script>
