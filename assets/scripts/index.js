@@ -161,6 +161,35 @@ class ExperimentalSwitch {
   }
 }
 
+class SharePost {
+  static create() {
+    return new SharePost();
+  }
+
+  constructor() {
+    this.listenForShare();
+  }
+
+  listenForShare() {
+    const shareButton = document.querySelector('#shareButton');
+    const pageUrl = document.querySelector('.postHeader-pageUrl').innerHTML;
+
+    if (!shareButton) {
+      return;
+    }
+
+    shareButton.addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          url: pageUrl
+        });
+      } else {
+        window.open(`http://twitter.com/intent/tweet?url=${pageUrl}`);
+      }
+    });
+  }
+}
+
 class App {
   static create() {
     return new App();
@@ -172,6 +201,7 @@ class App {
     CodeSnippets.create();
     ContentsTable.create();
     ExperimentalSwitch.create();
+    SharePost.create();
   }
 }
 

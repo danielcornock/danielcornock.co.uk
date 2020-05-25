@@ -60,6 +60,11 @@
     text-decoration: none;
     color: $color-body;
     display: inline-block;
+    font-size: 16px;
+    border: 0;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    font-weight: 500;
     margin: -5px;
     padding: 5px;
     border-radius: $br-default;
@@ -98,5 +103,10 @@
       font-size: 50px;
       width: auto;
     }
+  }
+
+  &-siteUrl,
+  &-pageUrl {
+    display: none;
   }
 }

@@ -9,17 +9,12 @@
       />
       <time class="postHeader-time">{{ page.date | date: "%d %B %Y" }}</time>
       <span class="postHeader-metaDivider"> | </span>
-      <a
-        class="postHeader-shareButton"
-        href="http://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}"
-        title="Tweet"
-        target="_blank"
-      >
+      <button class="postHeader-shareButton" id="shareButton">
         <span class="postHeader-shareButtonIcon">
           <i class="fas fa-share-alt"></i>
         </span>
         Share
-      </a>
+      </button>
     </div>
     <div class="postHeader-tags">
       {% for tag in page.tags %}
@@ -40,3 +35,5 @@
   <span class="postHeader-emoji">{{ page.emoji }}</span>
   {% endif %}
 </div>
+
+<span class="postHeader-pageUrl">{{ site.url }}{{ page.url }}</span>
