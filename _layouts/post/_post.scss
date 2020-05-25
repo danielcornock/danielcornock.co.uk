@@ -60,7 +60,9 @@ $post-header-margin-bottom: 10px;
   }
 
   &-content {
+    @include article-code-styling;
     position: relative;
+
     img {
       width: 100%;
       margin-bottom: 5px;
@@ -112,28 +114,6 @@ $post-header-margin-bottom: 10px;
       }
     }
 
-    h5 {
-      background-color: $color-code-file-label;
-      padding: 10px $post-code-spacing;
-      border-radius: $br-default $br-default 0 0;
-      color: $color-highlight-text;
-      margin-top: $post-default-spacing;
-      position: relative;
-      font-weight: 600;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 1px;
-        width: calc(100% - 2px);
-        background-color: $color-border-code-file-label;
-        z-index: 10;
-      }
-    }
-
     p {
       font-weight: 400;
       color: $color-body;
@@ -165,97 +145,6 @@ $post-header-margin-bottom: 10px;
       font-size: $post-font-size;
       margin-bottom: 10px;
       line-height: 1.9;
-    }
-
-    .codeLabel {
-      // Used for auto generated javascript element
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background-color: $color-code-language-label-bg;
-      color: white;
-      padding: 5px 8px;
-      border-radius: $br-default;
-      font-weight: 500;
-      font-size: 14px;
-      opacity: 0;
-
-      transition: 250ms;
-
-      @include media($tablet) {
-        top: 10px;
-        right: 10px;
-      }
-    }
-
-    .highlighter-rouge {
-      position: relative;
-      background-color: $color-code-bg;
-      border-radius: $br-default;
-      border: 1px solid $color-code-border;
-      overflow: hidden;
-
-      &:hover {
-        .codeLabel {
-          opacity: 0.8;
-        }
-      }
-    }
-
-    h5 + .highlighter-rouge {
-      border-radius: 0 0 $br-default $br-default;
-      border: 1px solid $color-code-file-label;
-    }
-
-    code.language-console {
-      font-family: $system-font !important;
-      font-size: 16px !important;
-    }
-
-    .highlight {
-      > .highlight {
-        background-color: $color-code-bg !important; //change
-
-        overflow-x: auto;
-        padding: $post-code-spacing;
-
-        &.language-console {
-          padding-bottom: 60px;
-        }
-      }
-
-      .token.operator,
-      .token.entity,
-      .token.url,
-      .language-css .token.string,
-      .style .token.string {
-        background: transparent;
-      }
-    }
-
-    div.highlighter-rouge {
-      margin-bottom: $post-default-spacing;
-    }
-
-    code.highlighter-rouge {
-      padding: 3px 5px;
-    }
-
-    .highlight {
-      font-size: 12px !important;
-
-      @include media($tablet) {
-        font-size: 10px;
-      }
-
-      .highlight {
-        padding: $post-code-spacing;
-        margin: 0;
-
-        @include media($tablet) {
-          padding: 15px;
-        }
-      }
     }
 
     blockquote {
@@ -293,40 +182,6 @@ $post-header-margin-bottom: 10px;
           display: none;
         }
       }
-    }
-
-    div.language-bash,
-    div.language-console {
-      padding-top: 30px;
-      position: relative;
-      &::before {
-        top: 0;
-        position: absolute;
-        content: '\2022 \2022 \2022';
-        font-size: 70px;
-        line-height: 0;
-        padding: 9px 0 21px 14px;
-        width: 100%;
-        height: 13px;
-        background-color: $color-console-header-bg;
-        color: #cccccc;
-
-        @include media($phone) {
-          padding: 9px 0 21px 10px;
-        }
-      }
-    }
-
-    div.language-console::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 15px;
-      transform: translate(-50%, -50%);
-      height: 15px;
-      width: 40%;
-      border-radius: 5px;
-      background-color: #cccccc;
     }
   }
 }
