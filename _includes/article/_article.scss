@@ -76,14 +76,13 @@
   }
 }
 
-.articles-list {
+@mixin article-detailed {
   $article: '.article';
 
   #{$article} {
     &-tags {
       display: flex;
       margin-left: auto;
-      margin-top: 5px;
 
       @include media($tablet) {
         display: none;
@@ -114,10 +113,7 @@
       display: block;
       color: $color-grey-text;
       font-size: 14px;
-
-      @include media($phone) {
-        margin-top: 2px;
-      }
+      margin-top: 2px;
     }
   }
 }

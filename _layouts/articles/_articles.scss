@@ -62,4 +62,8 @@
     font-weight: 500;
     cursor: pointer;
   }
+
+  &-list {
+    @include article-detailed;
+  }
 }
