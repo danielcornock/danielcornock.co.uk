@@ -10,7 +10,7 @@
   &-container {
     display: flex;
     align-items: center;
-    padding: 100px 0 160px;
+    padding: 60px 0 120px;
 
     @include media($tablet) {
       flex-direction: column;
