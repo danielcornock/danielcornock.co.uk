@@ -32,12 +32,12 @@
     position: fixed;
     z-index: 1000;
     width: 100%;
-    background-color: $color-background;
-    transition-property: box-shadow;
+    transition-property: box-shadow, background-color;
     transition-duration: 400ms;
 
     &--mini {
       box-shadow: 2px 2px 8px $color-header-shadow;
+      background-color: $color-background;
     }
   }
 
