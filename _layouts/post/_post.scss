@@ -3,7 +3,8 @@ $post-large-spacing: 30px;
 $post-font-size: 16px;
 $post-header-margin-top: 40px;
 $post-code-spacing: 20px;
-$post-header-margin-bottom: 10px;
+$post-header-margin-bottom: 15px;
+$post-header-margin-bottom--mobile: 10px;
 
 .post {
   &-headerList {
@@ -66,6 +67,8 @@ $post-header-margin-bottom: 10px;
     img {
       width: 100%;
       margin-bottom: 5px;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: $br-default;
     }
 
     figure {
@@ -83,6 +86,10 @@ $post-header-margin-bottom: 10px;
       margin-top: $post-header-margin-top;
       margin-bottom: $post-header-margin-bottom;
       color: $color-subheading;
+
+      @include media($phone) {
+        margin-bottom: $post-header-margin-bottom--mobile;
+      }
     }
 
     h2 {
@@ -120,6 +127,10 @@ $post-header-margin-bottom: 10px;
       line-height: 1.9;
       font-size: $post-font-size;
       margin-bottom: $post-default-spacing;
+
+      & + ul {
+        margin-top: -10px;
+      }
     }
 
     a {
@@ -134,7 +145,7 @@ $post-header-margin-bottom: 10px;
 
     ul {
       list-style-position: outside;
-      margin: -10px 0 $post-large-spacing 40px;
+      margin: $post-default-spacing 0 $post-large-spacing 40px;
 
       @include media($phone) {
         margin-left: 20px;
