@@ -69,10 +69,7 @@
     border-radius: $br-default;
     text-transform: uppercase;
     font-size: 10px;
-
-    & + & {
-      margin-left: 5px;
-    }
+    margin: 2px;
   }
 }
 
@@ -83,6 +80,7 @@
     &-tags {
       display: flex;
       margin-left: auto;
+      justify-content: flex-end;
 
       @include media($tablet) {
         display: none;
