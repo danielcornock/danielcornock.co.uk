@@ -41,12 +41,11 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 15px;
-    // background-color: $color-light-grey;
+    right: 0;
+    padding: 15px;
     background-color: initial;
     font-size: 14px;
     color: $color-highlight-text;
-    // padding: 8px 12px;
     font-size: 14px;
     display: flex;
     align-items: center;
