@@ -1,5 +1,5 @@
 ---
-title: 'Bootstrapping a TypeScript server: Configuring our linter'
+title: 'Bootstrapping a TypeScript project: Configuring our linter'
 description: >-
   How to set up a clean express server with linting, testing and a build pipeline using TravisCI.
 image: 'article-icons/eslint.png'
@@ -12,7 +12,7 @@ tags:
 
 Linting is a tool used to ensure that we make less syntax errors and enforces consistency and syntax rules within our codebase. Linters usually come with an range of pre-selected options, but we are able to add to and remove from the rules as we wish.
 
-For this tutorial, I'll be showing you how to install `ESLint` as `TSLint` is now deprecated even for TypeScript projects, however if you would rather use `TSLint` then you can swap out this section of the tutorial for your own configuration, and skip ahead to [the next section](bootstrap-typescript-3-testing).
+For this tutorial, I'll be showing you how to install `ESLint`. If you would rather use `TSLint` for your own project, then you can swap out this section of the tutorial for your own configuration, and skip ahead to [the next section](bootstrap-typescript-3-testing).
 
 ## Installation
 
@@ -58,7 +58,7 @@ Below are the contents of my `eslintrc.json` file:
 }
 ```
 
-I have removed the default extends, and just kept the typescript options there, to prevent double-errors. I have also added my own rules in the `rules` object, but these can be adjusted to your own taste. Primarily, I have turned off the `no-unused-vars` eslint rule because the typescript compiler already has functionality for that.
+I have removed the default extends, and just kept the typescript options there to prevent double-errors. I have also added my own rules in the `rules` object, but these can be adjusted to your own taste. Primarily, I have turned off the `no-unused-vars` eslint rule because the typescript compiler already has functionality for that.
 
 ## Adding it to our scripts
 
@@ -106,4 +106,4 @@ Or, if you're happy to let calls to `console.log` pass linting and make their wa
 
 ## Conclusion
 
-Thanks for reading this article - if you're following along, you can read the next article on [how to add testing to your project](bootstrap-typescript-3-testing). Have a great day!
+We've now configured linting in our project, which will keep our code styling consistent and point out potential errors. If you're following along, you can read the next article on [how to add testing to your project](bootstrap-typescript-3-testing).

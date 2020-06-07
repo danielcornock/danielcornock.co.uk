@@ -1,5 +1,5 @@
 ---
-title: 'Bootstrapping a TypeScript server: Initialising the project'
+title: 'Bootstrapping a TypeScript project: Getting set up'
 description: >-
   How to set up a clean express server with linting, testing and a build pipeline using TravisCI.
 image: 'article-icons/ts.svg'
@@ -7,13 +7,14 @@ tags:
   - typescript
 ---
 
-In this article series, we're going to walk through setting up a NodeJS express server that uses TypeScript, ESLint, Jest and TravisCI. By doing this, we can ensure that we have type safety, linting to keep our code tidy, tested code and a pipeline to ensure that all of the above pass before our code is committed into our chosen repo.
+In this article series, we're going to walk through setting up a small TypeScript project that utilises ESLint, Jest and TravisCI. By doing this, we can ensure that we have type safety, linting to keep our code tidy, tested code and a pipeline to ensure that all of the above pass before our code is committed into our chosen repo.
+
+The actual features of the code will be very minimal, which will allow you to go ahead and create your projects in the way that you want them, with all of the safety checks from this series pre-configured and ready to go.
 
 > The operating system that will be used for this tutorial is MacOS. Most of the steps should be transferable to windows, but some command line operations may differ.
 
 ### Prerequisites
 
-- Working knowledge of NodeJs.
 - Git installed on your machine.
 - Working knowledge of git.
 - NodeJS and NPM installed globally on your machine.
@@ -115,9 +116,7 @@ To run our built code, go ahead and run:
 node dist/server.js
 ```
 
-And you should see our friendly message displayed in the terminal window.
-
-The problem is, this would get a bit tedious to do every time we made a change. Let's automate it a bit.
+And you should see our friendly message displayed in the terminal window. The problem is, this would get a bit tedious to do every time we made a change. Let's automate it a bit.
 
 ### Automating the build
 
@@ -126,10 +125,10 @@ To automate our build, we're going to have to install a couple of dependencies, 
 First up, run the following within your project:
 
 ```bash
-npm i -D typescript ts-watch
+npm i -D typescript tsc-watch
 ```
 
-This will install TypeScript **locally**, so that our `package.json` is able to run scripts that perform TypeScript operations. It will also install `ts-watch` which is a package that we will use to watch for changes in our files.
+This will install TypeScript **locally**, so that our `package.json` is able to run scripts that perform TypeScript operations. It will also install `tsc-watch` which is a package that we will use to watch for changes in our files.
 
 To use these, we can add the following entries to the `scripts` object within our `package.json` file:
 
@@ -160,34 +159,8 @@ Hello world!
 
 If we go ahead and change something in our server file, our code will be re-compiled and re-served with the new code in effect!
 
-Now would be a good time to commit your code, before we move on to the next section.
-
-## Creating our server
-
-This is the bit I'm sure your familiar with - creating an express server. For this part, you're going to need to install `express` locally within your project.
-
-```bash
-npm i express && npm i -D @types/express
-```
-
-This will install `express` as well as the types for express, which we install as a `devDependency` because it doesn't need to be in the compiled code.
-
-In our `server.ts` it's about time we got rid of that 'hello world'. Replace our previous console log with the following code:
-
-##### server.ts
-
-```ts
-import express. { Application } from 'express';
-
-const app: Application = express();
-
-app.listen(2400, () => {
-  console.log('[!] Server started on port 2400');
-});
-```
-
-If you've created express servers before, this will be all too familiar to you. The main difference is that with TypeScript, we're using ES6 imports, and we assign a type to our express application - this is one of the many things that we got from the type definitions file for express.
+As we now have a working project, now would be a good time to commit your code before we move on to the next section.
 
 ## Conclusion
 
-If you want to carry on reading, head to [the next article](bootstrap-typescript-2-linting), which is all about adding linting to our project. Thanks for reading!
+Our TypeScript project is now set up ready for development, and will re-build every time we want to make changes. If you want to carry on reading, head to [the next article](bootstrap-typescript-2-linting), which is all about adding linting to our project. Thanks for reading!

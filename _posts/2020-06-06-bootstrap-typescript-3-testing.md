@@ -1,5 +1,5 @@
 ---
-title: 'Bootstrapping a TypeScript server: Setting up our testing environment'
+title: 'Bootstrapping a TypeScript project: Setting up our testing environment'
 description: >-
   How to set up a clean express server with linting, testing and a build pipeline using TravisCI.
 image: 'article-icons/jest.png'
@@ -11,9 +11,9 @@ tags:
 
 > This article is a part of a series on how to set up a CI/CD TypeScript server from scratch. Some of the examples here might not make sense if you haven't read the previous articles, so if you want to follow along with the whole thing, head to the [first article](bootstrap-typescript-1-ts-initialisation)!
 
-Unit testing is a technique that is used across most serious projects. The idea of unit testing is to test everything in isolation, in order to give developers more confidence that their code works as expected. When paired with typescript, it dramatically reduces the amount of bugs and errors caused by a developers work.
+Unit testing is a technique that is used across most large-scale projects. The idea of unit testing is to test everything in isolation, in order to give developers more confidence that their code works as expected. When paired with TypeScript, it dramatically reduces the amount of bugs and errors caused by a developers work.
 
-In this article, we'll be setting up Jest, a popular javascript testing framework, to be used within our TypeScript project.
+In this article, we'll be setting up Jest, a popular JavaScript testing framework, to be used within our TypeScript project.
 
 ## Installation
 
@@ -23,7 +23,7 @@ First, we're going to install it. In the command line, run:
 npm i -D jest @types/jest ts-jest
 ```
 
-This will install `jest` itself, the `type` definitions for jest, and `ts-jest` which will allow us to test our typescript code on the fly without having to compile it to javascript.
+This will install `jest` itself, the `type` definitions for jest, and `ts-jest` which will allow us to test our typescript code on the fly without having to compile it to JavaScript first.
 
 ## Configuration
 
@@ -107,7 +107,7 @@ It's best practise to add a script to our `package.json` file, so let's do that.
 },
 ```
 
-By putting it in our package file, it means that it runs jest from the **projects'** node modules, and not from the version of jest that we have installed globally. This means that anyone using our project will be able to pull this repo, install the dependencies and not have to worry about what's installed on their machine.
+By putting it in our package file, it means that it runs jest from the node modules of our project, and not from the version of jest that we have installed globally. This means that anyone working on our project will be able to pull this repo, install the dependencies and not have to worry about what's installed on their machine.
 
 To run our tests, just type `npm test` in to the command line, and if all goes well you'll be presented with a lovely green success message.
 
