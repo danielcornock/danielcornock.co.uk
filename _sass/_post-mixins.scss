@@ -170,10 +170,6 @@
       width: 100%;
       background-color: $color-console-header-bg;
       color: #cccccc;
-
-      @include media($phone) {
-        padding: 9px 0 21px 10px;
-      }
     }
   }
 
