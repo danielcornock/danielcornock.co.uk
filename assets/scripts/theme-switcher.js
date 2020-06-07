@@ -1,27 +1,24 @@
-class PreThemeSwitcher {
+class ThemeSwitcher {
   static create() {
-    return new PreThemeSwitcher();
+    return new ThemeSwitcher(preThemeSwitcher);
   }
 
-  constructor() {
+  constructor(preThemeSwitcher) {
     this.button = document.querySelector('#themeSwitch');
-    this.setTheme();
+    this.preThemeSwitcher = preThemeSwitcher;
+    this.listenToThemeSwitch();
   }
 
-  setTheme() {
-    const currentTheme = localStorage.getItem('theme');
-    const html = document.querySelector('html');
+  listenToThemeSwitch() {
+    this.button.addEventListener('click', () => {
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'dark') {
+        localStorage.setItem('theme', 'light');
+      } else {
+        localStorage.setItem('theme', 'dark');
+      }
 
-    if (currentTheme === 'dark') {
-      html.classList.add('dark-mode');
-      html.classList.remove('light-mode');
-      this.button ? (this.button.innerText = '☀️') : null;
-    } else {
-      html.classList.add('light-mode');
-      html.classList.remove('dark-mode');
-      this.button ? (this.button.innerText = '🌙') : null;
-    }
+      this.preThemeSwitcher.setTheme();
+    });
   }
 }
-
-PreThemeSwitcher.create();
