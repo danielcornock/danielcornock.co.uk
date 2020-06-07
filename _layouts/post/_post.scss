@@ -160,6 +160,10 @@ $post-header-margin-bottom--mobile: 10px;
       line-height: 1.9;
     }
 
+    figure {
+      margin: 30px 0;
+    }
+
     blockquote {
       border: 2px solid $color-tooltip-icon-border;
       background-color: $color-highlight-container-bg;
