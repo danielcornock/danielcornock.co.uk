@@ -14,6 +14,8 @@ include: ['_pages']
 # Build settings
 markdown: kramdown
 
+highlighter: none
+
 collections:
   projects:
     output: true

@@ -1,7 +1,7 @@
 @mixin article-code-styling {
   h5 {
-    /** 
-     ** Used for displaying the filename of code snippets. 
+    /**
+     ** Used for displaying the filename of code snippets.
      **/
     background-color: $color-code-file-label;
     padding: 10px $post-code-spacing;
@@ -10,8 +10,11 @@
     margin-top: $post-default-spacing;
     position: relative;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 
-    + .highlighter-rouge {
+    + pre[class*='language-'] {
       border-radius: 0 0 $br-default $br-default;
       border: 1px solid $color-code-file-label;
     }
@@ -32,13 +35,52 @@
     }
   }
 
+  .copyButton {
+    cursor: pointer;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    // background-color: $color-light-grey;
+    background-color: initial;
+    font-size: 14px;
+    color: $color-highlight-text;
+    // padding: 8px 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: $br-default;
+    font-weight: 500;
+    opacity: 0.5;
+    transition: 250ms;
+    font-family: 'Montserrat';
+    text-shadow: initial !important;
+
+    &-icon {
+      font-size: 18px;
+      display: block;
+      margin-left: 10px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      opacity: 1;
+    }
+
+    @include media($tablet) {
+    }
+  }
+
   .codeLabel {
     /**
      ** Display the language of the code displayed in code block.
      **/
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     background-color: $color-code-language-label-bg;
     color: white;
     padding: 5px 8px;
@@ -47,6 +89,8 @@
     font-size: 14px;
     opacity: 0;
     transition: 250ms;
+    font-family: 'Montserrat';
+    text-shadow: initial !important;
 
     @include media($tablet) {
       top: 10px;
@@ -54,69 +98,38 @@
     }
   }
 
-  .highlighter-rouge {
-    /**
-     ** Styles used for both file snippets and no-file snippets
-    **/
+  code:not([class*='language-']) {
+    padding: 3px 5px;
     position: relative;
     background-color: $color-code-bg;
     border-radius: $br-default;
     border: 1px solid $color-code-border;
     overflow: hidden; // Used to stop child element from cutting through curved border.
+  }
+
+  pre[class*='language-'] {
+    //* Code for outer block
+    position: relative;
+    background-color: $color-code-bg !important; //change
+    padding: $post-code-spacing !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    margin-bottom: $post-default-spacing !important;
+    border-radius: $br-default;
+    border: 1px solid $color-code-border;
+
+    @include media($tablet) {
+      padding: 15px;
+    }
+
+    .token {
+      background: transparent;
+    }
 
     &:hover {
       .codeLabel {
         opacity: 0.8;
       }
-    }
-  }
-
-  code {
-    /**
-     ** Inner block of code styling
-     */
-
-    &.language-console {
-      /**
-       ** Styling for the 'browser view' snippet
-      **/
-      font-family: $system-font !important;
-      font-size: 16px !important;
-    }
-
-    &.highlighter-rouge {
-      /**
-       ** Styling for the inline code snippet.
-       */
-      padding: 3px 5px;
-    }
-  }
-
-  .highlight {
-    /**
-     ** Resetting the background color of some code elements.
-     */
-
-    .token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string {
-      background: transparent;
-    }
-  }
-
-  pre.highlight {
-    /**
-     ** Middle element for displaying code.
-     */
-    background-color: $color-code-bg !important; //change
-    padding: $post-code-spacing !important;
-    margin: 0 !important;
-    font-size: 12px !important;
-
-    @include media($tablet) {
-      padding: 15px;
     }
 
     &.language-console {
@@ -127,31 +140,35 @@
     }
   }
 
-  div.highlighter-rouge {
-    /**
-     ** Outer code element
-     */
-
-    margin-bottom: $post-default-spacing;
+  code {
+    &[class*='language-'] {
+      &.language-console {
+        /**
+          ** Styling for the 'browser view' snippet
+         **/
+        font-family: $system-font !important;
+        font-size: 16px !important;
+      }
+    }
   }
 
-  div.language-bash,
-  div.language-console {
+  pre.language-bash,
+  pre.language-console {
     /**
      ** Browser/console view - showing 3 mac buttons top left
      */
 
-    padding-top: 30px;
+    padding-top: 30px + 20px !important;
     position: relative;
     &::before {
+      left: 0;
       top: 0;
       position: absolute;
+      letter-spacing: 8px;
       content: '\2022 \2022 \2022';
-      font-size: 70px;
-      line-height: 0;
-      padding: 9px 0 21px 14px;
+      font-size: 20px;
+      padding: 0 20px;
       width: 100%;
-      height: 13px;
       background-color: $color-console-header-bg;
       color: #cccccc;
 
@@ -161,7 +178,7 @@
     }
   }
 
-  div.language-console::after {
+  pre.language-console::after {
     /**
      ** Simulating search bar for browser view
      **/
