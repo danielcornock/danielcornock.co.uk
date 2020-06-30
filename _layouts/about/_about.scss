@@ -32,6 +32,11 @@
     }
   }
 
+  &-linksContainer {
+    margin-top: 20px;
+    display: flex;
+  }
+
   &-content {
     margin-top: 25px;
 
@@ -50,5 +55,26 @@
         display: none;
       }
     }
+  }
+
+  &-socialButton {
+    @include social-button-default;
+    padding: 10px 12px;
+
+    &--linkedin {
+      @include social-button-bg-color(#0e76a1);
+    }
+
+    &--cv {
+      @include social-button-bg-color($color-tertiary);
+    }
+  }
+
+  &-socialIcon {
+    @include social-icon-default;
+  }
+
+  &-socialName {
+    font-size: 14px;
   }
 }
