@@ -1,7 +1,9 @@
 <figure>
-  <img
-    src="{{ site.image_dir | append: include.url | absolute_url }}"
-    alt="{{ include.description }}"
-  />
+  <a href="{{ site.image_dir | append: include.url | absolute_url }}">
+    <img
+      src="{{ site.image_dir | append: include.url | absolute_url }}"
+      alt="{{ include.description }}"
+    />
+  </a>
   <figcaption>{{ include.description }}</figcaption>
 </figure>
