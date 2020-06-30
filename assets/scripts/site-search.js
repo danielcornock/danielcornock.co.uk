@@ -23,11 +23,7 @@ class SiteSearch {
     const searchButton = document.querySelector('#articleSearchButton');
 
     searchButton.addEventListener('click', this.search.bind(this));
-    this.searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        this.search();
-      }
-    });
+    this.searchInput.addEventListener('keyup', this.search.bind(this));
   }
 
   listenToClear() {
@@ -45,12 +41,17 @@ class SiteSearch {
     const articlesList = document.querySelector('.articles-list');
 
     this.allArticles.forEach((article) => {
-      const headerText = article.querySelector('h3').innerHTML;
-      if (headerText.toLowerCase().includes(query)) {
+      const headerText = article.querySelector('h3').innerHTML.toLowerCase();
+      const meta = article
+        .querySelector('.article-meta')
+        .innerHTML.toLowerCase();
+      if (headerText.includes(query) || meta.includes(query)) {
         matches.push(article);
       }
     });
     articlesList.innerHTML = '';
+    console.log(matches);
+
     matches.forEach((match) => {
       articlesList.appendChild(match);
     });

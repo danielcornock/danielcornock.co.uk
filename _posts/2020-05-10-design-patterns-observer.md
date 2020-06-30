@@ -5,6 +5,7 @@ description: >-
 image: 'article-icons/rxjs.png'
 tags:
   - design patterns
+meta: 'rxjs observable observer design pattern'
 ---
 
 The observer pattern is a behavioural design pattern that enables you to define a subscription mechanism to notify objects on any events that occur on the object they are observing.

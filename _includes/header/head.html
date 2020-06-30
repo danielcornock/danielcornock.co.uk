@@ -4,11 +4,14 @@
 <meta name="description" content="{{ page.description }}" />
 {% else %}
 <meta name="description" content="{{ site.description }}" />
-{% endif %}
+{% endif %} {% if page.meta %}
+<meta name="keywords" content="{{ page.meta }}" />
+{% else %}
 <meta
   name="keywords"
   content="Software Programming Development Javascript Web"
 />
+{% endif %}
 <meta name="author" content="Daniel Cornock" />
 <link rel="stylesheet" href="{{ "assets/styles/index.css" | absolute_url }}" />
 <meta name="theme-color" content="#6246ea" />

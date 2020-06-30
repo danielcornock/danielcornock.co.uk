@@ -71,6 +71,10 @@
     font-size: 10px;
     margin: 2px;
   }
+
+  &-meta {
+    display: none;
+  }
 }
 
 @mixin article-detailed {
