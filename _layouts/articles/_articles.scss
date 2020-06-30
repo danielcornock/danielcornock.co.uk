@@ -32,4 +32,14 @@
   &-list {
     @include article-detailed;
   }
+
+  &-noArticles {
+    display: none;
+    font-weight: 500;
+    font-size: 18px;
+
+    &.show {
+      display: block;
+    }
+  }
 }
