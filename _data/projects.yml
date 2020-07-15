@@ -1,3 +1,5 @@
+# Projects
+
 - name: Personal Site
   description: The site you're on now! A revamped portfolio for 2020.
   type: project
@@ -10,6 +12,36 @@
   type: project
   emoji: 📝
   github: https://github.com/danielcornock/nutodo-ui
+
+- name: Property Right
+  description: A full stack app to manage your properties, tenants and payments.
+  type: project
+  writeup: projects/property-right
+  emoji: 🏡
+  github: https://github.com/danielcornock/propertyright-ui
+  demo: https://property-right-ui.herokuapp.com/
+
+- name: Kanbo
+  description: A full stack trello-inspired kanban board with added features that fit my own work flow.
+  type: project
+  writeup: projects/kanbo
+  emoji: 📊
+  github: https://github.com/danielcornock/kanbo-ui
+  demo: https://ng-kanban.herokuapp.com/
+
+- name: Legacy Portfolio
+  description: My first shot at a portfolio & blog before this redesign.
+  type: project
+  emoji: 👨‍💻
+  demo: https://www.danielcornock-legacy.netlify.app
+  github: https://github.com/danielcornock/danielcornock.co.uk
+
+# Tools/Libraries/Frameworks
+
+- name: SpruceJS
+  description: A WIP, non-opinionated framework build on top of express to speed up development of Node APIs.
+  type: package
+  emoji: 🌲
 
 - name: ng-forms
   description: A WIP forms framework for use with modern Angular applications.
@@ -31,21 +63,7 @@
   github: https://github.com/danielcornock/express-utils
   demo: https://www.npmjs.com/package/@danielc7150/express-utils
 
-- name: Property Right
-  description: A full stack app to manage your properties, tenants and payments.
-  type: project
-  writeup: projects/property-right
-  emoji: 🏡
-  github: https://github.com/danielcornock/propertyright-ui
-  demo: https://property-right-ui.herokuapp.com/
-
-- name: Kanbo
-  description: A full stack trello-inspired kanban board with added features that fit my own work flow.
-  type: project
-  writeup: projects/kanbo
-  emoji: 📊
-  github: https://github.com/danielcornock/kanbo-ui
-  demo: https://ng-kanban.herokuapp.com/
+# Client projects
 
 - name: Mark Nartey
   description: An academic portfolio for a client.
@@ -53,13 +71,6 @@
   emoji: 🎓
   demo: https://www.marknartey.com
   github: https://github.com/danielcornock/marknartey.com
-
-- name: Legacy Portfolio
-  description: My first shot at a portfolio & blog before this redesign.
-  type: project
-  emoji: 👨‍💻
-  demo: https://www.danielcornock-legacy.netlify.app
-  github: https://github.com/danielcornock/danielcornock.co.uk
 
 - name: Greg Woodin
   description: An academic portfolio built for a friend.
@@ -73,4 +84,11 @@
   type: client
   emoji: 👷‍♂️
   demo: https://www.ionicbuilds.co.uk
+  hidden: true
+
+- name: efitnessntherapy
+  description: Brochure site for a freelance sports therapist. Desktop only due to a cut in funding.
+  type: client
+  emoji: 🤾‍♀️
+  demo: https://efitnessntherapy.netlify.app
   hidden: true

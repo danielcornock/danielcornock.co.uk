@@ -8,9 +8,11 @@
 }
 
 @mixin header-emoji {
+  width: 24px;
   font-size: 24px;
 
   @include media($tablet) {
+    width: 20px;
     font-size: 20px;
   }
 }
