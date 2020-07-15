@@ -1,17 +1,29 @@
 .articles {
   &-heading {
     @include section-heading;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+
+    @include media($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &-header {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media($tablet) {
+      display: block;
+      margin-bottom: 20px;
+    }
   }
 
   &-search {
     padding: 10px 15px;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     font-size: 16px;
     border-radius: $br-default $br-default;
     border: 0;
@@ -24,8 +36,9 @@
       border-color: $color-highlight;
     }
 
-    @include media($phone) {
+    @include media($tablet) {
       width: 100%;
+      max-width: initial;
     }
   }
 
