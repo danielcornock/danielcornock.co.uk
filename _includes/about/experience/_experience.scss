@@ -32,6 +32,7 @@
   &-institution {
     display: block;
     margin-bottom: 5px;
+    font-size: 16px;
     color: $color-tertiary;
 
     @include media($phone) {
@@ -42,6 +43,8 @@
   &-icon {
     font-size: 36px !important;
     margin-right: 30px;
+    position: relative;
+    top: -10px;
 
     @include media($phone) {
       margin-right: 20px;

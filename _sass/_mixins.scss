@@ -85,6 +85,16 @@
   font-size: 14px;
 }
 
+@mixin default-link {
+  color: $color-tertiary;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 $tablet: 768px;
 $phone: 460px;
 $sm-phone: 380px;

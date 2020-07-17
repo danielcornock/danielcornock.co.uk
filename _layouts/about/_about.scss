@@ -4,7 +4,7 @@
       font-weight: 400;
       color: $color-body;
       line-height: 1.9;
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 20px;
 
       &:last-of-type {
@@ -45,7 +45,7 @@
     }
 
     img {
-      height: 230px;
+      height: 250px;
       border-radius: $br-default;
       float: right;
       margin: 10px 30px 10px 30px;
@@ -54,6 +54,10 @@
       @include media($phone) {
         display: none;
       }
+    }
+
+    a {
+      @include default-link;
     }
   }
 
