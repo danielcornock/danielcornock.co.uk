@@ -22,6 +22,9 @@ html {
   --color-tooltip-icon-text: #{$color-highlight};
   --color-tag-bg: #{$color-highlight-light};
   --color-tag-text: #{$color-highlight};
+  --color-search-background: #{$color-white};
+  --color-search-border: #{$color-light-grey};
+  --color-search-placeholder: #{$color-grey-text};
 }
 
 html.dark-mode {
@@ -48,4 +51,6 @@ html.dark-mode {
   --color-tooltip-icon-text: #{$color-highlight};
   --color-tag-bg: #223;
   --color-tag-text: #fff;
+  --color-search-background: #{$color-dark-blue};
+  --color-search-border: #{$color-darker};
 }

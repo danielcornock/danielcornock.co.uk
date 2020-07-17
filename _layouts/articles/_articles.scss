@@ -21,19 +21,23 @@
   }
 
   &-search {
+    background-color: $color-search-background;
     padding: 10px 15px;
     width: 100%;
     max-width: 400px;
     font-size: 16px;
     border-radius: $br-default $br-default;
-    border: 0;
     outline: none;
-    border: 2px solid $color-light-grey;
+    border: 2px solid $color-search-border;
     font-family: 'Montserrat';
     color: $color-heading;
 
     &:focus {
       border-color: $color-highlight;
+    }
+
+    &::placeholder {
+      color: $color-search-placeholder;
     }
 
     @include media($tablet) {
