@@ -10,6 +10,8 @@ tags:
   - RxJS
 ---
 
+> This article is a part of a series on unit testing in Angular. Some of the examples here might not make sense if you haven't read the previous articles, so if you want to follow along with the whole thing, head to the [first article](angular-testing-1-getting-started)!
+
 RxJS is baked into Angular. At some point in your time spent developing Angular applications, you're bound to come across it. When it comes to testing it, it can feel a little alien and intimidating at first, but hopefully after this guide you'll be left feeling much more confident.
 
 ## Internal observables
@@ -49,7 +51,10 @@ And then in our template we utilise the `async` pipe to subscribe to our subject
 ##### product-list.component.html
 
 ```html
-<app-product *ngFor="let product of productsSubject | async" [product]="product"></app-product>
+<app-product
+  *ngFor="let product of productsSubject | async"
+  [product]="product"
+></app-product>
 ```
 
 > The async pipe will automatically subscribe to a subject or observable that is passed in to it, as well as unsubscribing on component destruction.
@@ -108,7 +113,10 @@ Now, to best test the functionality of our method, we should test how it works _
 
 ```ts
 it('should display the products', () => {
-  expect(getProducts()[0].componentInstance.product).toEqual({ name: 'product', number: '1' });
+  expect(getProducts()[0].componentInstance.product).toEqual({
+    name: 'product',
+    number: '1'
+  });
 });
 
 // Start of our new test

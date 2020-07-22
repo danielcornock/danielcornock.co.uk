@@ -9,6 +9,8 @@ tags:
   - testing
 ---
 
+> This article is a part of a series on unit testing in Angular. Some of the examples here might not make sense if you haven't read the previous articles, so if you want to follow along with the whole thing, head to the [first article](angular-testing-1-getting-started)!
+
 Often when creating Angular applications, we will be dealing with some sort of asynchronous data, whether that be from a modal closing, one of your own asynchronous methods or awaiting a response from an external API. Luckily for us, Angular provides some great utilities for dealing with this. However, there are a few small utilities that we can use to make testing asynchronous code even easier. Without further ado, let's get started.
 
 ## The test promise class
@@ -70,7 +72,9 @@ describe('on initialisation', () => {
 
   beforeEach(() => {
     getProductsPromise = new TestPromise();
-    (dependencies.productService.getAllAsync as jasmine.Spy).and.returnValue(getProductsPromise.promise);
+    (dependencies.productService.getAllAsync as jasmine.Spy).and.returnValue(
+      getProductsPromise.promise
+    );
     fixture.detectChanges();
   });
 
@@ -103,7 +107,10 @@ describe('when the products have been fetched', () => {
   }));
 
   it('should display the products', () => {
-    expect(getProducts()[0].componentInstance.product).toEqual({ name: 'product', number: '1' });
+    expect(getProducts()[0].componentInstance.product).toEqual({
+      name: 'product',
+      number: '1'
+    });
   });
 });
 ```

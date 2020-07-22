@@ -9,6 +9,8 @@ tags:
   - testing
 ---
 
+> This article is a part of a series on unit testing in Angular. Some of the examples here might not make sense if you haven't read the previous articles, so if you want to follow along with the whole thing, head to the [first article](angular-testing-1-getting-started)!
+
 Like services, child components need stubs too. This reduces the load of the testing module, prevents calls to any external APIs to services from within that child component, and just tests the things that we want to test.
 
 Here is the class for our child component:
@@ -59,7 +61,9 @@ To use our stubbed component in place of the real thing, we need to add it to th
 ```typescript
 TestBed.configureTestingModule({
   declarations: [ProductListComponent, ProductComponentStub],
-  providers: [{ provide: ProductService, useValue: dependencies.productService }]
+  providers: [
+    { provide: ProductService, useValue: dependencies.productService }
+  ]
 });
 ```
 
@@ -76,7 +80,9 @@ beforeEach(() => {
   fixture = TestBed.createComponent(ProductListComponent);
   component = fixture.componentInstance;
 
-  (dependencies.productService.getAll as jasmine.Spy).and.returnValue([{ name: 'product', number: '1' }]);
+  (dependencies.productService.getAll as jasmine.Spy).and.returnValue([
+    { name: 'product', number: '1' }
+  ]);
 });
 ```
 
@@ -128,7 +134,10 @@ Now, just after our first test, we can add another test to check that each produ
 
 ```typescript
 it('should display the products', () => {
-  expect(getProducts()[0].componentInstance.product).toEqual({ product: 'product', number: '1' });
+  expect(getProducts()[0].componentInstance.product).toEqual({
+    product: 'product',
+    number: '1'
+  });
 });
 ```
 
@@ -206,7 +215,9 @@ Just like before, we can now test that the appropriate method has been called. W
 
 ```typescript
 it('should delete the product', () => {
-  expect(dependencies.productService.deleteProduct).toHaveBeenCalledWith('product');
+  expect(dependencies.productService.deleteProduct).toHaveBeenCalledWith(
+    'product'
+  );
 });
 ```
 

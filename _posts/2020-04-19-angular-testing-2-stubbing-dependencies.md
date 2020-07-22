@@ -9,6 +9,8 @@ tags:
   - testing
 ---
 
+> This article is a part of a series on unit testing in Angular. Some of the examples here might not make sense if you haven't read the previous articles, so if you want to follow along with the whole thing, head to the [first article](angular-testing-1-getting-started)!
+
 When working with big applications, it can be beneficial to create a stub for every service you create. Stubbing a service means that we don’t have to spy on any methods in our test file, as they are all already initialised as spies for us. Creating a stub doesn’t take long, and it saves you repeating code in future test files if your service is used in multiple places.
 
 Let’s take a look at our service:
@@ -64,7 +66,9 @@ describe('ProductListComponent', () => {
     };
     TestBed.configureTestingModule({
       declarations: [ProductListComponent],
-      providers: [{ provide: ProductService, useValue: dependencies.productService }]
+      providers: [
+        { provide: ProductService, useValue: dependencies.productService }
+      ]
     }).compileComponents();
   }));
 });
@@ -89,7 +93,9 @@ Finally, we need to tell the Angular testing module to use our stub instead of t
 ```ts
 TestBed.configureTestingModule({
   declarations: [ProductListComponent],
-  providers: [{ provide: ProductService, useValue: dependencies.productService }]
+  providers: [
+    { provide: ProductService, useValue: dependencies.productService }
+  ]
 });
 ```
 
