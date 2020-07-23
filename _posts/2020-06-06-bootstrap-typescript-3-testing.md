@@ -32,20 +32,18 @@ We then need to add a file in to the root of our project (the level up from the 
 ##### jest.config.json
 
 ```json
-"moduleFileExtensions": ["json", "ts", "js"],
-"rootDir": "src",
-"modulePaths": ["<rootDir>"],
-"testRegex": ".spec.ts$",
-"transform": {
-  "^.+\\.(t|j)s$": "ts-jest"
-},
-"coveragePathIgnorePatterns": [
-  "factories",
-  ".stub.ts",
-  ".constant.ts"
-],
-"coverageDirectory": "./coverage",
-"testEnvironment": "node"
+{
+  "moduleFileExtensions": ["json", "ts", "js"],
+  "rootDir": "src",
+  "modulePaths": ["<rootDir>"],
+  "testRegex": ".spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "coveragePathIgnorePatterns": ["factories", ".stub.ts", ".constant.ts"],
+  "coverageDirectory": "./coverage",
+  "testEnvironment": "node"
+}
 ```
 
 Most of this is pretty standard stuff that will allow us to run jest straight out of the box to test our typescript files.
