@@ -4,11 +4,11 @@ class PreThemeSwitcher {
   }
 
   constructor() {
-    this.button = document.querySelector('#themeSwitch');
     this.setTheme();
   }
 
   setTheme() {
+    this.button = document.querySelector('#themeSwitch');
     const currentTheme = localStorage.getItem('theme');
     const html = document.querySelector('html');
 
