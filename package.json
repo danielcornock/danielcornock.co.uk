@@ -1,0 +1,24 @@
+{
+  "name": "danielcornock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-post": "node assets/cli/create-post.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielcornock/portfolio-v2.git"
+  },
+  "author": "Daniel Cornock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielcornock/portfolio-v2/issues"
+  },
+  "homepage": "https://github.com/danielcornock/portfolio-v2#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.19"
+  }
+}
