@@ -1,5 +1,5 @@
 ---
-title: 'Unit testing in Angular: Mocking observables'
+title: 'Unit testing in Angular: Mocking RxJS observables'
 description: >-
   How to write unit tests for our service that utilises RxJS observables.
 image: 'article-icons/angular.png'
