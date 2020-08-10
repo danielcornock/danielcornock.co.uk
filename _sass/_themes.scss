@@ -20,8 +20,8 @@ html {
   --color-tooltip-icon-background: #fcfcff;
   --color-tooltip-icon-border: #{rgba($color-highlight, 0.5)};
   --color-tooltip-icon-text: #{$color-highlight};
-  --color-tag-bg: #{$color-highlight-light};
-  --color-tag-text: #{$color-highlight};
+  --color-tag-bg: #{$color-tertiary-light};
+  --color-tag-text: #{$color-tertiary};
   --color-search-background: #{$color-white};
   --color-search-border: #{$color-light-grey};
   --color-search-placeholder: #{$color-grey-text};
