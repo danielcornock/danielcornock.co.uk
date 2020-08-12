@@ -35,6 +35,7 @@
   emoji: 👨‍💻
   demo: https://www.danielcornock-legacy.netlify.app
   github: https://github.com/danielcornock/danielcornock.co.uk
+  hidden: true
 
 # Tools/Libraries/Frameworks
 
@@ -42,12 +43,14 @@
   description: A WIP, non-opinionated framework build on top of express to speed up development of Node APIs.
   type: package
   emoji: 🌲
+  github: https://github.com/sprucejs
 
 - name: ng-forms
   description: A WIP forms framework for use with modern Angular applications.
   type: package
   emoji: ✏️
   demo: https://www.npmjs.com/package/@danielc7150/ng-forms
+  hidden: true
 
 - name: ng-api
   description: A WIP Angular framework for communicating with and processing external API data.
@@ -62,6 +65,7 @@
   emoji: 🔧
   github: https://github.com/danielcornock/express-utils
   demo: https://www.npmjs.com/package/@danielc7150/express-utils
+  hidden: true
 
 # Client projects
 
@@ -87,7 +91,7 @@
   hidden: true
 
 - name: efitnessntherapy
-  description: Brochure site for a freelance sports therapist. Desktop only due to a cut in funding.
+  description: Brochure site for a freelance sports therapist. Available on desktop only due to a cut in funding.
   type: client
   emoji: 🤾‍♀️
   demo: https://efitnessntherapy.netlify.app

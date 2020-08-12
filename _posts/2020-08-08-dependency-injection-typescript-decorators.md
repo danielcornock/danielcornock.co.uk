@@ -264,4 +264,4 @@ In the code snippet above, we have:
 
 We've now finished building our dependency injection service. I told you it was going to be small! You can now test it out similarly to how we did it in the [snippet](#how-our-di-service-is-going-to-work) from earlier on in the article.
 
-Dependency injection does go much deeper than this, such as injecting directly in to the constructor and using symbols instead of tokens (similar to how Angular does it). However, I hope this has given you a small insight on how DI works behind the scenes and you can feel happy knowing that there's now one more (seemingly) magical part about software engineering that you're not completely unaware of. Happy coding!
+Dependency injection does go much deeper than this, such as injecting directly in to the constructor and using symbols instead of tokens (similar to how Angular does it). However, I hope this has given you a small insight on how DI works behind the scenes and you can feel happy knowing that there's now one more (seemingly) magical part about software engineering that you're no longer in the dark about. Happy coding!

@@ -1,6 +1,11 @@
 @mixin header-text-config {
   font-size: 18px;
   font-weight: 500;
+  color: $color-body;
+
+  &:hover {
+    color: $color-highlight;
+  }
 
   @include media($phone) {
     font-size: 16px;
@@ -98,12 +103,7 @@
     display: inline-block;
     margin-left: 50px;
     text-decoration: none;
-    color: $color-body;
     @include header-text-config;
-
-    &:hover {
-      color: $color-highlight;
-    }
 
     @include media($tablet) {
       margin-left: 0;
