@@ -6,6 +6,8 @@ image: article-icons/ts.svg
 tags:
   - typescript
   - decorators
+  - DI
+meta: 'dependency injection typescript ts decorators javascript js di container'
 ---
 
 Dependency injection is a well known software development technique that is based off of one of the SOLID principles - inversion of control. It allows us to abstract the creation of classes to be separate from their implementation, which make it easier for us to make changes on classes that depend on those implementations in the future.
@@ -56,11 +58,10 @@ export class TestService {
 
 @Injectable('consumer')
 export class Consumer {
-  @Inject('testService')
-  private readonly _testService;
+  @Inject('testService') private testService;
 
   constructor() {
-    this._testService.log('Hey!');
+    this.testService.log('Hey!');
   }
 }
 
@@ -83,11 +84,11 @@ For any dependency injection service, there is always some form of centralised c
 import { find } from 'lodash';
 
 export class Container {
-  public providers: { [key: string]: any } = {};
+  private _providers: { [key: string]: any } = {};
 
   public resolve(token: string) {
     const matchedProvider = find(
-      this.providers,
+      this._providers,
       (_provider, key) => key === token
     );
 
@@ -166,9 +167,98 @@ In this function, the `target` parameter is the class containing our property, a
 We use `Object.defineProperty` here in order to set our injected class. For the `get` field, we call our previously defined `resolve` method on our container with the `token` argument provided in the `@Inject` decorator. We use this decorator inside a class like so:
 
 ```ts
-@Inject('myInjectable')
-private myInjectable;
+@Inject('myInjectable') private myInjectable;
 ```
+
+## Making it unit testable
+
+Now, if you're not interested in unit testing, you're free to end your journey here. However, one of the main benefits of dependency injection is that it makes testing our classes much more straight forward, allowing us to pass in custom mock classes instead of the real implementation. Lets dig in to how we can do this.
+
+In our container, let's add another method called `provide`.
+
+##### container.ts
+
+```ts
+export interface IContainerProvider {
+  useValue: any;
+  token: string;
+}
+
+export class Container {
+  // Rest of the class
+
+  public provide(details: IContainerProvider): void {
+    this.providers[details.token] = details.useValue;
+  }
+}
+```
+
+With this method, we can manually override the value that is stored for a specific token. This helps us a lot in testing, as we can provide custom values for our injected classes instead of using the real thing. This way, we can focus on testing our component in isolation.
+
+Let's throw together some sample classes and test them.
+
+##### consumer.ts
+
+```ts
+@Injectable('timeService')
+export class TimeService {
+  public getCurrentDate(): Date {
+    return new Date(Date.now());
+  }
+}
+
+@Injectable('consumer')
+export class Consumer {
+  @Inject('timeService') private timeService: TimeService;
+
+  public currentDate: string;
+
+  constructor() {
+    this.currentDate = this.timeService.getCurrentDate();
+  }
+}
+```
+
+If you're an avid unit tester, you'll probably notice what the problem would be here. Because our injected service gets the current date, the value that it returns will always be changing - hence not consistently unit testable. We need to provide a mock object in order to prevent our service from returning different results for the unit tests every time.
+
+In the test file for our `Consumer` class (I am using Jest here, but the concepts will remain the same), we can now override the value of our injected class by using the `provide` method that we just added to our container.
+
+##### consumer.spec.ts
+
+```ts
+import { container } from './container';
+
+describe('Consumer', () => {
+  let consumer: Consumer, timeServiceMock: TimeService;
+
+  beforeEach(() => {
+    timeServiceMock = { getCurrentDate: jest.fn() };
+    (timeServiceMock.getCurrentDate as jest.Mock).mockReturnValue('12/08/2020');
+
+    container.provide({
+      token: 'timeService',
+      useValue: timeServiceMock
+    });
+
+    consumer = new Consumer();
+  });
+
+  it('should fetch the date', () => {
+    expect(timeServiceMock.getCurrentDate).toHaveBeenCalledWith();
+  });
+
+  it('should set the date', () => {
+    expect(consumer.currentDate).toBe('12/08/2020');
+  });
+});
+```
+
+In the code snippet above, we have:
+
+- Created a mock object `timeServiceMock` to use in place of the real `TimeService`.
+- Mocked the return value of the `getCurrentDate` method in order to return a static string.
+- Used the `provide` method that we just added to our container in order to assign our mock to the token that our class will use to inject the `TimeService`.
+- Checked that both the `getCurrentDate` service was called, and that the value it returned was correctly assigned to the `currentDate` property in our `Consumer` instance.
 
 ## Testing it out
 
