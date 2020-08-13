@@ -10,7 +10,7 @@ tags:
 meta: 'dependency injection typescript ts decorators javascript js di container'
 ---
 
-Dependency injection is a well known software development technique that is based off of one of the SOLID principles - inversion of control. It allows us to abstract the creation of classes to be separate from their implementation, which make it easier for us to make changes on classes that depend on those implementations in the future.
+Dependency injection is a well known software development technique that is based off of one of the SOLID principles - dependency inversion. It allows us to abstract the creation of classes to be separate from their implementation, which make it easier for us to make changes on classes that depend on those implementations in the future.
 
 In this article, we will be building an extremely small and lightweight dependency injection service using the experimental decorators that TypeScript provides. You may have seen these about before, such as with Angular's `@Component`, `@Injectable` and `@Pipe` decorators. These decorators allow us to wrap existing implementations and alter their contents or provide extra functionality without having to change the code of the items itself.
 
