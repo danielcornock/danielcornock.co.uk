@@ -8,7 +8,7 @@
   hidden: true
 
 - name: NuTodo
-  description: A full stack todo app written the way that I like to organise my todos.
+  description: A full stack todo app written with a purpose of organising todos in a more manageable medium.
   type: project
   emoji: 📝
   github: https://github.com/danielcornock/nutodo-ui

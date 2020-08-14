@@ -3,7 +3,7 @@
   time: Aug 2020 - Present
   icon: 👾
   type: work
-  description: Leading a project to manage user transactions using Angular, NodeJS, Express and MongoDB.
+  description: Leading a project to manage user transactions using Angular, NodeJS, Express and MongoDB. Introduced CI pipelines, linting and unit testing to the team which helped maintain a high quality for the code entering the repository.
 
 - institution: MHR
   position: Junior Web Application Developer
