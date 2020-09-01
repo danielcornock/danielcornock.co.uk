@@ -4,8 +4,8 @@
     <a href="/projects" class="homeProjects-viewMore">View more</a>
   </h2>
 
-  <div class="homeProjects-list">
-    {% for project in site.data.projects %} {% unless project.hidden %} {% include project/project.html %} {% endunless
-    %}{% endfor %}
-  </div>
+  <ul class="homeProjects-list">
+    {% for project in site.data.projects %} {% unless project.hidden %} {%
+    include project/project.html %} {% endunless %}{% endfor %}
+  </ul>
 </div>
