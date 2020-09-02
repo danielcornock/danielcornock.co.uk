@@ -11,6 +11,7 @@ class CopyCode {
 
   createNewElement() {
     const copyButton = document.createElement('button');
+    copyButton.setAttribute('aria-label', 'Copy this code snippet');
     copyButton.classList.add('copyButton');
     copyButton.innerHTML = `<i class="copyButton-icon far fa-copy"></i>`;
     copyButton.addEventListener('click', this.copyCurrentText(copyButton));
