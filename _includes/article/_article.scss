@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 25px 10px;
+    padding: 25px 15px;
     min-height: 70px;
 
     & + & {
@@ -20,7 +20,12 @@
     }
 
     @include media($phone) {
-      padding: 15px 10px;
+      padding: 15px 0px;
+
+      &:hover {
+        background-color: initial;
+        border-radius: initial;
+      }
     }
   }
 
@@ -32,7 +37,7 @@
     @include media($phone) {
       width: 22px;
       font-size: 22px;
-      transform: scale(1.1);
+      // transform: scale(1.1);
     }
   }
 

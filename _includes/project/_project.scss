@@ -18,7 +18,7 @@
   &-container {
     display: flex;
     justify-content: space-between;
-    padding: 25px 10px;
+    padding: 25px 15px;
     align-items: center;
 
     & + & {
@@ -26,7 +26,8 @@
     }
 
     @include media(680px) {
-      padding: 15px 10px;
+      flex-wrap: wrap;
+      padding: 15px 0px;
     }
   }
 
@@ -48,14 +49,20 @@
     font-weight: 500;
 
     @include media(680px) {
-      display: none;
+      order: 10;
+      flex-basis: 100%;
+      margin-top: 10px;
+    }
+
+    @include media($phone) {
+      font-size: 14px;
     }
   }
 
   &-projectRepo {
     @include small-button($color-dark-button);
     @include mobile-only-icon-switch;
-    margin-left: 10px;
+    margin-left: 20px;
 
     @include media(680px) {
       margin-left: auto;
