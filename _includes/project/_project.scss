@@ -27,7 +27,7 @@
 
     @include media(680px) {
       flex-wrap: wrap;
-      padding: 15px 0px;
+      padding: 20px 0px;
     }
   }
 
@@ -56,6 +56,7 @@
 
     @include media($phone) {
       font-weight: 400;
+      font-size: 14px;
     }
 
     &--home {
