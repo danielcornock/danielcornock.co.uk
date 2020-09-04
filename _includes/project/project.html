@@ -5,18 +5,37 @@
       {{ project.name }}
     </h3>
   </div>
+  {% if page.title == 'Projects' %}
   <p class="project-projectDescription">
-    {{ project.description }} {% if project.writeup and page.title == 'Projects' %}
-    <a class="project-viewWriteup" href="{{ project.writeup | absolute_url }}">View writeup</a>
+    {{ project.description }} {% if project.writeup %}
+    <a class="project-viewWriteup" href="{{ project.writeup | absolute_url }}"
+      >View writeup</a
+    >
     {% endif %}
   </p>
-  {% if project.github %}
-  <a href="{{ project.github }}" class="project-projectRepo" rel="noreferrer" rel="noopener" target="_blank">
+  {% else %}
+  <p class="project-projectDescription project-projectDescription--home">
+    {{ project.description }}
+  </p>
+  {% endif %} {% if project.github %}
+  <a
+    href="{{ project.github }}"
+    class="project-projectRepo"
+    rel="noreferrer"
+    rel="noopener"
+    target="_blank"
+  >
     <span class="no-mobile">Github</span>
     <span class="mobile-only"><i class="fab fa-github"></i></span>
   </a>
   {% endif %} {% if project.demo %}
-  <a href="{{ project.demo }}" class="project-projectDemo" rel="noreferrer" rel="noopener" target="_blank">
+  <a
+    href="{{ project.demo }}"
+    class="project-projectDemo"
+    rel="noreferrer"
+    rel="noopener"
+    target="_blank"
+  >
     <span class="no-mobile">Demo</span>
     <span class="mobile-only"><i class="fas fa-desktop"></i></span>
   </a>

@@ -55,7 +55,13 @@
     }
 
     @include media($phone) {
-      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &--home {
+      @include media(680px) {
+        display: none;
+      }
     }
   }
 
