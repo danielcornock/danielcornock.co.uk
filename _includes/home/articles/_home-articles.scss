@@ -1,4 +1,8 @@
 .homeArticles {
+  &-container {
+    @include article-detailed;
+  }
+
   &-heading {
     @include section-heading;
     display: flex;

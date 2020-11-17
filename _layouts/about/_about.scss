@@ -52,7 +52,10 @@
       display: block;
 
       @include media($phone) {
-        display: none;
+        float: initial;
+        margin: initial;
+        height: initial;
+        width: 100%;
       }
     }
 

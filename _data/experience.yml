@@ -1,13 +1,20 @@
-- institution: Storm GT
+- institution: CrowdComms
+  position: Software Developer
+  time: Sep 2020 - Present
+  icon: 💬
+  type: work
+  description: Using Angular with Ionic to build an online events application to be used on desktop, Android and iPhones. Played an important role in improving accessibility of the application.
+
+- institution: Storm Gaming Technology
   position: Full Stack Developer
-  time: Aug 2020 - Present
+  time: Jul 2020 - Sep 2020
   icon: 👾
   type: work
   description: Leading a project to manage user transactions using Angular, NodeJS, Express and MongoDB. Introduced CI pipelines, linting and unit testing to the team which helped maintain a high quality for the code entering the repository.
 
 - institution: MHR
   position: Junior Web Application Developer
-  time: Jul 2019 - Aug 2020
+  time: Jul 2019 - Jul 2020
   icon: 💻
   type: work
   description: During my time working at MHR, I have been privileged enough to have complete ownership of the front-end of multiple features from start to finish. Working within the recruitment area, I have been a key contributor to delivering high-quality solutions for the users of our SaaS HR social media application.

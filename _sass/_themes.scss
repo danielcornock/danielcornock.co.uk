@@ -20,11 +20,14 @@ html {
   --color-tooltip-icon-background: #fcfcff;
   --color-tooltip-icon-border: #{rgba($color-highlight, 0.5)};
   --color-tooltip-icon-text: #{$color-highlight};
-  --color-tag-bg: #{$color-tertiary-light};
-  --color-tag-text: #{$color-tertiary};
+  --color-tag-bg: #eee;
+  --color-tag-text: #333;
   --color-search-background: #{$color-white};
   --color-search-border: #{$color-light-grey};
   --color-search-placeholder: #{$color-grey-text};
+  --color-view-writeup-text: #{$color-tertiary};
+  --color-view-writeup-bg: #{lighten($color-tertiary, 35%)};
+  --color-view-writeup-bg--hover: #{lighten($color-tertiary, 30%)};
 }
 
 html.dark-mode {
@@ -53,4 +56,7 @@ html.dark-mode {
   --color-tag-text: #fff;
   --color-search-background: #{$color-dark-blue};
   --color-search-border: #{$color-darker};
+  --color-view-writeup-text: var(--color-tag-text);
+  --color-view-writeup-bg: var(--color-tag-bg);
+  --color-view-writeup-bg--hover: var(--color-tooltip-icon-background);
 }

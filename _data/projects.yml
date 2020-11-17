@@ -1,4 +1,10 @@
 # Projects
+- name: Scoop
+  description: An application built to track investments, net worth and monthly spending.
+  type: project
+  emoji: 📈
+  github: https://github.com/danielcornock/scoop
+  demo: https://www.scoopfinance.co.uk
 
 - name: Personal Site
   description: The site you're on now! A revamped portfolio for 2020.
@@ -12,6 +18,7 @@
   type: project
   emoji: 📝
   github: https://github.com/danielcornock/nutodo-ui
+  hidden: true
 
 - name: Property Right
   description: A full stack app to manage your properties, tenants and payments.
@@ -43,14 +50,15 @@
   description: A WIP, non-opinionated framework build on top of express to speed up development of Node APIs.
   type: package
   emoji: 🌲
+  demo: https://www.npmjs.com/package/@sprucejs/core
   github: https://github.com/sprucejs
 
-- name: ng-forms
-  description: A WIP forms framework for use with modern Angular applications.
+- name: ngx-form-trooper
+  description: A WIP forms framework built to reduce boilerplate when creating reactive forms in Angular.
   type: package
   emoji: ✏️
-  demo: https://www.npmjs.com/package/@danielc7150/ng-forms
-  hidden: true
+  github: https://github.com/danielcornock/ngx-packages
+  demo: https://www.npmjs.com/package/ngx-form-trooper
 
 - name: ng-api
   description: A WIP Angular framework for communicating with and processing external API data.
@@ -82,7 +90,7 @@
   emoji: 🏫
   demo: https://www.gregwoodin.co.uk
   github: https://github.com/GregWoodin/gregwoodin.github.io
-
+  hidden: true
 - name: Ionic Builds
   description: A brochure style website for a construction company built with WordPress.
   type: client

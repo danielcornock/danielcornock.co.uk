@@ -1,23 +1,18 @@
 <li class="project-container">
+  <div class="project-projectEmoji">{{ project.emoji }}</div>
   <div class="project-projectName">
-    <div class="project-projectEmoji">{{ project.emoji }}</div>
     <h3 class="project-projectTitle">
-      {{ project.name }}
+      {{ project.name }} {% if project.writeup %}
+      <a class="project-viewWriteup" href="{{ project.writeup | absolute_url }}"
+        >View writeup</a
+      >
+      {% endif %}
     </h3>
+    <p class="project-projectDescription project-projectDescription--home">
+      {{ project.description }}
+    </p>
   </div>
-  {% if page.title == 'Projects' %}
-  <p class="project-projectDescription">
-    {{ project.description }} {% if project.writeup %}
-    <a class="project-viewWriteup" href="{{ project.writeup | absolute_url }}"
-      >View writeup</a
-    >
-    {% endif %}
-  </p>
-  {% else %}
-  <p class="project-projectDescription project-projectDescription--home">
-    {{ project.description }}
-  </p>
-  {% endif %} {% if project.github %}
+  {% if project.github %}
   <a
     href="{{ project.github }}"
     class="project-projectRepo"
