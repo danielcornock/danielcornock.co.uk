@@ -10,4 +10,15 @@
     }
     text-align: center;
   }
+
+  &-small {
+    font-size: 10px;
+    color: $color-white;
+    margin-top: 10px;
+
+    a {
+      color: $color-white;
+      text-decoration: underline;
+    }
+  }
 }
