@@ -1,7 +1,7 @@
 ---
 title: 'Project Writeup: Kanbo'
 image: 'projects/kanbo/logo.png'
-date: 2020-05-08
+date: 2020-01-10
 tags:
   - TypeScript
   - Angular

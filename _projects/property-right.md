@@ -1,7 +1,7 @@
 ---
 title: 'Project Writeup: PropertyRight'
 image: 'projects/property-right/logo.png'
-date: 2020-05-09
+date: 2019-11-05
 tags:
   - TypeScript
   - Angular
