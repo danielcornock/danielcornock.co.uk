@@ -16,7 +16,7 @@
   width: 24px;
   font-size: 24px;
 
-  @include media($tablet) {
+  @include media($phone) {
     width: 20px;
     font-size: 20px;
   }
@@ -101,13 +101,24 @@
 
   &-navLink {
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 30px;
     text-decoration: none;
     @include header-text-config;
+    padding: 10px;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: rgba($color-highlight, 0.05);
+    }
 
     @include media($tablet) {
+      padding: 0;
       margin-left: 0;
       @include set-horizontal-spacing(45px);
+
+      &:hover {
+        background-color: transparent;
+      }
     }
 
     @include media($phone) {
@@ -124,7 +135,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-left: 50px;
+    margin-left: 40px;
 
     @include header-emoji;
 
