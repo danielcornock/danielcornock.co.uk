@@ -17,3 +17,5 @@ fields:
 - type: text
   name: meta
   label: meta
+pages:
+- _posts/2020-my-year-in-a-blog-post.md
