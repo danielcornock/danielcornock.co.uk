@@ -19,7 +19,12 @@ A project that I started in 2019, Kanbo was a kanban board application inspired 
 
 I learned a lot from this project, with my biggest goals being to have near 100% unit test code coverage, abstract away some common functionality in to libraries, and to create an application that I could use for future projects.
 
-It was a success! You can view the write-up I did for it [here](https://www.danielcornock.co.uk/projects/kanbo 'Kanbo writeup'). _(Jan)_
+It was a success! You can view the write-up I did for it [here](https://www.danielcornock.co.uk/projects/kanbo 'Kanbo writeup').
+
+## Client Work _(Jan - Feb)_
+
+{% include components/image.html url="articles/2020-review/post_2020-review_mn.png" description="An academic portfolio for Mark Nartey" %}
+An academic portfolio that I created for a client. I was happy with the final design of this portfolio, with the style being quite different to my usual. Full CMS was set up with the use of NetlifyCMS.
 
 ## Portfolio Redesign _(April)_
 
@@ -79,11 +84,27 @@ You can take a look at the project [here](https://www.npmjs.com/package/ngx-form
 
 In November I joined CrowdComms, a company that creates applications for companies to host online events and conferences. For this role, I returned to my original role as front-end developer. In my time there so far I've been learning a lot about web accessibility and have just started working on a super cool new project. The nature of which I am probably not at liberty to disclose! But so far, I've really enjoyed working at CrowdComms, and really appreciating the atmosphere of the company.
 
+At CrowdComms, I've also been introduced to the wonderful world of NgRx - this is all very new to me at the minute, but I'm enjoying picking up new skills as I go along!
+
+## A new setup
+
+With remote working becoming a large part of my life, over the past year I've been slowly building up my WFH setup. As of this week, it's finally reached a point of completion.
+
+{% include components/image.html
+  url="articles/2020-review/post_2020-review_setup.jpg"
+  description="My home office" %}
+
+I love it! It's my favourite place to be, and working in a place so aesthetic makes me a lot more productive. As well as the pretty LEDs, recent upgrades to my mouse and keyboard have increased my productivity massively.
+
 ## What about now?
 
 Well, we're coming up to the end of the year and development on Scoop has slowed down a little bit. I still have a large backlog of things that I want to add, but all of the core functionality that I originally wanted to include is now implemented, and the application is in a pretty production-ready state.
 
 For Christmas, I got an Arduino starter kit, so I've been playing around with a few fun projects for that. Maybe next year I'll have some interesting ones to showcase!
+
+## What's next?
+
+I've been toying with a few ideas for my next project, with one of them being a habit tracker (new year, new me and all that jazz!). For this project, I'd be looking at expanding out my current stack a little bit - with the aim being to build it using NgRx and TailWind (both of which I am not familiar with), alongside the usual Angular and NestJS of course!
 
 ## Wrapping up
 
@@ -91,4 +112,4 @@ Overall I'm pretty happy with the projects I've completed this year. I definitel
 
 I'm also super happy with my place of work, feeling like I can settle in and work for a company that both values me and has a great working environment. It's also fun to be working on some pretty cool stuff!
 
-Here's hoping that 2021 brings some better fortunes than 2020. 🙏
+Here's hoping that 2021 brings some good fortunes. 🙏
