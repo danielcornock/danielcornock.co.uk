@@ -9,7 +9,7 @@ meta: ''
 
 I guess it goes without saying that 2020 has been a strange year. Despite what has been thrown at us, I feel that it also opened up a great opportunity to progress. All of that time spent indoors with not much to do gave me the opportunity to spend more time on personal projects and blogging, as well as opening up more doors in my career due to remote work becoming more widely available.
 
-So, let's start from January!
+This blog post is my personal log of what I got up to, and what I achieved in the world of tech this year. Time to rack my brains and remember when I got up to all the way back in January, when the world was a very different place!
 
 ## Kanbo _(Jan)_
 
