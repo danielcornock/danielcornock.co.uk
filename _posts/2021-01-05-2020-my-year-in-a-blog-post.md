@@ -112,4 +112,4 @@ Overall I'm pretty happy with the projects I've completed this year. I definitel
 
 I'm also super happy with my place of work, feeling like I can settle in and work for a company that both values me and has a great working environment. It's also fun to be working on some pretty cool stuff!
 
-Here's hoping that 2021 brings some good fortunes. 🙏
+Here's to 2021! 🙏
