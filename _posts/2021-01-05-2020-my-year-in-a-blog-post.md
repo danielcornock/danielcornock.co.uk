@@ -104,7 +104,7 @@ For Christmas, I got an Arduino starter kit, so I've been playing around with a 
 
 ## What's next?
 
-I've been toying with a few ideas for my next project, with one of them being a habit tracker (new year, new me and all that jazz!). For this project, I'd be looking at expanding out my current stack a little bit - with the aim being to build it using NgRx and TailWind (both of which I am not familiar with), alongside the usual Angular and NestJS of course!
+I've been toying with a few ideas for my next project, with one of them being a habit tracker (new year, new me and all that jazz!). For this project, I'd be looking at expanding out my current stack a little bit - with the aim being to build it using NgRx and Tailwind (both of which I am not familiar with), alongside the usual Angular and NestJS of course!
 
 ## Wrapping up
 
