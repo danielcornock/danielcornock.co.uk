@@ -1,4 +1,11 @@
 # Projects
+- name: Habi
+  description: Track your daily habits with flexibility. <i>(In progress)</i>
+  type: project
+  emoji: 📓
+  github: https://github.com/danielcornock/habi-ui
+  demo: https://habi-uk.netlify.app/
+
 - name: Scoop
   description: An application built to track investments, net worth and monthly spending.
   type: project
@@ -29,7 +36,7 @@
   demo: https://property-right-ui.herokuapp.com/
 
 - name: Kanbo
-  description: A full stack trello-inspired kanban board with added features that fit my own work flow.
+  description: A full stack trello-inspired kanban board with added features. High unit test coverage and CI pipeline.
   type: project
   writeup: projects/kanbo
   emoji: 📊
