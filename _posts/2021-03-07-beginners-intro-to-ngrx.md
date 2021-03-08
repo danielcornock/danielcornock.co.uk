@@ -50,14 +50,17 @@ An action can optionally pass along a payload, like so:
 ##### core.actions.ts
 
 ```ts
-const setHeaderTitle = createAction('[Core] Set header title', props<{ title: string }>);
+const setHeaderTitle = createAction(
+  '[Core] Set header title',
+  props<{ title: string }>()
+);
 
 export const CoreActions = {
   setHeaderTitle
 };
 ```
 
-The magical props object is what you use to set interface for the payload of each action. For this action, the payload is the page title.
+The magical props function is what you use to set interface for the payload of each action. For this action, the payload is the page title.
 
 For our first action, we will listen for it in an **effects** file - effects files are used when information needs to be fetched from outside our store, or when we want to have side-effects from our actions.
 
@@ -257,7 +260,9 @@ We can now select the todos list from our store, from within any component that 
 ```ts
 @Component({
   selector: 'app-todos-list',
-  template: `<app-todo *ngFor="let todo of todos | async" [name]="todo.name></app-todo>`
+  template: `
+    <app-todo *ngFor="let todo of todos$ | async" [name]="todo.name"></app-todo>
+  `
 })
 export class TodosListComponent {
   public todos$: Observable<Todo[]>;
