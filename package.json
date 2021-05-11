@@ -19,6 +19,6 @@
   "homepage": "https://github.com/danielcornock/portfolio-v2#readme",
   "dependencies": {
     "inquirer": "^7.3.3",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.21"
   }
 }
