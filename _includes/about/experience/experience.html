@@ -1,10 +1,13 @@
 <ul class="experience-container">
   {% for experience in site.data.experience %}
-  <li class="experience-item">
-    <p class="experience-icon">{{ experience.icon }}</p>
+  <li class="experience-item {% if experience.repeat %}is-repeat{% endif %}">
+    <p class="experience-icon">
+      {% if experience.repeat != true %} {{ experience.icon }} {% endif %}
+    </p>
     <div class="experience-details">
-      <span class="experience-institution"
-        >{{ experience.institution }}
+      <span class="experience-institution">
+        {% if experience.repeat != true %} {{ experience.institution }} {% endif
+        %}
         <span class="experience-time">({{ experience.time }})</span></span
       >
       <h3 class="experience-position">{{ experience.position }}</h3>

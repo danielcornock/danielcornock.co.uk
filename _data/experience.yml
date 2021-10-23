@@ -1,13 +1,21 @@
 - institution: CrowdComms
-  position: Software Developer
-  time: Sep 2020 - Present
+  position: Senior Front-end Developer
+  time: Oct 2021 - Present
   icon: 💬
   type: work
+  description: Leading a sizeable rebuild project of an AngularJS application using technologies such as Angular, Nx, Jest, EsLint and Cypress. Responsible for mentoring junior developers.
+
+- institution: CrowdComms
+  position: Front-end Developer
+  time: Nov 2020 - Aug 2021
+  icon: 💬
+  type: work
+  repeat: true
   description: Using Angular with Ionic to build an online events application to be used on desktop, Android and iPhones. Played an important role in improving accessibility of the application. Introduced to new technologies such as Storybook and NgRx.
 
 - institution: Storm Gaming Technology
   position: Full Stack Developer
-  time: Jul 2020 - Sep 2020
+  time: Aug 2020 - Oct 2020
   icon: 👾
   type: work
   description: Leading a project to manage user transactions using Angular, NodeJS, Express and MongoDB. Introduced CI pipelines, linting and unit testing to the team which helped maintain a high quality for the code entering the repository.

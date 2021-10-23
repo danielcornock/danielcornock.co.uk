@@ -1,10 +1,10 @@
 # Projects
-- name: Habi
-  description: Track your daily habits with flexibility. <i>(In progress)</i>
+- name: RecovQR
+  description: Tag your belongings with QR codes that open up to an online portal.
   type: project
-  emoji: 📓
-  github: https://github.com/danielcornock/habi-ui
-  demo: https://habi-uk.netlify.app/
+  emoji:  🔐
+  github: https://github.com/danielcornock/recovqr-ui
+  demo: https://app.recovqr.com/
 
 - name: Scoop
   description: An application built to track investments, net worth and monthly spending.
@@ -12,6 +12,13 @@
   emoji: 📈
   github: https://github.com/danielcornock/scoop
   demo: https://www.scoopfinance.co.uk
+
+- name: Habi
+  description: Track your daily habits with flexibility. <i>(In progress)</i>
+  type: project
+  emoji: 📓
+  github: https://github.com/danielcornock/habi-ui
+  demo: https://habi-uk.netlify.app/
 
 - name: Personal Site
   description: The site you're on now! A revamped portfolio for 2020.
@@ -60,12 +67,12 @@
   demo: https://www.npmjs.com/package/@sprucejs/core
   github: https://github.com/sprucejs
 
-- name: ngx-form-trooper
+- name: ngx-power-forms
   description: A WIP forms framework built to reduce boilerplate when creating reactive forms in Angular.
   type: package
   emoji: ✏️
-  github: https://github.com/danielcornock/ngx-packages
-  demo: https://www.npmjs.com/package/ngx-form-trooper
+  github: https://github.com/danielcornock/ngx-power-forms
+  demo: https://ngx-power-forms.netlify.app/
 
 - name: ng-api
   description: A WIP Angular framework for communicating with and processing external API data.
@@ -90,6 +97,7 @@
   emoji: 🎓
   demo: https://www.marknartey.com
   github: https://github.com/danielcornock/marknartey.com
+  hidden: true
 
 - name: Greg Woodin
   description: An academic portfolio built for a friend.
@@ -98,6 +106,7 @@
   demo: https://www.gregwoodin.co.uk
   github: https://github.com/GregWoodin/gregwoodin.github.io
   hidden: true
+
 - name: Ionic Builds
   description: A brochure style website for a construction company built with WordPress.
   type: client
